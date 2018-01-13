@@ -20,7 +20,7 @@ class Login extends Component {
           this.lock.getUserInfo(authResult.accessToken, (error, user) => {
             axios.post('/login', { userId: user.sub }).then(response => {
               this.props.login(response.data.user);
-              this.props.history.push('/dashboard');
+              this.props.history.push('/account');
             })
           })
         })
