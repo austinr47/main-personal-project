@@ -31,39 +31,34 @@ app.post('/login', (req, res) => {
     }).then ( response => {
         const userData = response.data;
         // console.log(response)
-        req.session.user = {
+        userForDatabase = {
             name: userData.name,
             email: userData.email,
-            auth0_id: userData.user_id,
-            pictureUrl: userData.picture 
+            auth0_id: userData.user_id, 
         };
-        res.json({ user: req.session.user });
         app.get('db').find_user(userData.user_id).then(users => {
-            console.log(users)
-            if (!users.length) {
-              app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name]).then(() => {
-                
+            if (users.length) {
+              req.session.user = userForDatabase;
+              res.json({ user: req.session.user });
+            } else {
+              app.get('db').create_user([userData.user_id, userData.email, userData.name]).then(() => {
+                req.session.user = userForDatabase;
+                res.json({ user: req.session.user });
               }).catch(error => {
-                console.log('error', error);
-                res.status(500).json({ message: 'Oh noes!1'});
-              }).catch(error => {
-                console.log('error', error);
-                res.status(500).json({ message: 'Oh noes!2'});
+                console.log('error1');
+                res.status(500).json({ message: 'Server 500' });
               });
-            } 
-          }).catch(error => {
-            console.log('error', error);
-            res.status(500).json({ message: 'Oh noes!3'});
-          });
-    }).catch(error => {
-        console.log('error', error);
-        res.status(500).json({ message: 'Oh noes!4'});
-    });
-});
+            }
+          })
+        }).catch(error => {
+          console.log('error2');
+          res.status(500).json({ message: 'Oh noes!' });
+        });
+      });
 
 app.get('/user-data', (req, res) => {
     res.json({ user: req.session.user })
-    console.log('its running!')
+    console.log('its running!1')
 });
 
 const PORT = process.env.SERVER_PORT || 3035;

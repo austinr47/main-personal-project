@@ -1,0 +1,1 @@
+SELECT * FROM users_personal_project WHERE auth0_id = $1 LIMIT 1;
