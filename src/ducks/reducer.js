@@ -1,5 +1,5 @@
 const initialState = {
-    user: '',
+    user: 'Austin Randall',
 }
 
 //action type

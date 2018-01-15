@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
+import './css/Header.css';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     componentDidMount() {
@@ -14,17 +16,24 @@ class Header extends Component {
       }
 
     render() {
-        // const { user } = this.props
+        const { user } = this.props
         return (
             <div className='header'>
                 <div className='header-left'>
                     <div className='header-text'>
-                        Flash-Study
+                        <Link className='link' to='/account' >Flash-Study</Link>
+                        <Link className='link' to='/' >Login</Link>
+                        <Link className='link' to='/trainings' >Trainings</Link>
+                        <Link className='link' to='/test-results' >Results</Link>
                     </div>
-                    <img className='header-icons' src='https://raw.githubusercontent.com/austinr47/simulation-3/master/assets/home.png' alt='home'/>
                 </div>
                 <div className='header-right'>
-                    {this.props.user.name}
+                    <div className='header-text'>
+                        {user.name}Austin Randall
+                    </div>
+                    <div className='header-logout'>
+                        Logout
+                    </div>
                 </div>
             </div>
         );
