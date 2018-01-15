@@ -35,25 +35,25 @@ class Results extends Component {
                         <div className='results-left'>
                             <div className='results-label'>
                                 <div className='results-stats-1'>Right</div>
-                                <div className='results-stats-2'>Description</div>
+                                <div className='results-stats-2'>Description/Question</div>
                                 <div className='results-stats-3'>Correct</div>
                                 <div className='results-stats-4'>Answered</div>
                             </div>
                             <div className='results-stats'>
                                 <div className='results-stats-1'>Right</div>
-                                <div className='results-stats-2'>Description</div>
+                                <div className='results-stats-2'>Description/Question</div>
                                 <div className='results-stats-3'>Correct</div>
                                 <div className='results-stats-4'>Answered</div>
                             </div>
                             <div className='results-stats'>
                                 <div className='results-stats-1'>Right</div>
-                                <div className='results-stats-2'>Description</div>
+                                <div className='results-stats-2'>Description/Question</div>
                                 <div className='results-stats-3'>Correct</div>
                                 <div className='results-stats-4'>Answered</div>
                             </div>
                             <div className='results-stats'>
                                 <div className='results-stats-1'>Right</div>
-                                <div className='results-stats-2'>Description</div>
+                                <div className='results-stats-2'>Description/Question</div>
                                 <div className='results-stats-3'>Correct</div>
                                 <div className='results-stats-4'>Answered</div>
                             </div>
@@ -77,12 +77,9 @@ class Results extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user, firstName, picture, lastName } = state;
+    const { user } = state;
     return {
         user,
-        firstName,
-        picture,
-        lastName
     };
 };
 

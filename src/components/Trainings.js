@@ -5,6 +5,7 @@ import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+// import { Link } from 'react-router';
 
 class Trainings extends Component {
 
@@ -12,6 +13,7 @@ class Trainings extends Component {
         axios.get('/user-data/').then(response => {
             if (response.data.user) {
                 this.props.login(response.data.user);
+                // console.log(response.data.user)
             }
         });
     }
@@ -30,7 +32,7 @@ class Trainings extends Component {
                             <div className='trainings-category'>
                             Training Category Two</div>
                             <div className='trainings-category'>
-                            Training Category Three</div>
+                            Training Category Thre</div>
                             <div className='trainings-category'>
                             Training Category Four</div>
                             <div className='trainings-category'>
@@ -48,12 +50,9 @@ class Trainings extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user, firstName, picture, lastName } = state;
+    const { user } = state;
     return {
         user,
-        firstName,
-        picture,
-        lastName
     };
 };
 

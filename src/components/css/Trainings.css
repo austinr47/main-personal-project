@@ -1,6 +1,6 @@
 .trainings-main {
     background-color: rgb(235, 235, 235);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .trainings-content {

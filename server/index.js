@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const massive = require('massive');
 const session = require('express-session');
 const axios = require('axios');
+const controller = require('../controller');
 
 require('dotenv').config();
 
@@ -31,7 +32,7 @@ app.post('/login', (req, res) => {
     }).then ( response => {
         const userData = response.data;
         // console.log(response)
-        userForDatabase = {
+        const userForDatabase = {
             name: userData.name,
             email: userData.email,
             auth0_id: userData.user_id, 
@@ -55,6 +56,19 @@ app.post('/login', (req, res) => {
           res.status(500).json({ message: 'AAAHHHH! 2' });
         });
       });
+
+app.get('/questions', ( req, res, next ) => {
+  const db = req.app.get('db');
+
+  db.find_questions(['JavaScript'])
+    .then(questions => { 
+      console.log(questions)
+      res.status(200).send(questions); 
+    }).catch( err => {
+      console.log(err);
+      res.status(500).send(err);
+    });
+});
 
 app.get('/user-data', (req, res) => {
     res.json({ user: req.session.user })

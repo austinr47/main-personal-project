@@ -5,6 +5,7 @@ import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
 import NotLoggedIn from './NotLoggedIn';
+import { Link } from 'react-router-dom';
 
 class Account extends Component {
     
@@ -12,7 +13,17 @@ class Account extends Component {
         axios.get('/user-data/').then(response => {
             if (response.data.user) {
                 this.props.login(response.data.user);
+                // console.log(response.data.user)
             }
+        });
+    }
+
+    componentDidMount() {
+        axios.get('/questions').then(response => {
+            // if (response.data.user) {
+                // this.props.login(response.data.user);
+                console.log(response)
+            // }
         });
     }
     
@@ -27,9 +38,9 @@ class Account extends Component {
                         <div className='account-content'>
                             <div className='account-left'>
                                 <div className='account-left-column'>
-                                    <div className='account-left-text'>
+                                    <Link className='link account-left-text' to='/trainings'>
                                         Flashcard Training
-                                    </div>
+                                    </Link>
                                     <div className='account-left-text'>
                                         Create Flashcards
                                     </div>
@@ -73,12 +84,9 @@ class Account extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user, firstName, picture, lastName } = state;
+    const { user } = state;
     return {
         user,
-        firstName,
-        picture,
-        lastName
     };
 };
 
