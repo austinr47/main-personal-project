@@ -8,7 +8,7 @@ body {
 }
 
 .login-main {
-    background-image: linear-gradient(99deg, #85ddf7, #bde7f4 40%, #badce7 73%, #cadee5);
+    /* background-image: linear-gradient(99deg, #85ddf7, #bde7f4 40%, #badce7 73%, #cadee5); */
     height: 100vh; 
     display: flex;
     align-items: center;
@@ -20,6 +20,7 @@ body {
     height: 400px;
     width: 500px;
     display: flex;
+    padding-bottom: 2em;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -40,4 +41,8 @@ body {
 
 .login-text {
     font-size: 5em;
+}
+
+.login-text1 {
+    font-size: 2em;
 }

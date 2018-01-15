@@ -26,7 +26,7 @@
 
 .account-right-label {
     font-size: 2em;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     display: flex;
     justify-content: space-between;
     padding: .5em 1em;

@@ -29,7 +29,7 @@ class Header extends Component {
                 </div>
                 <div className='header-right'>
                     <div className='header-text'>
-                        {user.name}Austin Randall
+                        {user.name}
                     </div>
                     <div className='header-logout'>
                         Logout
