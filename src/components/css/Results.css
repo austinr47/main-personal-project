@@ -1,0 +1,128 @@
+.results-main {
+    background-color: rgb(235, 235, 235);
+    height: 100vh;
+}
+/* results title */
+.results-title {
+    /* background-color: lightpink; */
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 3em;
+}
+
+.results-to-account {
+    /* background-color: lightgreen; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    padding: 1em 3em;
+    margin: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.results-main-title {
+    font-size: 25px;
+    /* background-color: lightyellow; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    padding: 1.5em 4em;
+    display: flex;
+    align-items: center;
+}
+
+.results-try-again {
+    /* background-color: lightseagreen; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    padding: 1em 3em;
+    margin: 2em;
+    display: flex;
+    align-items: center;
+}
+
+/* results content */
+
+.results-content {
+    /* background-color: lightsalmon; */
+    display: flex;
+    padding: 2em 5em;
+}
+
+/* results left */
+
+.results-left {
+    /* background-color: lightskyblue; */
+    flex: 3 0 0;
+}
+
+.results-label {
+    /* background-color: lightcoral; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 0;
+    padding: .6em .3em;
+}
+
+.results-stats-1 {
+    flex: 1 0 0;
+}
+
+.results-stats-2 {
+    flex: 3 0 0;
+}
+
+.results-stats-3 {
+    flex: 1.5 0 0;
+}
+
+.results-stats-4 {
+    flex: 1 0 0;
+}
+
+.results-stats {
+    /* background-color: teal; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 1em;
+    padding: 1.2em .3em;
+}
+
+/* results right */
+
+.results-right {
+    /* background-color: lightblue; */
+    flex: .5 0 0;
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.results-result {
+    /* background-color: lightgreen; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    padding: 2em;
+}
+
+.results-percent {
+    /* background-color: lightpink; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
