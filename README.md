@@ -1,3 +1,32 @@
+<!-- -- SELECT * FROM pg_catalog.pg_tables
+-- WHERE schemaname='public';
+
+-- SELECT * FROM users_auth0_demo;
+
+-- SELECT * FROM users_fullstack_auth;
+
+-- SELECT * FROM users_sim_3;
+
+-- SELECT * FROM users;
+
+-- CREATE TABLE users_personal_project (
+-- id SERIAL,
+-- auth0_id TEXT,
+-- email TEXT,
+-- pictureUrl TEXT,
+-- name TEXT,
+-- )
+
+-- CREATE TABLE users_personal_project (
+--   id SERIAL PRIMARY KEY,
+--   auth0_id VARCHAR NOT NULL,
+--   email VARCHAR NOT NULL,
+--   name TEXT
+-- );
+
+SELECT * FROM users_personal_project; -->
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

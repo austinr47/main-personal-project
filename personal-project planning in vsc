@@ -1,0 +1,79 @@
+Flashcard Web App
+
+
+///////////// Points ////////////////
+
+
+Presentation - 10
+Domain Registration - 10
+Redux - 10
+5 endpoint tests - 20  (will be in postman and will be 1. adding new user, 2. reading flashcards, 3. updating answers, 4. reading results, 5. deleting answer)
+
+others:
+Responsive - 20
+
+
+///////////// Required ///////////////
+
+/// Full stack CRUD site
+    Create/POST (registering, creating training)
+    Read/GET (displaying user, displaying results)
+    Update/PATCH (update username)
+    Delete/DELETE (delete training )
+
+
+/// A fully planned project
+    using trello and adobe xd and vsc text file
+
+/// 1 foreign key and a JOIN statement
+
+    -forgeign key is in the results table and will be used with a join on the user table so that you can see your personal results
+
+/// MVPs:
+    -need to register/sign in
+    -select into category to study
+    -answer questions in flashcards
+    -compile list of results
+
+
+/// API endpoint:
+    POST    api/login               returns the user object from auth0 and stores it in sessions
+    PATCH   api/user-data           updates user name and returns user object
+    GET     api/user-data           returns the user that is logged in
+    POST    api/answers             adds the user answers to a table with the coresponding user-id and cardId
+    GET     api/results             returns sum of the specific categories trained
+    DELETE  api/results             deletes results to reset it 
+    GET     api/categories          returns all of the unique categories from the flashcard table are shown
+    GET     api/results-session     returns the training results after finished. will include question, correct, and answered
+
+/// Schema
+    -Users Table
+        UserID SERIAL PRIMARY KEY, 
+        auth0_id VARCHAR NOT NULL,
+        Name VARCHAR NOT NULL,  
+        Email VARCHAR NOT NULL,
+
+    -flashcard table
+        cardId SERIAL PRIMARY KEY,
+        category TEXT,
+        question TEXT,
+        answer TEXT,
+
+    -answer table
+        answerId SERIAL PRIMARY KEY,
+        answer VARCHAR,
+        UsersId INTEGER,           FOREIGN KEY
+        cardId  INTEGER,           FOREIGN KEY
+        category TEXT,             FOREIGN KEY
+
+    -results table
+        resultId SERIAL PRIMARY KEY, 
+        UserID from Users Table,   FOREIGN KEY
+        category TEXT,             FOREIGN KEY
+        question TEXT,             FOREIGN KEY
+        correct-ans INTEGER,       FOREIGN KEY
+        user-answer TEXT,          FOREIGN KEY
+
+        
+    
+

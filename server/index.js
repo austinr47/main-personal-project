@@ -46,13 +46,13 @@ app.post('/login', (req, res) => {
                 res.json({ user: req.session.user });
               }).catch(error => {
                 console.log('error1');
-                res.status(500).json({ message: 'Server 500' });
+                res.status(500).json({ message: 'AAAHHHH! 1' });
               });
             }
           })
         }).catch(error => {
           console.log('error2');
-          res.status(500).json({ message: 'Oh noes!' });
+          res.status(500).json({ message: 'AAAHHHH! 2' });
         });
       });
 

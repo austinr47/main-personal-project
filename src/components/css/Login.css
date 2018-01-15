@@ -35,6 +35,7 @@ body {
     border: black;
     border-radius: 9px 9px 9px 9px;
     width: 350px;
+    cursor: pointer;
 }
 
 .login-text {

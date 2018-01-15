@@ -14,13 +14,16 @@ class Header extends Component {
       }
 
     render() {
-        const { user } = this.props
+        // const { user } = this.props
         return (
-            <div>
-                <div>
-                    Flash-Study
+            <div className='header'>
+                <div className='header-left'>
+                    <div className='header-text'>
+                        Flash-Study
+                    </div>
+                    <img className='header-icons' src='https://raw.githubusercontent.com/austinr47/simulation-3/master/assets/home.png' alt='home'/>
                 </div>
-                <div>
+                <div className='header-right'>
                     {this.props.user.name}
                 </div>
             </div>
