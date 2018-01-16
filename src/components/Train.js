@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import './css/Trainings.css';
+import './css/Train.css';
 import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
@@ -15,7 +15,6 @@ class Train extends Component {
             question: [],
         }
         this.renderQuestion = this.renderQuestion.bind(this);
-        // this.countUp=this.countUp.bind(this);
     }
 
     componentDidMount() {
@@ -33,39 +32,34 @@ class Train extends Component {
             })
             console.log(response.data)
         });
-    console.log('component DID Mount')
 }
-
-    componentWillMount() {
-        console.log('componentWill Mount')
-        }
 
     renderQuestion() {
         const result = this.state.questions.map(a => a.question)
         this.setState({
-            question: result[this.state.count],
+            question: result[this.state.count + 1],
             count: this.state.count + 1
         })
         console.log(this.state.count)
         console.log(result)
     }
 
-    // countUp() {
-    // }
-
     render() {
         const { user } = this.props;
-        // const quest = this.state.questions.filter((obj) => {
-        //     this.state.questions[obj] === this.state.count
-        // })
-        console.log('')
         return (
-            <div>
+            <div className='train-main'>
                 {user && 
                     <div>
                     <Header />
-                        {this.state.question}
-                        <button onClick={this.renderQuestion}>count up</button>
+                        <div className='train-content'>
+                            <div className='train-question'>
+                                {this.state.question}
+                            </div>
+                            <div className='train-input'>
+                                <input className='train-input-box' placeholder='Enter Answer Here'/>
+                            </div>
+                            <button onClick={this.renderQuestion} className='train-button'>next question</button>
+                        </div>
                     </div>
                     }
                 {!user &&
