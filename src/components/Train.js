@@ -21,7 +21,7 @@ class Train extends Component {
         axios.get('/user-data/').then(response => {
             if (response.data.user) {
                 this.props.login(response.data.user);
-                console.log(response.data.user)
+                // console.log(response.data.user)
             }
         });
         axios.get('/questions').then(response => {
@@ -30,7 +30,7 @@ class Train extends Component {
                 question: result[this.state.count],
                 questions: response.data
             })
-            console.log(response.data)
+            // console.log(response.data)
         });
 }
 
@@ -40,8 +40,8 @@ class Train extends Component {
             question: result[this.state.count + 1],
             count: this.state.count + 1
         })
-        console.log(this.state.count)
-        console.log(result)
+        // console.log(this.state.count)
+        // console.log(result)
     }
 
     render() {

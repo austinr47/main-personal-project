@@ -3,7 +3,7 @@ import Header from './Header';
 import './css/Trainings.css';
 import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
-import { login } from '../ducks/reducer';
+import { login, updateCategory } from '../ducks/reducer';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ class Trainings extends Component {
         axios.get('/user-data/').then(response => {
             if (response.data.user) {
                 this.props.login(response.data.user);
-                console.log(response.data.user)
+                // console.log(response.data.user)
             }
         });
         axios.get('/categories').then(response => {
@@ -28,16 +28,16 @@ class Trainings extends Component {
             this.setState({
                 categories: response.data
             })
-            console.log(response.data)
+            // console.log(response.data)
         });
     }
 
     render() {
-        const { user } = this.props;
+        const { user, updateCategory } = this.props;
         const categories = this.state.categories.map((items) => {
-            return <Link to='/train' key={items.category} className='link trainings-category'>{items.category}</Link>
+            return <Link to='/train' key={items.category} onClick={(event) => updateCategory(items.category)} className='link trainings-category'>{items.category}</Link>
         })
-        console.log(this.state.question)
+        // console.log(this.state.question)
         return (
             
             <div className='trainings-main'>
@@ -59,7 +59,6 @@ class Trainings extends Component {
                             <div className='trainings-category'>
                             Category</div> */}
                         </div>
-                        {console.log(this.state.questions)}
                     </div>}
                 {!user &&
                     <NotLoggedIn />
@@ -70,16 +69,17 @@ class Trainings extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user } = state;
+    const { user, updateCategory } = state;
     return {
         user,
+        updateCategory
     };
 };
 
-const mapDispatchToProps = {
-    login: login,
+// const mapDispatchToProps = {
+//     login: login,
 
 
-};
+// };
 
-export default connect(mapStateToProps,  mapDispatchToProps )(Trainings);
+export default connect(mapStateToProps,  { login, updateCategory } )(Trainings);
