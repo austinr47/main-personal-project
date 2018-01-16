@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
     componentDidMount() {
         axios.get('/user-data').then(response => {
-            console.log(response)
+            // console.log(response)
           if (response.data.user) {
             this.props.login(response.data.user);
           }
@@ -24,6 +24,7 @@ class Header extends Component {
                         <Link className='link' to='/account' >Flash-Study</Link>
                         <Link className='link' to='/' >Login</Link>
                         <Link className='link' to='/trainings' >Trainings</Link>
+                        <Link className='link' to='/train' >Train</Link>
                         <Link className='link' to='/test-results' >Results</Link>
                     </div>
                 </div>

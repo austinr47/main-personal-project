@@ -1,1 +1,1 @@
-SELECT * FROM flash_cards;
+SELECT * FROM flash_cards WHERE category = $1;

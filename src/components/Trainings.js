@@ -5,21 +5,39 @@ import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class Trainings extends Component {
-
+    constructor(){
+        super()
+        this.state = {
+            categories: [],
+        }
+    }
+   
+    
     componentDidMount() {
         axios.get('/user-data/').then(response => {
             if (response.data.user) {
                 this.props.login(response.data.user);
-                // console.log(response.data.user)
+                console.log(response.data.user)
             }
+        });
+        axios.get('/categories').then(response => {
+            // console.log(response)
+            this.setState({
+                categories: response.data
+            })
+            console.log(response.data)
         });
     }
 
     render() {
         const { user } = this.props;
+        const categories = this.state.categories.map((items) => {
+            return <Link to='/train' key={items.category} className='link trainings-category'>{items.category}</Link>
+        })
+        console.log(this.state.question)
         return (
             
             <div className='trainings-main'>
@@ -27,19 +45,21 @@ class Trainings extends Component {
                     <div>
                     <Header />
                         <div className='trainings-content'>
+                            {categories}
+                            {/* <div className='trainings-category'>
+                            Category</div>
                             <div className='trainings-category'>
-                            Training Category One</div>
+                            Category</div>
                             <div className='trainings-category'>
-                            Training Category Two</div>
+                            Category</div>
                             <div className='trainings-category'>
-                            Training Category Thre</div>
+                            Category</div>
                             <div className='trainings-category'>
-                            Training Category Four</div>
+                            Category</div>
                             <div className='trainings-category'>
-                            Training Category Five</div>
-                            <div className='trainings-category'>
-                            Training Category Six</div>
+                            Category</div> */}
                         </div>
+                        {console.log(this.state.questions)}
                     </div>}
                 {!user &&
                     <NotLoggedIn />

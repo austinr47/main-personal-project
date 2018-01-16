@@ -8,6 +8,12 @@ import NotLoggedIn from './NotLoggedIn';
 import { Link } from 'react-router-dom';
 
 class Account extends Component {
+    constructor(){
+        super()
+        this.state = {
+            
+        }
+    }
     
     componentDidMount() {
         axios.get('/user-data/').then(response => {
@@ -15,15 +21,6 @@ class Account extends Component {
                 this.props.login(response.data.user);
                 // console.log(response.data.user)
             }
-        });
-    }
-
-    componentDidMount() {
-        axios.get('/questions').then(response => {
-            // if (response.data.user) {
-                // this.props.login(response.data.user);
-                console.log(response)
-            // }
         });
     }
     

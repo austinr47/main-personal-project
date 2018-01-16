@@ -1,5 +1,7 @@
 const initialState = {
     user: 'Austin',
+    category: '',
+    
 }
 
 //action type
