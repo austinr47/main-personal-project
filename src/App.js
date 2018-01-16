@@ -15,7 +15,7 @@ class App extends Component {
         <Route exact path='/(access_token.*)?' component={ Login } />
         <Route path='/account' component={ Account } />
         <Route path='/trainings' component={ Trainings } />
-        <Route path='/train' component={ Train } />
+        <Route path='/train/:category' component={ Train } />
         <Route path='/test-results' component={ Results } />
       </div>
     );

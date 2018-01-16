@@ -24,13 +24,13 @@ class Train extends Component {
                 // console.log(response.data.user)
             }
         });
-        axios.get('/questions').then(response => {
+        axios.get(`/questions?category=${this.props.match.params.category}`).then(response => {
             const result = response.data.map(a => a.question)
             this.setState({
                 question: result[this.state.count],
                 questions: response.data
             })
-            // console.log(response.data)
+            console.log(response.data)
         });
 }
 
@@ -71,9 +71,10 @@ class Train extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user } = state;
+    const { user, category } = state;
     return {
         user,
+        category,
     };
 };
 

@@ -24,7 +24,7 @@ class Trainings extends Component {
             }
         });
         axios.get('/categories').then(response => {
-            // console.log(response)
+            console.log(response)
             this.setState({
                 categories: response.data
             })
@@ -35,7 +35,7 @@ class Trainings extends Component {
     render() {
         const { user, updateCategory } = this.props;
         const categories = this.state.categories.map((items) => {
-            return <Link to='/train' key={items.category} onClick={(event) => updateCategory(items.category)} className='link trainings-category'>{items.category}</Link>
+            return <Link to={`/train/${items.category}`} key={items.category} onClick={(event) => updateCategory(items.category)} className='link trainings-category'>{items.category}</Link>
         })
         // console.log(this.state.question)
         return (
