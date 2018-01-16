@@ -24,7 +24,7 @@ class Train extends Component {
                 // console.log(response.data.user)
             }
         });
-        axios.get(`/questions?category=${this.props.match.params.category}`).then(response => {
+        axios.get(`/questions/${this.props.match.params.category}`).then(response => {
             const result = response.data.map(a => a.question)
             this.setState({
                 question: result[this.state.count],
@@ -71,10 +71,9 @@ class Train extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user, category } = state;
+    const { user } = state;
     return {
         user,
-        category,
     };
 };
 

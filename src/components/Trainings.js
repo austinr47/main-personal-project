@@ -3,7 +3,7 @@ import Header from './Header';
 import './css/Trainings.css';
 import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
-import { login, updateCategory } from '../ducks/reducer';
+import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -33,9 +33,9 @@ class Trainings extends Component {
     }
 
     render() {
-        const { user, updateCategory } = this.props;
+        const { user } = this.props;
         const categories = this.state.categories.map((items) => {
-            return <Link to={`/train/${items.category}`} key={items.category} onClick={(event) => updateCategory(items.category)} className='link trainings-category'>{items.category}</Link>
+            return <Link to={`/train/${items.category}`} key={items.category} className='link trainings-category'>{items.category}</Link>
         })
         // console.log(this.state.question)
         return (
@@ -69,17 +69,16 @@ class Trainings extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user, updateCategory } = state;
+    const { user } = state;
     return {
         user,
-        updateCategory
     };
 };
 
-// const mapDispatchToProps = {
-//     login: login,
+const mapDispatchToProps = {
+    login: login,
 
 
-// };
+};
 
-export default connect(mapStateToProps,  { login, updateCategory } )(Trainings);
+export default connect(mapStateToProps, mapDispatchToProps )(Trainings);
