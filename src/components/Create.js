@@ -15,6 +15,7 @@ class Create extends Component {
             answer: '',
             showAdd: false,
             showTestButton: true,
+            testId: '',
         }
         this.addToDb=this.addToDb.bind(this)
         this.updateCategory=this.updateCategory.bind(this)
@@ -27,15 +28,12 @@ class Create extends Component {
         axios.get('/user-data/').then(response => {
             if (response.data.user) {
                 this.props.login(response.data.user);
-                // console.log(response.data.user)
             }
         });
     }
  
     addToDb() {
-        axios.post(`/create/${this.props.match.params.category}`, { category: `${this.state.category}`, question: `${this.state.question}`, answer: `${this.state.answer}`} ).then(response => {
-            // console.log(response)
-            // console.log(this.state.card)
+        axios.post(`/create/${this.props.match.params.category}`, { question: `${this.state.question}`, answer: `${this.state.answer}`, test_id: `${this.state.testId}` } ).then(response => {
         }).catch(error => {
             console.log('error2');
         });
@@ -43,8 +41,10 @@ class Create extends Component {
 
     createTest() {
         axios.post(`/new-test/:category`, {category: `${this.state.category}`}).then(response => {
-            console.log(response + 'this is resp1')
-            console.log(this.state.category)
+            console.log(response.data)
+            this.setState({
+                testId: response.data[0].id
+            })
         }).catch(error => {
             console.log('error2');
         });
@@ -73,6 +73,7 @@ class Create extends Component {
     }
 
     render() {
+        console.log(this.state.testId)
         const { user } = this.props;
         return (
             <div>

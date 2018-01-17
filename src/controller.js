@@ -30,16 +30,16 @@ module.exports = {
           const { category } = req.body;
 
           db.new_test(category, req.session.user[0].id)
-              .then( () => res.status(200).send() )
+              .then( (response) => res.status(200).send(response) )
               .catch( () => res.status(500).send() );
           },
 
-      // create: ( req, res, next ) => {
-      //   const db = req.app.get('db');
-      //   const { category, question, answer } = req.body;
+      create: ( req, res, next ) => {
+        const db = req.app.get('db');
+        const { question, answer, test_id } = req.body;
     
-      //   db.create_card(req.params.category, [ category, question, answer ])
-      //     .then( () => res.status(200).send() )
-      //     .catch( () => res.status(500).send() );
-      // },
+        db.create_card([ question, answer, test_id ])
+          .then( () => res.status(200).send() )
+          .catch( () => res.status(500).send() );
+      },
     }
