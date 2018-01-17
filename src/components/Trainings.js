@@ -53,6 +53,9 @@ class Trainings extends Component {
                     <Header />
                         <div className='trainings-content'>
                             {categories}
+                            <Link to='/create-test'><div className='link trainings-category'>
+                                Add New Test
+                            </div></Link>
                             {/* <div className='trainings-category'>
                             Category</div>
                             <div className='trainings-category'>

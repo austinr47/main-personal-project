@@ -25,6 +25,15 @@ module.exports = {
           });
       },
 
+      newTest: ( req, res, next ) => {
+          const db = req.app.get('db');
+          const { category } = req.body;
+
+          db.new_test(category, req.session.user[0].id)
+              .then( () => res.status(200).send() )
+              .catch( () => res.status(500).send() );
+          },
+
       // create: ( req, res, next ) => {
       //   const db = req.app.get('db');
       //   const { category, question, answer } = req.body;

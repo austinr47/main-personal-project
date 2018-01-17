@@ -64,6 +64,7 @@ app.post('/login', (req, res) => {
 app.get('/categories', controller.getAllCategories);
 app.get('/questions/:category', controller.getOneCategory);
 // app.post('/create/:category', controller.create);
+app.post('/new-test/:category', controller.newTest);
 
 
 

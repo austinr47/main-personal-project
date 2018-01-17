@@ -19,10 +19,10 @@ class App extends Component {
           <Route path='/account' component={ Account } /> {/*good*/}
           <Route path='/all-tests' component={ Trainings } />
           <Route path='/flashcards/:category' component={ Flashcards } /> {/*good*/}
-          <Route path='/tests/edit/:category' component={ Create } />
           <Route path='/tests/:category' component={ Train } /> {/*good*/}
+          <Route path='/tests/edit/:category' component={ Create } />
           <Route path='/test-results' component={ Results } />
-          <Route path='/create-cards' component={ Create } />
+          <Route path='/create-test' component={ Create } />
         </Switch>
       </div>
     );
