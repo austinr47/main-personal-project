@@ -1,1 +1,1 @@
-SELECT DISTINCT category FROM flash_cards;
+SELECT DISTINCT category FROM test_personal_project WHERE user_id = $1;

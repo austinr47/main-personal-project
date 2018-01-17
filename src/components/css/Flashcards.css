@@ -1,0 +1,35 @@
+.flashcard-main {
+    background-color: rgb(235, 235, 235);
+    height: 100vh;
+}
+
+.flashcard-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.flashcard-view {
+    font-size: 2em;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    margin: 2em;
+    width: 60%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.flashcard-button {
+    padding: .8em;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 3px -1.4px rgba(0,0,0,0.4);
+    cursor: pointer;
+}

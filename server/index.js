@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const massive = require('massive');
 const session = require('express-session');
 const axios = require('axios');
-const controller = require('../controller');
+const controller = require('../src/controller.js');
 
 require('dotenv').config();
 
@@ -37,13 +37,17 @@ app.post('/login', (req, res) => {
           email: userData.email,
           auth0_id: userData.user_id, 
       };
+      // console.log(response.data)
       app.get('db').find_user(userData.user_id).then(users => {
+        // console.log(users)
           if (users.length) {
-            req.session.user = userForDatabase;
+            req.session.user = users;
             res.json({ user: req.session.user });
+            // console.log(req.session)
           } else {
-            app.get('db').create_user([userData.user_id, userData.email, userData.name]).then(() => {
-              req.session.user = userForDatabase;
+            app.get('db').create_user([userData.user_id, userData.email, userData.name]).then((users) => {
+              // console.log(users)
+              req.session.user = users;
               res.json({ user: req.session.user });
             }).catch(error => {
               console.log('error1');
@@ -57,9 +61,12 @@ app.post('/login', (req, res) => {
       });
     });
 
-app.get('/questions/:category', controller.getOneCategory);
 app.get('/categories', controller.getAllCategories);
-app.post('/create', controller.create);
+app.get('/questions/:category', controller.getOneCategory);
+// app.post('/create/:category', controller.create);
+
+
+
 
 app.get('/user-data', (req, res) => {
     res.json({ user: req.session.user })

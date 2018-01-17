@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import './css/Trainings.css';
 import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
@@ -11,9 +10,9 @@ class Create extends Component {
     constructor(){
         super()
         this.state={
-            category: 'JavaScript',
-            question: 'question1',
-            answer: 'answer1',
+            category: '',
+            question: '',
+            answer: '',
         }
         this.addToDb=this.addToDb.bind(this)
         this.updateCategory=this.updateCategory.bind(this)
@@ -31,12 +30,12 @@ class Create extends Component {
     }
  
     addToDb() {
-        axios.post('/create', { category: `${this.state.category}`, question: `${this.state.question}`, answer: `${this.state.answer}`} ).then(response => {
+        axios.post(`/create/${this.props.match.params.category}`, { category: `${this.state.category}`, question: `${this.state.question}`, answer: `${this.state.answer}`} ).then(response => {
             // console.log(response)
             // console.log(this.state.card)
         }).catch(error => {
             console.log('error2');
-          });
+        });
     }
 
     updateCategory(category){
@@ -58,13 +57,23 @@ class Create extends Component {
     }
 
     render() {
+        const { user } = this.props;
         return (
             <div>
+                {user && 
+                <div>
                 <Header />
                 <input placeholder='Category' onChange={event => this.updateCategory(event.target.value)}/>
+                <div>
                 <input placeholder='Question' onChange={event => this.updateQuestion(event.target.value)}/>
                 <input placeholder='Answer' onChange={event => this.updateAnswer(event.target.value)}/>
                 <button onClick={this.addToDb}>Add</button>
+                </div>
+                </div>
+                }
+                {!user &&
+                    <NotLoggedIn />
+                }
             </div>
         );
     }

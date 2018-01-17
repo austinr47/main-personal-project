@@ -35,12 +35,12 @@ class Account extends Component {
                         <div className='account-content'>
                             <div className='account-left'>
                                 <div className='account-left-column'>
-                                    <Link className='link account-left-text' to='/subjects'>
-                                        Flashcard Training
+                                    <Link className='link account-left-text' to='/all-tests'>
+                                        Study/Tests
                                     </Link>
-                                    <div className='account-left-text'>
+                                    <Link className='link account-left-text' to='/create-cards'>
                                         Create Flashcards
-                                    </div>
+                                    </Link>
                                     {/* <div className='account-left-text'>
                                         Edit Flashcards
                                     </div> */}

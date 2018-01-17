@@ -3,7 +3,7 @@ module.exports = {
     getOneCategory: ( req, res, next ) => {
         const db = req.app.get('db');
       
-        db.find_questions(req.params.category)
+        db.find_questions(req.params.category, req.session.user[0].id)
           .then(questions => { 
             console.log(questions)
             res.status(200).send(questions); 
@@ -16,9 +16,8 @@ module.exports = {
       getAllCategories: ( req, res, next ) => {
         const db = req.app.get('db');
       
-        db.find_categories([])
+        db.find_categories(req.session.user[0].id)
           .then(questions => { 
-            // console.log(questions)
             res.status(200).send(questions); 
           }).catch( err => {
             console.log(err);
@@ -26,12 +25,12 @@ module.exports = {
           });
       },
 
-      create: ( req, res, next ) => {
-        const db = req.app.get('db');
-        const { category, question, answer } = req.body;
+      // create: ( req, res, next ) => {
+      //   const db = req.app.get('db');
+      //   const { category, question, answer } = req.body;
     
-        db.create_card([ category, question, answer ])
-          .then( () => res.status(200).send() )
-          .catch( () => res.status(500).send() );
-      },
+      //   db.create_card(req.params.category, [ category, question, answer ])
+      //     .then( () => res.status(200).send() )
+      //     .catch( () => res.status(500).send() );
+      // },
     }
