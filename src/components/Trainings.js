@@ -35,7 +35,7 @@ class Trainings extends Component {
     render() {
         const { user } = this.props;
         const categories = this.state.categories.map((items) => {
-            return <Link to={`/train/${items.category}`} key={items.category} className='link trainings-category'>{items.category}</Link>
+            return <Link to={`/tests/${items.category}`} key={items.category} className='link trainings-category'>{items.category}</Link>
         })
         // console.log(this.state.question)
         return (

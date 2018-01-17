@@ -24,5 +24,14 @@ module.exports = {
             console.log(err);
             res.status(500).send(err);
           });
-      }
+      },
+
+      create: ( req, res, next ) => {
+        const db = req.app.get('db');
+        const { category, question, answer } = req.body;
+    
+        db.create_card([ category, question, answer ])
+          .then( () => res.status(200).send() )
+          .catch( () => res.status(500).send() );
+      },
     }

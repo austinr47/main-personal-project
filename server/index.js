@@ -59,6 +59,7 @@ app.post('/login', (req, res) => {
 
 app.get('/questions/:category', controller.getOneCategory);
 app.get('/categories', controller.getAllCategories);
+app.post('/create', controller.create);
 
 app.get('/user-data', (req, res) => {
     res.json({ user: req.session.user })

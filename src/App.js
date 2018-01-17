@@ -5,6 +5,7 @@ import Account from './components/Account';
 import Trainings from './components/Trainings';
 import Train from './components/Train';
 import Results from './components/Results';
+import Create from './components/Create';
 
 
 
@@ -14,9 +15,10 @@ class App extends Component {
       <div>
         <Route exact path='/(access_token.*)?' component={ Login } />
         <Route path='/account' component={ Account } />
-        <Route path='/trainings' component={ Trainings } />
-        <Route path='/train/:category' component={ Train } />
+        <Route path='/subjects' component={ Trainings } />
+        <Route path='/tests/:category' component={ Train } />
         <Route path='/test-results' component={ Results } />
+        <Route path='/create-cards' component={ Create } />
       </div>
     );
   }

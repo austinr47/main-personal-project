@@ -35,7 +35,7 @@ class Account extends Component {
                         <div className='account-content'>
                             <div className='account-left'>
                                 <div className='account-left-column'>
-                                    <Link className='link account-left-text' to='/trainings'>
+                                    <Link className='link account-left-text' to='/subjects'>
                                         Flashcard Training
                                     </Link>
                                     <div className='account-left-text'>
