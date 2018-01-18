@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import './css/Create.css';
 import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';

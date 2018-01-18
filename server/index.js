@@ -65,6 +65,8 @@ app.get('/categories', controller.getAllCategories);
 app.get('/questions/:category', controller.getOneCategory);
 app.post('/create/:category', controller.create);
 app.post('/new-test/:category', controller.newTest);
+app.patch('/test-name-update/:id', controller.updateTestName);
+app.delete('/card-delete/:id', controller.deleteTestCard);
 
 
 

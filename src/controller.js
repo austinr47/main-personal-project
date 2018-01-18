@@ -5,7 +5,7 @@ module.exports = {
       
         db.find_questions(req.params.category, req.session.user[0].id)
           .then(questions => { 
-            console.log(questions)
+            // console.log(questions)
             res.status(200).send(questions); 
           }).catch( err => {
             console.log(err);
@@ -40,6 +40,23 @@ module.exports = {
     
         db.create_card([ question, answer, test_id ])
           .then( () => res.status(200).send() )
+          .catch( () => res.status(500).send() );
+      },
+
+      updateTestName: ( req, res, next ) => {
+        const db = req.app.get('db');
+        const { test_id, category } = req.body;
+    
+        db.update_test_name([ test_id, category ])
+        .then( (response) => res.status(200).send(response) )
+          .catch( () => res.status(500).send() );
+      },
+
+      deleteTestCard: ( req, res, next ) => {
+        const db = req.app.get('db');
+    
+        db.delete_card(req.params.id)
+        .then( (response) => res.status(200).send(response) )
           .catch( () => res.status(500).send() );
       },
     }
