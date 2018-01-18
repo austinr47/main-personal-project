@@ -12,9 +12,17 @@ class Train extends Component {
         this.state = {
             count: 0,
             questions: [],
+            
+            myAnswer: '',
+            correctAnser: '',
             question: [],
+            testId: '',
+            category: '',
+            indiTest: '',
+            
         }
         this.renderQuestion = this.renderQuestion.bind(this);
+        this.answer = this.answer.bind(this);
     }
 
     componentDidMount() {
@@ -26,25 +34,46 @@ class Train extends Component {
         });
         axios.get(`/questions/${this.props.match.params.category}`).then(response => {
             const result = response.data.map(a => a.question)
+            const answer = response.data.map(a => a.answer)
             this.setState({
                 question: result[this.state.count],
-                questions: response.data
+                questions: response.data,
+                testId: response.data[0].test_id,
+                category: response.data[0].category,
+                correctAnswer: answer[this.state.count],
             })
             console.log(response.data)
         });
+        axios.post(`/indi-test/${this.props.match.params.category}`).then(response => {
+            this.setState({
+                indiTest: response.data[0].indi_test
+            })
+        })
 }
 
     renderQuestion() {
+        axios.post('/results-indi-test', { my_answer: `${this.state.myAnswer}`, correct_answer: `${this.state.correctAnswer}`, question: `${this.state.question}`,  test_id: `${this.state.testId}`, category: `${this.state.category}`, result_table_id: `${this.state.indiTest}` }).then(response => {
+
+        })
         const result = this.state.questions.map(a => a.question)
+        const answer = this.state.questions.map(a => a.answer)
         this.setState({
             question: result[this.state.count + 1],
+            correctAnswer: answer[this.state.count + 1],
             count: this.state.count + 1
         })
         // console.log(this.state.count)
         // console.log(result)
     }
 
+    answer(answer) {
+        this.setState({
+            myAnswer: answer
+        })
+    }
+
     render() {
+        console.log(this.state.indiTest)
         const { user } = this.props;
         return (
             <div className='train-main'>
@@ -56,7 +85,7 @@ class Train extends Component {
                                 {this.state.question}
                             </div>
                             <div className='train-input'>
-                                <input className='train-input-box' placeholder='Enter Answer Here'/>
+                                <input className='train-input-box' onChange={event => this.answer(event.target.value)}placeholder='Enter Answer Here'/>
                             </div>
                             <button onClick={this.renderQuestion} className='train-button'>next question</button>
                         </div>

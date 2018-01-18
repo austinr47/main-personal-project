@@ -4,7 +4,7 @@ import Auth0Lock from 'auth0-lock';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { login } from '../ducks/reducer';
-import Header from './Header';
+// import Header from './Header';
 
 class Login extends Component {
     constructor() {

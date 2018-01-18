@@ -59,4 +59,21 @@ module.exports = {
         .then( (response) => res.status(200).send(response) )
           .catch( () => res.status(500).send() );
       },
+
+      createIndiTest: ( req, res, next ) => {
+        const db = req.app.get('db');
+    
+        db.create_indi_test(req.params.category, req.session.user[0].id)
+        .then( (response) => res.status(200).send(response) )
+          .catch( () => res.status(500).send() );
+      },
+
+      createIndiResults: ( req, res, next ) => {
+        const db = req.app.get('db');
+        const { my_answer, correct_answer, question, test_id, category, result_table_id } = req.body;
+    
+        db.create_result([my_answer, correct_answer, question, test_id, category, result_table_id, req.session.user[0].id])
+        .then( (response) => res.status(200).send(response) )
+          .catch( () => res.status(500).send() );
+      },
     }

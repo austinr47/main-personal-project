@@ -56,7 +56,7 @@ app.post('/login', (req, res) => {
           }
         })
       }).catch(error => {
-        console.log('error2');
+        console.log('error2', error);
         res.status(500).json({ message: 'AAAHHHH! 2' });
       });
     });
@@ -67,8 +67,8 @@ app.post('/create/:category', controller.create);
 app.post('/new-test/:category', controller.newTest);
 app.patch('/test-name-update/:id', controller.updateTestName);
 app.delete('/card-delete/:id', controller.deleteTestCard);
-
-
+app.post('/indi-test/:category', controller.createIndiTest);
+app.post('/results-indi-test', controller.createIndiResults);
 
 
 app.get('/user-data', (req, res) => {

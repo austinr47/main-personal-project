@@ -38,9 +38,9 @@ class Account extends Component {
                                     <Link className='link account-left-text' to='/all-tests'>
                                         Study/Tests
                                     </Link>
-                                    <Link className='link account-left-text' to='/create-cards'>
+                                    {/* <Link className='link account-left-text' to='/create-cards'>
                                         Create Flashcards
-                                    </Link>
+                                    </Link> */}
                                     {/* <div className='account-left-text'>
                                         Edit Flashcards
                                     </div> */}
