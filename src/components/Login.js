@@ -35,7 +35,7 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Header />
+                {/* <Header /> */}
                 <div className='login-main'>
                     <div className='login-box'>
                         <img alt='' src=''/>

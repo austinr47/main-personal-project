@@ -10,6 +10,7 @@ body {
 .login-main {
     /* background-image: linear-gradient(99deg, #85ddf7, #bde7f4 40%, #badce7 73%, #cadee5); */
     /* background-image: linear-gradient(128deg, rgba(64, 61, 57, 0.1), rgba(255, 255, 255, 0.2)); */
+    background-color: rgb(235, 235, 235);
     height: 100vh; 
     display: flex;
     align-items: center;

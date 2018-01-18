@@ -23,9 +23,6 @@ class Header extends Component {
                     <div className='header-text'>
                         <Link className='link' to='/account' >Flash-Study</Link>
                         <Link className='link' to='/' >Login</Link>
-                        <Link className='link' to='/subjects' >Trainings</Link>
-                        <Link className='link' to='/tests/react' >Train</Link>
-                        <Link className='link' to='/test-results' >Results</Link>
                     </div>
                 </div>
                 <div className='header-right'>
@@ -33,7 +30,7 @@ class Header extends Component {
                         {user.name}
                     </div>
                     <div className='header-logout'>
-                        Logout
+                        <Link className='link' to='/logout'> Logout </Link>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import Results from './components/Results';
 import Create from './components/Create';
 import Flashcards from './components/Flashcards';
 import EditTests from './components/EditTests';
+import NotLoggedIn from './components/NotLoggedIn';
 
 
 
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path='/tests/:category' component={ Train } /> {/*good*/}
           <Route path='/test-results' component={ Results } />
           <Route path='/create-test' component={ Create } /> {/*good*/}
+          <Route path='/logout' component={ NotLoggedIn } /> {/*good*/}
         </Switch>
       </div>
     );
