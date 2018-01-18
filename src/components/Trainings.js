@@ -24,7 +24,7 @@ class Trainings extends Component {
             }
         });
         axios.get('/categories').then(response => {
-            console.log(response)
+            // console.log(response)
             this.setState({
                 categories: response.data
             })

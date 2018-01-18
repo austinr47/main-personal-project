@@ -31,22 +31,17 @@ app.post('/login', (req, res) => {
     }
   }).then ( response => {
       const userData = response.data;
-      // console.log(response)
       const userForDatabase = {
           name: userData.name,
           email: userData.email,
           auth0_id: userData.user_id, 
       };
-      // console.log(response.data)
       app.get('db').find_user(userData.user_id).then(users => {
-        // console.log(users)
           if (users.length) {
             req.session.user = users;
             res.json({ user: req.session.user });
-            // console.log(req.session)
           } else {
             app.get('db').create_user([userData.user_id, userData.email, userData.name]).then((users) => {
-              // console.log(users)
               req.session.user = users;
               res.json({ user: req.session.user });
             }).catch(error => {
@@ -63,6 +58,7 @@ app.post('/login', (req, res) => {
 
 app.get('/categories', controller.getAllCategories);
 app.get('/questions/:category', controller.getOneCategory);
+app.get('/indi-results/:id', controller.indiTestResults);
 app.post('/create/:category', controller.create);
 app.post('/new-test/:category', controller.newTest);
 app.patch('/test-name-update/:id', controller.updateTestName);

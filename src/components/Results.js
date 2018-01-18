@@ -7,6 +7,12 @@ import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
 
 class Results extends Component {
+    constructor() {
+        super()
+        this.state = {
+            results: [],
+        }
+    }
 
     componentDidMount() {
         axios.get('/user-data/').then(response => {
@@ -14,10 +20,17 @@ class Results extends Component {
                 this.props.login(response.data.user);
             }
         });
+        axios.get(`/indi-results/${this.props.match.params.id}`).then(response => {
+            console.log(response)
+            this.setState({
+                results: response.data
+            })
+        })       
     }
 
     render() {
         const { user } = this.props;
+        console.log(this.state.results)
         return (
             
             <div className='results-main'>
@@ -77,9 +90,10 @@ class Results extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user } = state;
+    const { user, testId } = state;
     return {
         user,
+        testId,
     };
 };
 

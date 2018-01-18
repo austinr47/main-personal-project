@@ -3,8 +3,9 @@ import Header from './Header';
 import './css/Train.css';
 import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
-import { login } from '../ducks/reducer';
+import { login, testId } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Train extends Component {
     constructor() {
@@ -29,7 +30,6 @@ class Train extends Component {
         axios.get('/user-data/').then(response => {
             if (response.data.user) {
                 this.props.login(response.data.user);
-                // console.log(response.data.user)
             }
         });
         axios.get(`/questions/${this.props.match.params.category}`).then(response => {
@@ -42,18 +42,17 @@ class Train extends Component {
                 category: response.data[0].category,
                 correctAnswer: answer[this.state.count],
             })
-            console.log(response.data)
         });
         axios.post(`/indi-test/${this.props.match.params.category}`).then(response => {
             this.setState({
                 indiTest: response.data[0].indi_test
             })
-        })
+        });
 }
 
     renderQuestion() {
         axios.post('/results-indi-test', { my_answer: `${this.state.myAnswer}`, correct_answer: `${this.state.correctAnswer}`, question: `${this.state.question}`,  test_id: `${this.state.testId}`, category: `${this.state.category}`, result_table_id: `${this.state.indiTest}` }).then(response => {
-
+            this.props.testId(this.state.indiTest);
         })
         const result = this.state.questions.map(a => a.question)
         const answer = this.state.questions.map(a => a.answer)
@@ -61,9 +60,7 @@ class Train extends Component {
             question: result[this.state.count + 1],
             correctAnswer: answer[this.state.count + 1],
             count: this.state.count + 1
-        })
-        // console.log(this.state.count)
-        // console.log(result)
+        });
     }
 
     answer(answer) {
@@ -73,13 +70,15 @@ class Train extends Component {
     }
 
     render() {
-        console.log(this.state.indiTest)
-        const { user } = this.props;
+        const { user, myTestId } = this.props;
+        const { question } = this.state;
+        console.log( myTestId )
         return (
             <div className='train-main'>
                 {user && 
                     <div>
                     <Header />
+                        {question &&
                         <div className='train-content'>
                             <div className='train-question'>
                                 {this.state.question}
@@ -89,6 +88,15 @@ class Train extends Component {
                             </div>
                             <button onClick={this.renderQuestion} className='train-button'>next question</button>
                         </div>
+                        }
+                        {!question &&
+                        <div className='train-content'>
+                            <div className='train-question'>
+                            Done!
+                            </div>
+                            <Link to={`/test-results/${myTestId}`} className='link'><button className='train-button'>Get Results</button></Link>
+                        </div>
+                        }
                     </div>
                     }
                 {!user &&
@@ -100,16 +108,16 @@ class Train extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { user } = state;
+    const { user, myTestId } = state;
     return {
         user,
+        myTestId,
     };
 };
 
 const mapDispatchToProps = {
     login: login,
-
-
+    testId: testId,
 };
 
 export default connect(mapStateToProps,  mapDispatchToProps )(Train);

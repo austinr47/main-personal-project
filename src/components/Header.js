@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
     componentDidMount() {
         axios.get('/user-data').then(response => {
-            // console.log(response)
           if (response.data.user) {
             this.props.login(response.data.user);
           }
@@ -27,7 +26,7 @@ class Header extends Component {
                 </div>
                 <div className='header-right'>
                     <div className='header-text'>
-                        {user.name}
+                        {user[0].name}
                     </div>
                     <div className='header-logout'>
                         <Link className='link' to='/logout'> Logout </Link>
@@ -39,8 +38,9 @@ class Header extends Component {
 }
 
 function mapStateToProps(state) {
+    const { user } = state;
     return {
-      user: state.user
+      user,
     };
   };
   

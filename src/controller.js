@@ -5,7 +5,6 @@ module.exports = {
       
         db.find_questions(req.params.category, req.session.user[0].id)
           .then(questions => { 
-            // console.log(questions)
             res.status(200).send(questions); 
           }).catch( err => {
             console.log(err);
@@ -76,4 +75,13 @@ module.exports = {
         .then( (response) => res.status(200).send(response) )
           .catch( () => res.status(500).send() );
       },
+
+      indiTestResults: ( req, res, next ) => {
+        const db = req.app.get('db');
+      
+        db.get_indi_results(req.params.id, req.session.user[0].id).then((response) => {
+            res.status(200).send(response) 
+          }).catch( err => {
+            res.status(500).send(err) });
+        },
     }

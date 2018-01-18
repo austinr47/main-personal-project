@@ -84,7 +84,6 @@ class Create extends Component {
                 <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
             </div>
         })
-        // const name = this.state.cards.map((item) => item.category)
 
         return (
             <div className='edit-main'>
