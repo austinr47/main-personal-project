@@ -46,8 +46,8 @@ class Create extends Component {
     }
 
     updateTestName() {
-        axios.patch(`/test-name-update/${this.state.testId}`, {test_id: this.state.testId, category: this.state.testName}).then(response => {
-            // console.log(response)
+        axios.patch(`/test-name-update/`, { id: `${this.state.testId}`, category: `${this.state.testName}` } ).then(response => {
+            console.log(response)
         })
         this.setState({
             showEditTitle: !this.state.showEditTitle
@@ -75,6 +75,8 @@ class Create extends Component {
 
     render() {
         const { user } = this.props;
+        console.log(this.state.testId)
+        console.log(this.state.testName)
         const cards = this.state.cards.map((item, i) => {
             return <div className='edit-cards' key={item.id}>
                 <div className='edit-cards-info'>

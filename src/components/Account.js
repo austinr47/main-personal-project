@@ -11,7 +11,7 @@ class Account extends Component {
     constructor(){
         super()
         this.state = {
-            
+            data: [],
         }
     }
     
@@ -22,10 +22,18 @@ class Account extends Component {
                 // console.log(response.data.user)
             }
         });
+        axios.get('/user-tests-results').then(response => {
+            console.log(response)
+            this.setState({
+                data: response.data
+            })
+
+        })
     }
     
     render() {
         const { user } = this.props;
+        
         return (
             <div className='account-bck'>
             {user &&

@@ -11,11 +11,12 @@ Redux - 10
 
 others:
 Responsive - 20
+chart js - 10
 
 
 ///////////// Required ///////////////
 
-/// Full stack CRUD site
+/// Full stack CRUD site  (see endpoints below)
     Create/POST (registering, creating training)
     Read/GET (displaying user, displaying results)
     Update/PATCH (update username)
@@ -31,48 +32,76 @@ Responsive - 20
 
 /// MVPs:
     -need to register/sign in
+    -create test and questions
+    -edit tests
     -select into category to study
+    -study flashcards
     -answer questions in flashcards
     -compile list of results
 
 
 /// API endpoint:
-    POST    api/login               returns the user object from auth0 and stores it in sessions
-    PATCH   api/user-data           updates user name and returns user object
-    GET     api/user-data           returns the user that is logged in
-    POST    api/answers             adds the user answers to a table with the coresponding user-id and cardId
-    GET     api/results             returns sum of the specific categories trained
-    DELETE  api/results             deletes results to reset it 
-    GET     api/categories          returns all of the unique categories from the flashcard table are shown
-    GET     api/results-session     returns the training results after finished. will include question, correct, and answered
+post   '/login'                     returns the user object from auth0 and stores it in sessions
+patch  '/user-data'                 updates user name and returns user object
+get    '/user-data'                 returns the user that is logged in
+get    '/categories'                returns the tests created by logged in user
+get    '/questions/:category'       gets questions for flashcards or taking test per specific test category
+get    '/indi-results/:id'          gets results for test that was just taken
+get    '/user-tests-results'        gets the result of each time the user took a test
+post   '/create/:category'          will create new questions
+post   '/new-test/:category';       will create new test
+patch  '/test-name-update'          updates the test name
+delete '/card-delete/:id'           deletes question from test
+post   '/indi-test/:category'       creates new answers table for a test by a user
+post   '/results-indi-test'         gets the results for a specifit test taken by user
 
 /// Schema
-    -Users Table
-        UserID SERIAL PRIMARY KEY, 
-        auth0_id VARCHAR NOT NULL,
-        Name VARCHAR NOT NULL,  
-        Email VARCHAR NOT NULL,
+CREATE TABLE users_personal_project (
+  id SERIAL PRIMARY KEY,
+  auth0_id VARCHAR NOT NULL,
+  email VARCHAR NOT NULL,
+  name TEXT
+);
 
-    -flashcard table
-        cardId SERIAL PRIMARY KEY,
-        category TEXT,
-        question TEXT,
-        answer TEXT,
+CREATE TABLE test_personal_project (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER,
+  category VARCHAR
+);
 
-    -answer table
-        answerId SERIAL PRIMARY KEY,
-        answer VARCHAR,
-        UsersId INTEGER,           FOREIGN KEY
-        cardId  INTEGER,           FOREIGN KEY
-        category TEXT,             FOREIGN KEY
+CREATE TABLE cards_personal_project (
+  id SERIAL PRIMARY KEY,
+  question VARCHAR NOT NULL,
+  answer VARCHAR NOT NULL,
+  test_id INTEGER references test_personal_project(id)     ----FOREIGN KEY
+);
 
-    -results table
-        resultId SERIAL PRIMARY KEY, 
-        UserID from Users Table,   FOREIGN KEY
-        category TEXT,             FOREIGN KEY
-        question TEXT,             FOREIGN KEY
-        correct-ans INTEGER,       FOREIGN KEY
-        user-answer TEXT,          FOREIGN KEY
+CREATE TABLE results_personal_project(
+    result_id SERIAL PRIMARY KEY,
+    my_answer VARCHAR,
+    correct_answer VARCHAR,
+    question VARCHAR,
+    test_id INTEGER,
+    category VARCHAR,
+    result_table_id INTEGER,
+    user_id INTEGER
+);
+
+CREATE TABLE indi_test_results_personal_project(
+    indi_test SERIAL PRIMARY KEY,
+    category VARCHAR,
+    user_id INTEGER,
+    date TEXT default current_date,
+    timestamp TEXT default CURRENT_TIMESTAMP
+);
+
+CREATE TABLE general_indi_test_result(
+    gen_indi_test_id SERIAL PRIMARY KEY,
+    indi_test INTEGER,
+    category VARCHAR,
+    percent INTEGER,
+    user_id INTEGER
+);
 
         
     

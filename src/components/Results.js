@@ -11,6 +11,7 @@ class Results extends Component {
         super()
         this.state = {
             results: [],
+            score: [],
         }
     }
 
@@ -21,16 +22,44 @@ class Results extends Component {
             }
         });
         axios.get(`/indi-results/${this.props.match.params.id}`).then(response => {
-            console.log(response)
+            // console.log(response.data)
             this.setState({
                 results: response.data
             })
-        })       
+            const result = response.data.map((item, i) => {
+                const myanswer = item.my_answer;
+                const coranswer = item.correct_answer;
+                const outcomePercent = () => myanswer.toLowerCase() === coranswer.toLowerCase() ? 100 : 0;
+
+                return this.setState({
+                    score: [...this.state.score,  outcomePercent()]
+                })
+            }
+        )})
     }
+
+  
 
     render() {
         const { user } = this.props;
-        console.log(this.state.results)
+        const result = this.state.results.map((item, i) => {
+                const myanswer = item.my_answer;
+                const coranswer = item.correct_answer;
+                const outcome = () => myanswer.toLowerCase() === coranswer.toLowerCase() ? 'right' : 'wrong';
+            return <div key={item.result_id}>
+                <div className='results-stats'>
+                    <div className='results-stats-1'>{outcome()}</div>
+                    <div className='results-stats-2'>{item.question}</div>
+                    <div className='results-stats-3'>{item.correct_answer}</div>
+                    <div className='results-stats-4'>{item.my_answer}</div>
+                </div>
+            </div>
+        })
+        console.log(this.state.score)
+        // function percent(arr) {
+        //     return arr.reduce(( acc, cur ) => Math.round(acc + cur, 0) / arr.length)
+        // }
+
         return (
             
             <div className='results-main'>
@@ -52,30 +81,15 @@ class Results extends Component {
                                 <div className='results-stats-3'>Correct</div>
                                 <div className='results-stats-4'>Answered</div>
                             </div>
-                            <div className='results-stats'>
-                                <div className='results-stats-1'>Right</div>
-                                <div className='results-stats-2'>Description/Question</div>
-                                <div className='results-stats-3'>Correct</div>
-                                <div className='results-stats-4'>Answered</div>
-                            </div>
-                            <div className='results-stats'>
-                                <div className='results-stats-1'>Right</div>
-                                <div className='results-stats-2'>Description/Question</div>
-                                <div className='results-stats-3'>Correct</div>
-                                <div className='results-stats-4'>Answered</div>
-                            </div>
-                            <div className='results-stats'>
-                                <div className='results-stats-1'>Right</div>
-                                <div className='results-stats-2'>Description/Question</div>
-                                <div className='results-stats-3'>Correct</div>
-                                <div className='results-stats-4'>Answered</div>
-                            </div>
+                            {result}
                         </div>
                         
                         <div className='results-right'>
-                            <div className='results-result'>Congrats!!!</div>
+                            <div className='results-result'>
+                                {/* {this.state.percent > 80 ? <div>Congrats!!!</div> : <div>More practice!</div>} */}
+                            </div>
                             <div className='results-percent'>
-                                <div>70%</div>
+                                {/* <div>{this.getPercent(this.state.score)}%</div> */}
                                 <div>Correct</div>
                             </div>
                         </div>
