@@ -72,7 +72,7 @@ class Train extends Component {
     render() {
         const { user, myTestId } = this.props;
         const { question } = this.state;
-        console.log( myTestId )
+        // console.log( myTestId )
         return (
             <div className='train-main'>
                 {user && 

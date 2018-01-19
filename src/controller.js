@@ -34,13 +34,22 @@ module.exports = {
             .catch( () => res.status(500).send() );
       },
 
+      createGeneralResults: ( req, res, next ) => {
+        const db = req.app.get('db');
+        const { category, percent } = req.body;
+    
+        db.create_general_results([req.params.id, category, percent, req.session.user[0].id])
+          .then( () => res.status(200).send() )
+            .catch( () => res.status(500).send() );
+      },
+
       updateTestName: ( req, res, next ) => {
         const db = req.app.get('db');
-        const { id, category } = req.body;
-    
-        db.update_test_name([ id, category ])
-          .then( (response) => res.status(200).send(response) )
-            .catch( () => res.status(500).send() );
+        const { test_id, category } = req.body;
+        // console.log(test_id, category)
+        db.update_test_name( [ test_id, category ] )
+        .then( (response) => res.status(200).send(response) )
+          .catch( () => res.status(500).send() );
       },
 
       deleteTestCard: ( req, res, next ) => {

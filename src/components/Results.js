@@ -5,6 +5,7 @@ import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import { setTimeout } from 'timers';
 
 class Results extends Component {
     constructor() {
@@ -12,6 +13,9 @@ class Results extends Component {
         this.state = {
             results: [],
             score: [],
+
+            category: '',
+            percent: '',
         }
     }
 
@@ -22,9 +26,9 @@ class Results extends Component {
             }
         });
         axios.get(`/indi-results/${this.props.match.params.id}`).then(response => {
-            // console.log(response.data)
             this.setState({
-                results: response.data
+                results: response.data,
+                category: response.data[0].category
             })
             const result = response.data.map((item, i) => {
                 const myanswer = item.my_answer;
@@ -32,13 +36,22 @@ class Results extends Component {
                 const outcomePercent = () => myanswer.toLowerCase() === coranswer.toLowerCase() ? 100 : 0;
 
                 return this.setState({
-                    score: [...this.state.score,  outcomePercent()]
+                    score: [...this.state.score,  outcomePercent()],
                 })
             }
-        )})
+        )} ).then (() => {
+            const score = this.state.score
+            const percent1 = score.reduce(( acc, cur ) => acc + cur, 0) / score.length
+            // console.log(percent1)
+            this.setState({
+                percent: percent1
+            })
+        }).then (() => {
+            axios.post(`/general-account-results/${this.props.match.params.id}`, { category: `${this.state.category}`, percent: `${this.state.percent}` } ).then(response => {
+                console.log(response)
+            })
+        })
     }
-
-  
 
     render() {
         const { user } = this.props;
@@ -55,10 +68,6 @@ class Results extends Component {
                 </div>
             </div>
         })
-        console.log(this.state.score)
-        // function percent(arr) {
-        //     return arr.reduce(( acc, cur ) => Math.round(acc + cur, 0) / arr.length)
-        // }
 
         return (
             
@@ -86,10 +95,10 @@ class Results extends Component {
                         
                         <div className='results-right'>
                             <div className='results-result'>
-                                {/* {this.state.percent > 80 ? <div>Congrats!!!</div> : <div>More practice!</div>} */}
+                                {this.state.percent > 80 ? <div>Congrats!!!</div> : <div>More practice!</div>}
                             </div>
                             <div className='results-percent'>
-                                {/* <div>{this.getPercent(this.state.score)}%</div> */}
+                                <div>{this.state.percent}%</div>
                                 <div>Correct</div>
                             </div>
                         </div>

@@ -62,10 +62,11 @@ app.get('/indi-results/:id', controller.indiTestResults);
 app.get('/user-tests-results', controller.getUserTestResults);
 app.post('/create/:category', controller.create);
 app.post('/new-test/:category', controller.newTest);
-app.patch('/test-name-update', controller.updateTestName);
+app.patch('/test-name-update/:id', controller.updateTestName);
 app.delete('/card-delete/:id', controller.deleteTestCard);
 app.post('/indi-test/:category', controller.createIndiTest);
 app.post('/results-indi-test', controller.createIndiResults);
+app.post('/general-account-results/:id', controller.createGeneralResults);
 
 
 app.get('/user-data', (req, res) => {

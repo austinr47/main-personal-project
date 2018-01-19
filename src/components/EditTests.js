@@ -46,7 +46,7 @@ class Create extends Component {
     }
 
     updateTestName() {
-        axios.patch(`/test-name-update/`, { id: `${this.state.testId}`, category: `${this.state.testName}` } ).then(response => {
+        axios.patch(`/test-name-update/${this.state.testId}`, {test_id: this.state.testId, category: this.state.testName}).then(response => {
             console.log(response)
         })
         this.setState({
