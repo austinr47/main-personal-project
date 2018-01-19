@@ -5,6 +5,7 @@ import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Flashcards extends Component {
     constructor() {
@@ -47,7 +48,8 @@ class Flashcards extends Component {
         this.setState({
             question: question[this.state.count],
             answer: answer[this.state.count],
-            count: newCount
+            count: newCount,
+            showQuestion: true
         })
     }
 
@@ -64,7 +66,6 @@ class Flashcards extends Component {
                 {user && 
                     <div>
                         <Header />
-                        {this.state.question && 
                         <div className='flashcard-content'>
 
                             <div className='flashcard-view' onClick={this.showAnswer}>
@@ -79,18 +80,12 @@ class Flashcards extends Component {
                                     </div>
                                 }
                             </div>
-                            <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
-                            <button className='flashcard-button' onClick={this.nextCard}>Next</button>
+                            <div>
+                            <Link to='/account' className='link'><button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button></Link>
+                                <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
+                                <button className='flashcard-button' onClick={this.nextCard}>Next</button>
+                            </div>
                         </div>
-                        }
-                            {!this.state.question &&
-                                <div className=''>
-                                    <div className=''>
-                                    No more cards
-                                    </div>
-                                    <div className=''><button className=''>Restart</button></div>
-                                </div>
-                            }
                     </div>}
                 {!user &&
                     <NotLoggedIn />

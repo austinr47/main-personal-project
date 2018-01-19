@@ -30,7 +30,7 @@ module.exports = {
         const { question, answer, test_id } = req.body;
     
         db.create_card([ question, answer, test_id ])
-          .then( () => res.status(200).send() )
+          .then( (response) => res.status(200).send(response) )
             .catch( () => res.status(500).send() );
       },
 
@@ -46,7 +46,7 @@ module.exports = {
       updateTestName: ( req, res, next ) => {
         const db = req.app.get('db');
         const { test_id, category } = req.body;
-        console.log(test_id, category)
+        // console.log(test_id, category)
         db.update_test_name( [ test_id, category ] )
         .then( (response) => res.status(200).send(response) )
           .catch( () => res.status(500).send() );
@@ -92,6 +92,16 @@ module.exports = {
           .then((response) => res.status(200).send(response) )
             .catch( err => res.status(500).send(err) );
         },
+
+      getWhenCreatingTest: ( req, res, next ) => {
+        const db = req.app.get('db');
+        const { id } = req.params;
+
+        db.find_all_when_creating_test(id)
+          .then( (response) => res.status(200).send(response) )
+            .catch( () => res.status(500).send() );
+        },
+
     }
 
     // create_card

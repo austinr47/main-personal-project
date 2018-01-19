@@ -60,6 +60,7 @@ app.get('/categories', controller.getAllCategories);
 app.get('/questions/:category', controller.getOneCategory);
 app.get('/indi-results/:id', controller.indiTestResults);
 app.get('/user-tests-results', controller.getUserTestResults);
+app.get('/during-create-test/:id', controller.getWhenCreatingTest);
 app.post('/create/:category', controller.create);
 app.post('/new-test/:category', controller.newTest);
 app.patch('/test-name-update/:id', controller.updateTestName);
