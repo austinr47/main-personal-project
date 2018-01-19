@@ -1,3 +1,4 @@
-SELECT * FROM results_personal_project
-FULL OUTER JOIN indi_test_results_personal_project on indi_test_results_personal_project.indi_test = results_personal_project.result_table_id
-WHERE indi_test_results_personal_project.user_id = $1;
+SELECT * FROM indi_test_results_personal_project
+FULL OUTER JOIN general_indi_test_result on general_indi_test_result.indi_test = indi_test_results_personal_project.indi_test
+WHERE general_indi_test_result.user_id = $1
+ORDER BY timestamp DESC;;
