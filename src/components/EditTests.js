@@ -32,7 +32,7 @@ class Create extends Component {
         axios.get(`/questions/${this.props.match.params.category}`).then(response => {
             console.log(response)
             this.setState({
-                testId: response.data[0].id,
+                testId: response.data[0].test_id,
                 cards: response.data,
                 testName: response.data[0].category,
             })
@@ -46,6 +46,7 @@ class Create extends Component {
     }
 
     updateTestName() {
+        console.log(this.state.testId, this.state.testName)
         axios.patch(`/test-name-update/${this.state.testId}`, {test_id: this.state.testId, category: this.state.testName}).then(response => {
             console.log(response)
         })
