@@ -35,7 +35,7 @@ class Account extends Component {
     render() {
         const { user } = this.props;
         const result = this.state.data.map((item, index) => {
-            return <div key={item.indi_test}>
+            return <div key={index}>
                         <div className='account-right-stats'>
                             <div>{item.category}</div>
                             <div>{item.percent}%</div>
@@ -43,12 +43,6 @@ class Account extends Component {
                     </div>
         })
         
-
-
-
-
-
-
         return (
             <div className='account-bck'>
             {user &&
@@ -59,7 +53,7 @@ class Account extends Component {
                             <div className='account-left'>
                                 <div className='account-left-column'>
                                     <Link className='link account-left-text' to='/all-tests'>
-                                        Study/Tests
+                                        View Subjects
                                     </Link>
                                     {/* <Link className='link account-left-text' to='/create-cards'>
                                         Create Flashcards
@@ -74,7 +68,7 @@ class Account extends Component {
                             </div>
                             <div className='account-right'>
                                 <div className='account-right-label'>
-                                    <div>Category</div>
+                                    <div>Subject</div>
                                     <div>Percent Correct</div>
                                 </div>
                                 {result}

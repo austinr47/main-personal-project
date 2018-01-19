@@ -33,7 +33,7 @@ componentDidMount() {
         })
     }).then(() => {
         // console.log(this.state.data)
-        const addCategories = this.state.data.map((item, index) => {
+        this.state.data.map((item, index) => {
             this.setState({
                 categories: [...this.state.categories, item.category]
             })
@@ -90,7 +90,6 @@ componentDidMount() {
         this.state.singleCategories.map((item, index) => {
             data1.labels.push(item)
             var arr = []
-            var length = ''
             var average = ''
             this.state.data.map((i, ind) => {
                 if(i.category === item) {
