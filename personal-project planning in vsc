@@ -33,7 +33,7 @@ chart js - 10
 /// MVPs:
     -need to register/sign in
     -create test and questions
-    -edit tests
+    -edit tests name
     -select into category to study
     -study flashcards
     -answer questions in flashcards

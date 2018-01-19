@@ -43,10 +43,11 @@ class Flashcards extends Component {
     nextCard() {
         const question = this.state.questions.map(a => a.question);
         const answer = this.state.questions.map(a => a.answer);
+        const newCount = Math.floor(Math.random() * Math.floor(this.state.questions.length))
         this.setState({
-            question: question[this.state.count + 1],
-            answer: answer[this.state.count + 1],
-            count: this.state.count + 1
+            question: question[this.state.count],
+            answer: answer[this.state.count],
+            count: newCount
         })
     }
 
@@ -63,7 +64,9 @@ class Flashcards extends Component {
                 {user && 
                     <div>
                         <Header />
+                        {this.state.question && 
                         <div className='flashcard-content'>
+
                             <div className='flashcard-view' onClick={this.showAnswer}>
                                 {this.state.showQuestion &&
                                     <div className='flaschard-question'>
@@ -79,6 +82,15 @@ class Flashcards extends Component {
                             <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
                             <button className='flashcard-button' onClick={this.nextCard}>Next</button>
                         </div>
+                        }
+                            {!this.state.question &&
+                                <div className=''>
+                                    <div className=''>
+                                    No more cards
+                                    </div>
+                                    <div className=''><button className=''>Restart</button></div>
+                                </div>
+                            }
                     </div>}
                 {!user &&
                     <NotLoggedIn />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Bar} from 'react-chartjs-2'
+import {HorizontalBar} from 'react-chartjs-2'
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
@@ -103,19 +103,19 @@ componentDidMount() {
         this.setState({
             data1: data1
         })
-    }).then(() => {
-        // console.log(this.state.data1)
-    })
-}
+        }).then(() => {
+            // console.log(this.state.data1)
+        })
+    }
 
           
     render() {
         return (
             <div>
 
-                <Bar 
+                <HorizontalBar 
           data={this.state.data1} redraw
-        //   width={450}
+          //   width={450}
           height={360}
           options={{
             maintainAspectRatio: false,
