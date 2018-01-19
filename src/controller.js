@@ -38,9 +38,9 @@ module.exports = {
         const db = req.app.get('db');
         const { category, percent } = req.body;
     
-        db.create_general_results([req.params.id, category, percent, req.session.user[0].id])
-          .then( () => res.status(200).send() )
-            .catch( () => res.status(500).send() );
+        db.create_general_results(req.params.id, category, percent, req.session.user[0].id)
+          .then( (response) => res.status(200).send(response) )
+            .catch( (err) => res.status(500).send(err) );
       },
 
       updateTestName: ( req, res, next ) => {

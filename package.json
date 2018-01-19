@@ -7,11 +7,14 @@
     "auth0-lock": "^11.0.1",
     "axios": "^0.17.1",
     "body-parser": "^1.18.2",
+    "chart.js": "^2.7.1",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "massive": "^4.6.3",
     "react": "^16.2.0",
+    "react-chartjs": "^1.2.0",
+    "react-chartjs-2": "^2.7.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -25,5 +28,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-    "proxy": "http://localhost:3035"
+  "proxy": "http://localhost:3035"
 }

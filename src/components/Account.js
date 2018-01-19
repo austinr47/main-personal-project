@@ -6,6 +6,7 @@ import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
 import NotLoggedIn from './NotLoggedIn';
 import { Link } from 'react-router-dom';
+import Chart from './Charts.1'
 
 class Account extends Component {
     constructor(){
@@ -23,7 +24,7 @@ class Account extends Component {
             }
         });
         axios.get('/user-tests-results').then(response => {
-            console.log(response)
+            // console.log(response)
             this.setState({
                 data: response.data
             })
@@ -42,6 +43,12 @@ class Account extends Component {
                     </div>
         })
         
+
+
+
+
+
+
         return (
             <div className='account-bck'>
             {user &&
@@ -60,6 +67,9 @@ class Account extends Component {
                                     {/* <div className='account-left-text'>
                                         Edit Flashcards
                                     </div> */}
+
+                                        <Chart/>
+
                                 </div>
                             </div>
                             <div className='account-right'>

@@ -5,7 +5,6 @@ import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
-import { setTimeout } from 'timers';
 
 class Results extends Component {
     constructor() {
@@ -26,11 +25,12 @@ class Results extends Component {
             }
         });
         axios.get(`/indi-results/${this.props.match.params.id}`).then(response => {
+            console.log(response)
             this.setState({
                 results: response.data,
                 category: response.data[0].category
             })
-            const result = response.data.map((item, i) => {
+            response.data.map((item, i) => {
                 const myanswer = item.my_answer;
                 const coranswer = item.correct_answer;
                 const outcomePercent = () => myanswer.toLowerCase() === coranswer.toLowerCase() ? 100 : 0;
@@ -47,6 +47,7 @@ class Results extends Component {
                 percent: percent1
             })
         }).then (() => {
+            console.log(this.state.category, this.state.percent, this.props.match.params.id)
             axios.post(`/general-account-results/${this.props.match.params.id}`, { category: `${this.state.category}`, percent: `${this.state.percent}` } ).then(response => {
                 console.log(response)
             })
