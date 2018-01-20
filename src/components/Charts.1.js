@@ -53,12 +53,12 @@ componentDidMount() {
                         {
                         label: 'Avg Percent/Subject',
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)',
+                            'rgba(255, 159, 64, 0.5)'
                         ],
                         borderColor: [
                             'rgba(255,99,132,1)',
@@ -69,25 +69,15 @@ componentDidMount() {
                             'rgba(255, 159, 64, 1)'
                         ],
                         borderWidth: 2,
-                        hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                        hoverBackgroundColor: 'rgba(255,99,132,0.7)',
                         hoverBorderColor: 'rgba(255,99,132,1)',
                         data: [],
-                        // options: {
-                            // scales:{
-                            //     yAxes:[{
-                            //         ticks:{
-                            //             min:100,
-                            //             max:100,
-                            //             reverse:true
-                            //         },
-                            //     }]
-                            // }
-                        // }
                         }
                         ]
                     };
 
         this.state.singleCategories.map((item, index) => {
+            // console.log(this.state.singleCategories)
             data1.labels.push(item)
             var arr = []
             var average = ''
@@ -116,7 +106,7 @@ componentDidMount() {
                 <HorizontalBar 
           data={this.state.data1} redraw
           //   width={450}
-          height={360}
+        //   height={360}
           options={{
             maintainAspectRatio: false,
             scales:{

@@ -5,8 +5,9 @@
 
 .trainings-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    justify-content: center;
     align-content: space-around;
     margin: 5em 10em;
 }

@@ -30,7 +30,7 @@ class Create extends Component {
             }
         });
         axios.get(`/questions/${this.props.match.params.category}`).then(response => {
-            console.log(response)
+            // console.log(response)
             this.setState({
                 testId: response.data[0].test_id,
                 cards: response.data,
@@ -48,7 +48,7 @@ class Create extends Component {
     updateTestName() {
         console.log(this.state.testId, this.state.testName)
         axios.patch(`/test-name-update/${this.state.testId}`, {test_id: this.state.testId, category: this.state.testName}).then(response => {
-            console.log(response)
+            // console.log(response)
         })
         this.setState({
             showEditTitle: !this.state.showEditTitle
@@ -64,7 +64,7 @@ class Create extends Component {
     deleteCard(i) {
         axios.delete(`/card-delete/${i}`).then(response => {
             axios.get(`/questions/${this.props.match.params.category}`).then(response => {
-                console.log(response)
+                // console.log(response)
                 this.setState({
                     testId: response.data[0].id,
                     cards: response.data,
@@ -76,13 +76,15 @@ class Create extends Component {
 
     render() {
         const { user } = this.props;
-        console.log(this.state.testId)
-        console.log(this.state.testName)
+        // console.log(this.state.testId)
+        // console.log(this.state.testName)
         const cards = this.state.cards.map((item, i) => {
-            return <div className='edit-cards' key={item.id}>
-                <div className='edit-cards-info'>
-                    <div>{item.question}</div>
-                    <div>{item.answer}</div>
+            return <div className='edit-card-content'key={item.id}>
+                <div className='edit-cards'>
+                    <div className='edit-cards-info'>
+                        <div>{item.question}</div>
+                        <div>{item.answer}</div>
+                    </div>
                 </div>
                 <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
             </div>
@@ -112,7 +114,6 @@ class Create extends Component {
                                 <div>Question/Description</div>
                                 <div>Answer</div>
                             </div>
-                            <div>Edit</div>
                         </div>
                         {cards}
                     </div>

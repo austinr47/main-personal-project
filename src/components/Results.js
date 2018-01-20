@@ -25,7 +25,7 @@ class Results extends Component {
             }
         });
         axios.get(`/indi-results/${this.props.match.params.id}`).then(response => {
-            console.log(response)
+            // console.log(response)
             this.setState({
                 results: response.data,
                 category: response.data[0].category
@@ -47,9 +47,9 @@ class Results extends Component {
                 percent: percent1
             })
         }).then (() => {
-            console.log(this.state.category, this.state.percent, this.props.match.params.id)
+            // console.log(this.state.category, this.state.percent, this.props.match.params.id)
             axios.post(`/general-account-results/${this.props.match.params.id}`, { category: `${this.state.category}`, percent: `${this.state.percent}` } ).then(response => {
-                console.log(response)
+                // console.log(response)
             })
         })
     }

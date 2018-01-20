@@ -37,7 +37,7 @@ class Flashcards extends Component {
                 questions: response.data,
                 answer: answer[this.state.count]
             })
-            console.log(response.data)
+            // console.log(response.data)
         });
     }
 
@@ -45,11 +45,17 @@ class Flashcards extends Component {
         const question = this.state.questions.map(a => a.question);
         const answer = this.state.questions.map(a => a.answer);
         const newCount = Math.floor(Math.random() * Math.floor(this.state.questions.length))
+        const oddEven = () => {
+            const num = Math.floor(Math.random() * Math.floor(50))
+            if(num % 2 === 0) {
+                return true
+            } else return false
+        }
         this.setState({
             question: question[this.state.count],
             answer: answer[this.state.count],
             count: newCount,
-            showQuestion: true
+            showQuestion: oddEven()
         })
     }
 

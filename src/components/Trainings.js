@@ -38,9 +38,9 @@ class Trainings extends Component {
             return <div key={items.category} className='link trainings-category'>
                         <div>{items.category}</div>
                         <div>
-                            <Link to={`/flashcards/${items.category}`}><button>Content Flaschards</button></Link>
-                            <Link to={`/tests/${items.category}`}><button>Test on Content</button></Link>
-                            <Link to={`/tests/edit/${items.category}`}><button>Edit Subject</button></Link>
+                            <Link to={`/flashcards/${items.category}`}><button>Flaschards</button></Link>
+                            <Link to={`/tests/${items.category}`}><button>Test</button></Link>
+                            <Link to={`/tests/edit/${items.category}`}><button>Edit</button></Link>
                         </div>
                     </div>
         })
