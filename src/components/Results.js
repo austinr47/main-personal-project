@@ -5,6 +5,9 @@ import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+///////need to check timestamp
 
 class Results extends Component {
     constructor() {
@@ -16,6 +19,7 @@ class Results extends Component {
             category: '',
             percent: '',
         }
+        // this.addResults=this.addResults.bind(this)
     }
 
     componentDidMount() {
@@ -46,13 +50,21 @@ class Results extends Component {
             this.setState({
                 percent: percent1
             })
-        }).then (() => {
+        })
+        .then (() => {
             // console.log(this.state.category, this.state.percent, this.props.match.params.id)
             axios.post(`/general-account-results/${this.props.match.params.id}`, { category: `${this.state.category}`, percent: `${this.state.percent}` } ).then(response => {
                 // console.log(response)
             })
         })
     }
+
+    // addResults() {
+    //         // console.log(this.state.category, this.state.percent, this.props.match.params.id)
+    //         axios.post(`/general-account-results/${this.props.match.params.id}`, { category: `${this.state.category}`, percent: `${this.state.percent}` } ).then(response => {
+    //             console.log(response)
+    //         })
+    // }
 
     render() {
         const { user } = this.props;
@@ -78,7 +90,7 @@ class Results extends Component {
                     <Header />
 
                     <div className='results-title'>
-                        <div className='results-to-account'>Account</div>
+                        <Link to='/account' className=''><div /*onClick={this.addResults}*/ className='results-to-account'>Go To Account</div></Link>
                         <div className='results-main-title'>Flash-Study Results</div>
                         <div className='results-try-again'>Train Again</div>
                     </div>

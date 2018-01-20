@@ -87,7 +87,7 @@ class Flashcards extends Component {
                                 }
                             </div>
                             <div>
-                            <Link to='/account' className='link'><button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button></Link>
+                            <Link to='/subjects' className='link'><button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button></Link>
                                 <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
                                 <button className='flashcard-button' onClick={this.nextCard}>Next</button>
                             </div>

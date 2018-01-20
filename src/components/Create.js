@@ -11,7 +11,7 @@ class Create extends Component {
     constructor(){
         super()
         this.state={
-            category: '',
+            category: 'Subject Name',
             question: '',
             answer: '',
             showAdd: false,
@@ -141,7 +141,7 @@ class Create extends Component {
                             <div className='results-left'>
                         { this.state.showSubjectName &&
                             <div>
-                                <input placeholder='Subject Name' onChange={event => this.updateCategory(event.target.value)}/>
+                                <input placeholder={this.state.category} onChange={event => this.updateCategory(event.target.value)}/>
                                 {this.state.showCreateSubject && <button onClick={this.createTest}>Create Subject</button>}
                                 {!this.state.showCreateSubject && <button onClick={this.updateTestName}>Update Subject Name</button>}
                             </div>

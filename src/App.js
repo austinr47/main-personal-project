@@ -19,7 +19,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/(access_token.*)?' component={ Login } /> {/*good*/}
           <Route path='/account' component={ Account } /> {/*good*/}
-          <Route path='/all-tests' component={ Trainings } />  {/*good*/}
+          <Route path='/subjects' component={ Trainings } />  {/*good*/}
           <Route path='/flashcards/:category' component={ Flashcards } /> {/*good*/}
           <Route path='/tests/edit/:category' component={ EditTests } /> {/*good*/}
           <Route path='/tests/:category' component={ Train } /> {/*good*/}
