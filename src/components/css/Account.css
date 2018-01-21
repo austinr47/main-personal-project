@@ -1,13 +1,13 @@
 .account-bck {
-    background-color: rgb(235, 235, 235);
-    height: 100vh;
+    background-color: rgb(221, 47, 47);
+    /* height: 100vh; */
 }
 
 .account-content {
-    /* background-color: lightblue; */
-    display: flex;
-    /* padding: 2em ; */
-    justify-content: space-between;
+    background-color: pink;
+    /* display: flex;
+    justify-content: space-between; */
+    /* padding: 1em; */
 }
 
 .link {
@@ -16,53 +16,65 @@
 }
 
 .account-margin {
-    padding: 3em 9em 0em 0em;
+    /* padding: 3em 9em 0em 0em; */
+    padding: 1em;
 }
 
 .account-left {
-    /* background-color: lightgreen; */
-    flex: 1 0 0;
+    background-color: lightgreen;
+    /* padding: 1em; */
+    /* flex: 1 0 0; */
 }
 
 .account-right {
-    /* background-color: lightsalmon; */
-    flex: 2 0 0;
+    background-color: lightsalmon;
+    padding: 1em 0 0 0;
+    /* flex: 2 0 0; */
 }
 
 .account-right-label {
-    font-size: 2em;
-    /* background-color: lightblue; */
+    font-size: 10px;
+    background-color: lightblue;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
-    padding: .5em 1em;
     border: 1.5px solid #000000;
-    box-shadow: 2px 3px 6px -1px rgba(0,0,0,0.75);
+    padding: .5em 1em;
 }
 
 .account-right-stats {
-    /* background-color: lightcoral; */
+    background-color: lightcoral;
+    padding: 6px;
     display: flex;
     justify-content: space-between;
-    padding: 1.5em 1.5em;
-    margin: 2em 1.8em;
-    border: 1.5px solid #000000;
-    border-radius: 4px;
-    box-shadow: 2px 3px 6px -1px rgba(0,0,0,0.75);
+    /* padding: 1.5em 0; */
+    margin: 10px 7px;
+    border: 1px solid #000000;
+    border-radius: 2px;
 }
 
 .account-left-column {
-    padding: 1em;
+    background-color: lightslategray;
+    /* padding: 1em; */
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
 }
 
 .account-left-text {
-    border: 2px solid #000000;
-    border-radius: 5px;
-    padding: 2em 3em;
+    background-color: lightyellow;
+    padding: 1em;
     display: flex;
+    font-size: 13px;;
+    border: 2px solid #000000;
+    border-radius: 7px;
+    
+    /* 
+    padding: 2em 3em;
     justify-content: space-around;
-    margin: 1em 0em 1em 0em;
+    margin: 1em 0em 1em 0em; */
+}
+
+.chart {
+    border: 1.5px solid #000000;
 }

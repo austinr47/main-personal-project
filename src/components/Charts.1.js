@@ -3,6 +3,7 @@ import {HorizontalBar} from 'react-chartjs-2'
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
+import './css/Account.css';
 
 
 class BarGraph extends Component {
@@ -101,7 +102,7 @@ componentDidMount() {
           
     render() {
         return (
-            <div>
+            <div className='chart'>
 
                 <HorizontalBar 
           data={this.state.data1} redraw

@@ -73,26 +73,28 @@ class Flashcards extends Component {
                     <div>
                         <Header />
                         <div className='flashcard-content'>
-
-                            <div className='flashcard-view' onClick={this.showAnswer}>
-                                {this.state.showQuestion &&
+                            {this.state.showQuestion &&
+                                <div className='flashcard-view' onClick={this.showAnswer}>
                                     <div className='flaschard-question'>
                                         {this.state.question}
                                     </div>
-                                } 
-                                {!this.state.showQuestion &&
+                                </div>
+                            } 
+                            {!this.state.showQuestion &&
+                                <div className='flashcard-view' onClick={this.showAnswer}>
                                     <div className='flashcard-answer'>
                                         {this.state.answer}
                                     </div>
-                                }
-                            </div>
-                            <div>
-                            <Link to='/subjects' className='link'><button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button></Link>
-                                <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
-                                <button className='flashcard-button' onClick={this.nextCard}>Next</button>
-                            </div>
+                                </div>
+                            }
                         </div>
-                    </div>}
+                        <div>
+                        <Link to='/subjects' className='link'><button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button></Link>
+                            <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
+                            <button className='flashcard-button' onClick={this.nextCard}>Next</button>
+                        </div>
+                    </div>
+                    }
                 {!user &&
                     <NotLoggedIn />
                 }

@@ -21,7 +21,7 @@ class Header extends Component {
                 <div className='header-left'>
                     <div className='header-text'>
                         <Link className='link' to='/account' >Flash-Study</Link>
-                        <Link className='link' to='/' >Login</Link>
+                        {/* <Link className='link' to='/' >Login</Link> */}
                     </div>
                 </div>
                 <div className='header-right'>
