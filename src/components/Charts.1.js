@@ -3,7 +3,7 @@ import {HorizontalBar} from 'react-chartjs-2'
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
-import './css/Account.css';
+// import './css/Account.css';
 
 
 class BarGraph extends Component {
@@ -111,7 +111,7 @@ componentDidMount() {
           options={{
             maintainAspectRatio: false,
             scales:{
-                yAxes:[{
+                xAxes:[{
                     ticks:{
                         min:0,
                         max:100,

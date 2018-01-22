@@ -1,10 +1,10 @@
 .account-bck {
-    background-color: rgb(221, 47, 47);
+    /* background-color: rgb(221, 47, 47); */
     /* height: 100vh; */
 }
 
 .account-content {
-    background-color: pink;
+    /* background-color: pink; */
     /* display: flex;
     justify-content: space-between; */
     /* padding: 1em; */
@@ -21,20 +21,20 @@
 }
 
 .account-left {
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
     /* padding: 1em; */
     /* flex: 1 0 0; */
 }
 
 .account-right {
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
     padding: 1em 0 0 0;
     /* flex: 2 0 0; */
 }
 
 .account-right-label {
-    font-size: 10px;
-    background-color: lightblue;
+    font-size: 14px;
+    /* background-color: lightblue; */
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@
 }
 
 .account-right-stats {
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     padding: 6px;
     display: flex;
     justify-content: space-between;
@@ -54,7 +54,7 @@
 }
 
 .account-left-column {
-    background-color: lightslategray;
+    /* background-color: lightslategray; */
     /* padding: 1em; */
     display: flex;
     flex-direction: column;
@@ -62,19 +62,83 @@
 }
 
 .account-left-text {
-    background-color: lightyellow;
-    padding: 1em;
+    /* /* background-color: lightyellow; */
     display: flex;
-    font-size: 13px;;
-    border: 2px solid #000000;
-    border-radius: 7px;
-    
-    /* 
-    padding: 2em 3em;
-    justify-content: space-around;
-    margin: 1em 0em 1em 0em; */
+    font-size: 13px;
+    /* border: 2px solid #000000;
+    border-radius: 7px; */
+    /* margin: auto; */
+    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
-.chart {
-    border: 1.5px solid #000000;
+.center-text {
+    margin: auto;
+    padding: 10px 0 10px 25px;
 }
+
+/* .chart {
+    border: 1.5px solid #000000;
+} */
+
+.css-button{ 
+    height: 60px; 
+    width: 120px; 
+    padding: 17px; 
+    text-align: center; 
+    color: #FFFFFF; 
+    font-family: 'Arial'; 
+    font-size: 18px; 
+    /* font-weight: bold;  */
+    background-color: #2E7FF9; 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #3E537D; 
+    border-radius: 18px; 
+    box-shadow: 3px 4px 0px 0px #284470; 
+    text-shadow: 0px 1px 0px #263666; 
+} 
+.css-button:hover{ 
+    height: 77px; 
+    width: 157px; 
+    background-color: #08C5FF; 
+} 
+
+@media (min-width: 800px) {
+    .account-content {
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 20px;
+    }
+
+    .account-right-label {
+        padding: 10px 25px;
+        font-size: 18px;
+    }
+
+    .account-right {
+        flex: 4;
+        padding: 6px 10px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .account-margin {
+        /* padding: 3em 9em 0em 0em; */
+        /* padding: 0 60px; */
+        min-width: 1025px;
+        /* display: flex;
+        justify-content: space-around; */
+    }
+
+    .account-left {
+        min-width: 400px;
+        /* max-width: 200px; */
+    }
+
+    .account-right {
+        max-width: 700px;
+    }
+}
+

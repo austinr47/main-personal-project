@@ -29,7 +29,9 @@ class Header extends Component {
                         {user[0].name}
                     </div>
                     <div className='header-logout'>
-                        <Link className='link' to='/logout'> Logout </Link>
+                        <div className='logout'>
+                            <Link className='link' to='/logout'> Logout </Link>
+                        </div>
                     </div>
                 </div>
             </div>

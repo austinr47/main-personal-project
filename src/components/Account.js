@@ -85,8 +85,10 @@ class Account extends Component {
                         <div className='account-content'>
                             <div className='account-left'>
                                 <div className='account-left-column'>
-                                    <Link className='link account-left-text' to='/subjects'>
-                                        View/Create Subjects
+                                    <Link type="button" className='css-button link account-left-text' to='/subjects'>
+                                        <div className='center-text'>
+                                            View/Create Subjects
+                                        </div>
                                     </Link>
                                     {/* <Link className='link account-left-text' to='/create-cards'>
                                         Create Flashcards
@@ -94,6 +96,7 @@ class Account extends Component {
                                     {/* <div className='account-left-text'>
                                         Edit Flashcards
                                     </div> */}
+                                    <div>Subject Results</div>
                                     <div>
                                         <Chart/>
                                     </div>
