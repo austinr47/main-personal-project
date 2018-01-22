@@ -1,44 +1,51 @@
 .results-main {
-    background-color: rgb(235, 235, 235);
-    height: 100vh;
+    /* padding: 3px; */
+    /* background-color: rgb(240, 95, 95); */
 }
 /* results title */
 .results-title {
+    padding: 3px;
     /* background-color: lightpink; */
     display: flex;
     justify-content: space-around;
-    padding: 2em 3em;
+    align-items: center;
+    align-content: center;
+    text-align: center
 }
 
 .results-to-account {
+    /* padding: 5px; */
     /* background-color: lightgreen; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 1em 3em;
-    margin: 2em;
+    padding: 3px;
+    margin: 2px 0;
     display: flex;
     align-items: center;
 }
 
 .results-main-title {
-    font-size: 25px;
+    /* padding: 5px; */
+    font-size: 20px;
     /* background-color: lightyellow; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 1.5em 4em;
+    padding: 3px;
+    margin: 2px 20px;
     display: flex;
     align-items: center;
 }
 
 .results-try-again {
+    /* padding: 5px; */
     /* background-color: lightseagreen; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 1em 3em;
-    margin: 2em;
+    padding: 3px;
+    margin: 2px;
     display: flex;
     align-items: center;
 }
@@ -46,19 +53,22 @@
 /* results content */
 
 .results-content {
+    /* padding: 5px; */
     /* background-color: lightsalmon; */
-    display: flex;
-    padding: 2em 5em;
+    /* display: flex; */
 }
 
 /* results left */
 
 .results-left {
+    /* padding: 5px; */
     /* background-color: lightskyblue; */
-    flex: 3 0 0;
+    /* flex: 3 0 0; */
 }
 
 .results-label {
+    padding: 5px;
+    font-size: 10px;
     /* background-color: lightcoral; */
     border: 1px solid #000000;
     border-radius: 3px;
@@ -86,22 +96,23 @@
 }
 
 .results-stats {
+    font-size: 10px;
     /* background-color: teal; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     display: flex;
+    margin: 1em 0;
+    padding: .6em .3em;
     justify-content: space-around;
-    margin: 1em 1em;
-    padding: 1.2em .3em;
 }
 
 /* results right */
 
 .results-right {
+    padding: 5px;
     /* background-color: lightblue; */
     flex: .5 0 0;
-    padding: 2em 3em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -113,7 +124,7 @@
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 2em;
+    padding: 10px;
 }
 
 .results-percent {
@@ -121,8 +132,79 @@
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 2em;
+    padding: 10px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 400px) {
+    .results-stats {
+        font-size: 15px;
+    }
+
+    .results-label {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 700px) {
+    .results-left {
+        padding: 0 30px;
+    }
+
+    .results-stats {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+
+    .results-content {
+        /* background-color: lightsalmon; */
+        display: flex;
+    }
+    
+    .results-left {
+        /* background-color: lightskyblue; */
+        flex: 2 0 0;
+    }
+
+    .results-right {
+        justify-content: flex-start;
+        padding-top: 70px;
+    }
+
+    .results-percent {
+        margin-top: 20px;
+        padding: 23px;
+    }
+
+    .results-result {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .results-title {
+        padding: 20px 0;
+    }
+
+    .results-main-title {
+        padding: 20px 10px;
+    }
+
+}
+
+@media (min-width: 900px){
+    .results-main {
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+    }
+
+    .results-main-2 {
+        width: 1003px;
+    }
+
 }

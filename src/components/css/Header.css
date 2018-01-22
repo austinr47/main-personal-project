@@ -7,6 +7,10 @@
 
 }
 
+.header-image {
+    height: 21px;
+}
+
 .header-right {
 
     /* background-color: pink; */
@@ -22,6 +26,7 @@
     text-decoration: unset;
     display: flex;
     text-align: center;
+    cursor: pointer;
 }
 
 .header-text {

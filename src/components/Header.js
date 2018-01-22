@@ -20,7 +20,7 @@ class Header extends Component {
             <div className='header'>
                 <div className='header-left'>
                     <div className='header-text'>
-                        <Link className='link' to='/account' ><div>Flash-Study</div></Link>
+                        <Link className='link' to='/account' ><img className='header-image' src='https://image.flaticon.com/icons/svg/70/70370.svg' alt='home'/><div>Flash-Study</div></Link>
                         {/* <Link className='link' to='/' >Login</Link> */}
                     </div>
                 </div>

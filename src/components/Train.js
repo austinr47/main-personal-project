@@ -74,9 +74,9 @@ class Train extends Component {
         const { question } = this.state;
         // console.log( myTestId )
         return (
-            <div className='train-main'>
+            <div className='train-main-01'>
                 {user && 
-                    <div>
+                    <div className='train-main-02'>
                     <Header />
                         {question &&
                         <div className='train-content'>

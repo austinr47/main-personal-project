@@ -12,47 +12,50 @@
 .trainings-category {
     border: 1px solid #000000;
     border-radius: 3px;
-    padding: 10px 10px 10px 14px;
+    padding: 10px 25px 10px 25px;
     margin-top: 15px;
     width: 200px;
     height: 120px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     /* background-color: blue; */
 }
 
 .subject-box{
     /* background-color: pink; */
-    margin: auto;
     padding: 10px;
 }
 
 
 .subject-boxs{
     /* background-color: red; */
-    margin: auto;
-    padding: 10px;
+    margin: 0 0 20px 0;
+    /* padding: 10px; */
     font-size: 25px;
 }
 
 .subject-button {
     /* background-color: teal; */
-    margin: 0 10px;
     font-size: 13px;
-    padding: 1px;
     border: 1px solid #000000;
+    margin: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
 }
 
 .subject-buttons {
-    margin-top: 20px;
-    /* background-color: purple; */
-    min-width: 198px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
 }
 
 .link {
     text-decoration: unset;
     color: black; 
+    cursor: pointer;
 }
 
 @media (min-width: 600px){

@@ -35,15 +35,30 @@ class Trainings extends Component {
     render() {
         const { user } = this.props;
         const categories = this.state.categories.map((items) => {
-            return <div key={items.category} className='link trainings-category'>
+            return <div key={items.category} className='trainings-category'>
                         <div className='subject-boxs'>
                             <div>{items.category}</div>
-                            <div className='subject-buttons'>
-                                <Link to={`/flashcards/${items.category}`}><button className='subject-button'>Flaschards</button></Link>
-                                <Link to={`/tests/${items.category}`}><button className='subject-button'>Test</button></Link>
-                                <Link to={`/tests/edit/${items.category}`}><button className='subject-button'>Edit</button></Link>
-                            </div>
                         </div>
+                            <div className='subject-buttons'>
+                                <div>
+                                    <Link className='link subject-button' to={`/flashcards/${items.category}`}>
+                                        {/* <button className='subject-button1'>Flaschards</button> */}
+                                        Flaschards
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link className='link subject-button' to={`/tests/${items.category}`}>
+                                        {/* <button className='subject-button1'>Test</button> */}
+                                        Test
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link className='link subject-button' to={`/tests/edit/${items.category}`}>
+                                        {/* <button className='subject-button1'>Edit</button> */}
+                                        Edit
+                                    </Link>
+                                </div>
+                            </div>
                     </div>
         })
         // console.log(this.state.question)
@@ -56,9 +71,11 @@ class Trainings extends Component {
                         <div className='trainings-content'>
                             <div className='subject-box'>
 
-                                <Link to='/create-test'><div className='link trainings-category'>
-                                    Add New Test
-                                </div></Link>
+                                <Link to='/create-test'>
+                                    <div className='link trainings-category'>
+                                        Add New Test
+                                    </div>
+                                </Link>
                                 {categories}
                             </div>
                         </div>

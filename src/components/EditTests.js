@@ -79,7 +79,8 @@ class Create extends Component {
         // console.log(this.state.testId)
         // console.log(this.state.testName)
         const cards = this.state.cards.map((item, i) => {
-            return <div className='edit-card-content'key={item.id}>
+            if(this.state.cards) {
+                return <div className='edit-card-content'key={item.id}>
                 <div className='edit-cards'>
                     <div className='edit-cards-info'>
                         <div>{item.question}</div>
@@ -88,6 +89,7 @@ class Create extends Component {
                     <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
                 </div>
             </div>
+            }
         })
 
         return (
