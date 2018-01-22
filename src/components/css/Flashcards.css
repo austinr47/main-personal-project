@@ -1,35 +1,103 @@
 .flashcard-main {
-    background-color: rgb(235, 235, 235);
-    height: 100vh;
+    /* background-color: lightblue; */
+    /* padding: 10px; */
+}
+
+.flashcard-main-2 {
+    /* background-color: lightgrey; */
+}
+
+
+.flashcard-question {
+    /* background-color: lightgreen; */
+    /* padding: 3px; */
+}
+
+.flashcard-answer {
+    /* background-color: lightseagreen; */
+    /* padding: 3px; */
+}
+
+.flashcard-buttons {
+    /* background-color: lightpink; */
+    display: flex;
+    justify-content: space-around;
 }
 
 .flashcard-content {
+    /* background-color: lightcoral; */
+    padding: 10px;
+    min-height: 250px;
+    margin: 20px 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
-}
-
-.flashcard-view {
-    font-size: 2em;
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    margin: 2em;
-    width: 60%;
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
 }
 
+.flashcard-view {
+    /* background-color: lightgoldenrodyellow; */
+    padding: 10px;
+}
+
+.link-1 {
+    padding: 0;
+    margin: 0 0;
+}
+
 .flashcard-button {
-    padding: .8em;
+    /* background-color: lightgreen; */
+    padding: 10px;
     border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 3px -1.4px rgba(0,0,0,0.4);
     cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .flaschard-box-3 {
+        /* background-color: pink; */
+        /* padding: 10px; */
+        display: flex;
+        justify-content: center;
+    }
+
+    .flashcard-big-box {
+        /* background-color: blue; */
+        padding: 5px;
+        width: 400px;
+    }
+
+}
+
+@media (min-width: 700px) {
+    .flaschard-box-3 {
+        /* background-color: pink; */
+        /* padding: 10px; */
+        display: flex;
+        justify-content: center;
+    }
+
+    .flashcard-big-box {
+        /* background-color: blue; */
+        padding: 5px;
+        width: 400px;
+    }
+
+}
+
+@media (min-width: 900px) {
+    .flashcard-main {
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+    }
+
+    .flashcard-main-2 {
+        width: 1003px;
+    }
+
 }

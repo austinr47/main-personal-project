@@ -70,28 +70,34 @@ class Flashcards extends Component {
         return (
             <div className='flashcard-main'>
                 {user && 
-                    <div>
+                    <div className='flashcard-main-2'  onClick={this.showAnswer}>
                         <Header />
-                        <div className='flashcard-content'>
-                            {this.state.showQuestion &&
-                                <div className='flashcard-view' onClick={this.showAnswer}>
-                                    <div className='flaschard-question'>
-                                        {this.state.question}
-                                    </div>
+                        <div className='flaschard-box-3'>
+                            <div className='flashcard-big-box'>
+                                <div className='flashcard-content'>
+                                    {this.state.showQuestion &&
+                                        <div className='flashcard-view'>
+                                            <div className='flaschard-question'>
+                                                {this.state.question}
+                                            </div>
+                                        </div>
+                                    } 
+                                    {!this.state.showQuestion &&
+                                        <div className='flashcard-view'>
+                                            <div className='flashcard-answer'>
+                                                {this.state.answer}
+                                            </div>
+                                        </div>
+                                    }
                                 </div>
-                            } 
-                            {!this.state.showQuestion &&
-                                <div className='flashcard-view' onClick={this.showAnswer}>
-                                    <div className='flashcard-answer'>
-                                        {this.state.answer}
-                                    </div>
+                                <div className='flashcard-buttons'>
+                                    <Link to='/subjects' className='link-1'>
+                                        <button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button>
+                                    </Link>
+                                    <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
+                                    <button className='flashcard-button' onClick={this.nextCard}>Next</button>
                                 </div>
-                            }
-                        </div>
-                        <div>
-                        <Link to='/subjects' className='link'><button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button></Link>
-                            <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
-                            <button className='flashcard-button' onClick={this.nextCard}>Next</button>
+                            </div>
                         </div>
                     </div>
                     }

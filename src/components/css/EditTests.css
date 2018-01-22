@@ -1,59 +1,82 @@
 .edit-main {
-    background-color: rgb(235, 235, 235);
-    height: 100vh;
+    /* background-color: rgb(241, 97, 97); */
+    /* padding: 5px; */
 }
 
 .edit-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    /* background-color: rgb(227, 247, 114); */
+    /* padding: 5px; */
+}
+
+.edit-content button {
+    /* background-colorgb(19, 17, 13) 3);
+    padding: 5px; */
 }
 
 .edit-name {
-    font-size: 25px;
-    /* background-color: lightyellow; */
-    border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 1.5em 4em;
-    margin: 1.5em 3em;
+    /* background-color: rgb(231, 179, 110); */
+    /* padding: 5px; */
+    padding: 25px 0;
+    font-size: 23px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .edit-cards {
-    font-size: 15px;
-    /* background-color: lightyellow; */
-    border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 1.5em 4em;
-    margin: .5em 3em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 50%;
+    /* background-color: rgb(108, 95, 133); */
+    padding: 5px;
+    margin: 7px 0;
+    border: 1px solid black;
 }
 
 .edit-cards-label {
-    font-size: 15px;
-    /* background-color: lightyellow; */
-    border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 1.5em 4em 1.5em 0;
-    margin: .5em 3em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 60%;
+    /* background-color: rgb(67, 79, 241); */
+    /* padding: 5px; */
 }
 
 .edit-cards-info {
+    /* background-color: rgb(34, 241, 69); */
+    padding: 3px;
     display: flex;
-    justify-content: space-around;
-    flex: 1
+    justify-content: space-between;
+}
+
+
+@media (min-width: 700px){
+    /* .edit-main-2 {
+        width: 1003px;
+    } */
+    .edit-main-3 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .edit-content {
+        /* background-color: rgb(227, 247, 114); */
+        padding: 5px;
+        margin: 0 40px;
+        width: 700px;
+    }
+    
+    .edit-cards {
+        /* background-color: rgb(108, 95, 133); */
+        padding: 5px;
+        margin: 7px 0;
+        border: 1px solid black;
+    }
+    
+}
+
+@media (min-width: 900px) {
+    .edit-main-2 {
+        width: 1003px;
+    }
+
+    .edit-main {
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+    }
+
 }

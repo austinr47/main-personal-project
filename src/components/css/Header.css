@@ -1,15 +1,15 @@
 .header {
-    background-color: rgb(57, 136, 255);
+    background-color: rgb(155, 149, 149);
     padding: 5px;
     display: flex;
     justify-content: space-between;
-    /* padding: 1em 4em; */
     align-content: center;
+
 }
 
 .header-right {
+
     /* background-color: pink; */
-    /* padding: 5px; */
     display: flex; 
     align-content: center;
     justify-content: center;
@@ -18,25 +18,19 @@
 
 .link {
     /* background-color: teal; */
-    /* padding: 5px; */
     margin: auto;
     text-decoration: unset;
-    color: black;
     display: flex;
     text-align: center;
-    /* justify-content: center; */
-    /* padding-right: 10px; */
 }
 
 .header-text {
     /* background-color: lightblue; */
-    /* padding: 5px; */
     font-size: 14px;
     margin: auto;
+
     display: flex;
     align-content: center;
-    /* padding: 0 2em;
-    font-size: 1.3em; */
     padding-right: 6px;
 }
 
@@ -44,14 +38,9 @@
     border: .7px solid #000000;
     border-radius: 3px;
     margin: auto;
-    /* background-color: lightcoral; */
-    /* padding: 5px; */
     font-size: 9px;
     text-align: center;
-    /* font: 1em; */
-    /* display: flex;
-    align-content: center;
-    justify-content: center; */
+    color: white;
 }
 
 .logout {
@@ -59,10 +48,15 @@
     text-align: center;
     width: 28px;
     padding: 4px;
+    color: white;
 }
 
 @media (min-width: 700px) {
     .header {
-        padding: 5px 100px;
+        padding: 10px 100px;
+    }
+
+    .header-text {
+        font-size: 22px;
     }
 }

@@ -36,11 +36,13 @@ class Trainings extends Component {
         const { user } = this.props;
         const categories = this.state.categories.map((items) => {
             return <div key={items.category} className='link trainings-category'>
-                        <div>{items.category}</div>
-                        <div>
-                            <Link to={`/flashcards/${items.category}`}><button>Flaschards</button></Link>
-                            <Link to={`/tests/${items.category}`}><button>Test</button></Link>
-                            <Link to={`/tests/edit/${items.category}`}><button>Edit</button></Link>
+                        <div className='subject-boxs'>
+                            <div>{items.category}</div>
+                            <div className='subject-buttons'>
+                                <Link to={`/flashcards/${items.category}`}><button className='subject-button'>Flaschards</button></Link>
+                                <Link to={`/tests/${items.category}`}><button className='subject-button'>Test</button></Link>
+                                <Link to={`/tests/edit/${items.category}`}><button className='subject-button'>Edit</button></Link>
+                            </div>
                         </div>
                     </div>
         })
@@ -49,25 +51,16 @@ class Trainings extends Component {
             
             <div className='trainings-main'>
                 {user && 
-                    <div>
+                    <div className='trainings-main-2'>
                     <Header />
                         <div className='trainings-content'>
-                            {categories}
-                            <Link to='/create-test'><div className='link trainings-category'>
-                                Add New Test
-                            </div></Link>
-                            {/* <div className='trainings-category'>
-                            Category</div>
-                            <div className='trainings-category'>
-                            Category</div>
-                            <div className='trainings-category'>
-                            Category</div>
-                            <div className='trainings-category'>
-                            Category</div>
-                            <div className='trainings-category'>
-                            Category</div>
-                            <div className='trainings-category'>
-                            Category</div> */}
+                            <div className='subject-box'>
+
+                                <Link to='/create-test'><div className='link trainings-category'>
+                                    Add New Test
+                                </div></Link>
+                                {categories}
+                            </div>
                         </div>
                     </div>}
                 {!user &&

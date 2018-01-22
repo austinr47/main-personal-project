@@ -69,9 +69,9 @@ class Account extends Component {
             const newDate = month() + ' ' + day + ', ' + year;
             return <div key={index}>
                         <div className='account-right-stats'>
-                            <div>{item.category}</div>
-                            <div>{newDate}</div>
-                            <div>{item.percent}%</div>
+                            <div className='account-subject'>{item.category}</div>
+                            <div className='account-date'>{newDate}</div>
+                            <div className='account-percent'>{item.percent}%</div>
                         </div>
                     </div>
         })
@@ -79,34 +79,32 @@ class Account extends Component {
         return (
             <div className='account-bck'>
             {user &&
-                <div>
+                <div className='account-center'>
                     <Header />
                     <div className='account-margin'>
                         <div className='account-content'>
-                            <div className='account-left'>
-                                <div className='account-left-column'>
-                                    <Link type="button" className='css-button link account-left-text' to='/subjects'>
-                                        <div className='center-text'>
-                                            View/Create Subjects
-                                        </div>
-                                    </Link>
-                                    {/* <Link className='link account-left-text' to='/create-cards'>
-                                        Create Flashcards
-                                    </Link> */}
-                                    {/* <div className='account-left-text'>
-                                        Edit Flashcards
-                                    </div> */}
-                                    <div>Subject Results</div>
-                                    <div>
-                                        <Chart/>
+                            <div className='account-left-column'>
+                                <Link type="button" className='css-button link account-left-text' to='/subjects'>
+                                    <div className='center-text'>
+                                        View/Create Subjects
                                     </div>
+                                </Link>
+                                {/* <Link className='link account-left-text' to='/create-cards'>
+                                    Create Flashcards
+                                </Link> */}
+                                {/* <div className='account-left-text'>
+                                    Edit Flashcards
+                                </div> */}
+                                <div>Subject Results</div>
+                                <div>
+                                    <Chart/>
                                 </div>
                             </div>
                             <div className='account-right'>
                                 <div className='account-right-label'>
                                     <div>Subject</div>
                                     <div>Date</div>
-                                    <div>Percent Correct</div>
+                                    <div>% Correct</div>
                                 </div>
                                 {result}
                             </div>

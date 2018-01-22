@@ -11,7 +11,7 @@ class Create extends Component {
     constructor(){
         super()
         this.state={
-            category: 'Subject Name',
+            category: 'Input Subject Name',
             question: '',
             answer: '',
             showAdd: false,
@@ -124,45 +124,46 @@ class Create extends Component {
         const { user } = this.props;
         const cards = this.state.cards.map((item, i) => {
             return <div className='' key={i}>
-                <div className='results-stats'>
-                    <div className='results-stats-2'>{item.question}</div>
-                    <div className='results-stats-3'>{item.answer}</div>
+                <div className='create-labels-1'>
+                    <div className='create-description-1'>{item.question}</div>
+                    <div className='create-description-2'>{item.answer}</div>
                     <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
                 </div>
             </div>
         })
 
         return (
-            <div>
+            <div className='create-main'>
                 {user && 
-                    <div>
+                    <div className='create-main-2'>
                         <Header />
-                        <div className='results-content'>
-                            <div className='results-left'>
-                        { this.state.showSubjectName &&
-                            <div>
-                                <input placeholder={this.state.category} onChange={event => this.updateCategory(event.target.value)}/>
-                                {this.state.showCreateSubject && <button onClick={this.createTest}>Create Subject</button>}
-                                {!this.state.showCreateSubject && <button onClick={this.updateTestName}>Update Subject Name</button>}
-                            </div>
-                        }
-                        {!this.state.showSubjectName &&
-                            <div>
-                                {this.state.category}<button onClick={this.showEdit}>Edit</button>
-                            </div>
-                        }
-                        {this.state.showAdd && 
-                            <div className='results-label'>
-                                <input placeholder='Content Decription/Question' onChange={event => this.updateQuestion(event.target.value)}/>
-                                <input placeholder='Content Answer' onChange={event => this.updateAnswer(event.target.value)}/>
-                                <button onClick={this.addToDb}>Add</button>
-                            </div>
-                        }
-                                <div className='results-label'>
-                                    <div className='results-stats-2'>Description/Question</div>
-                                    <div className='results-stats-3'>Correct</div>
-                                </div>
-                                {cards}
+                        <div className='create-content'>
+                            <div className='create-left'>
+                                { this.state.showSubjectName &&
+                                    <div className='create-subject'>
+                                        <input placeholder={this.state.category} onChange={event => this.updateCategory(event.target.value)}/>
+                                        {this.state.showCreateSubject && <button onClick={this.createTest}>Create Subject</button>}
+                                        {!this.state.showCreateSubject && <button onClick={this.updateTestName}>Update Subject Name</button>}
+                                    </div>
+                                }
+                                {!this.state.showSubjectName &&
+                                    <div className='create-edit-name'>
+                                        {this.state.category}<button onClick={this.showEdit}>Edit</button>
+                                    </div>
+                                }
+                                {this.state.showAdd && 
+                                    <div className='create-label'>
+                                        <input placeholder='Input Decription' onChange={event => this.updateQuestion(event.target.value)}/>
+                                        <input placeholder='Input Answer' onChange={event => this.updateAnswer(event.target.value)}/>
+                                        <button onClick={this.addToDb}>Add</button>
+                                    </div>
+                                }
+                                        <div className='create-labels'>
+                                            <div className='create-description'>Descriptions</div>
+                                            <div className='create-answer'>Answers</div>
+                                            <div className='create-answer'></div>
+                                        </div>
+                                        {cards}
                             </div>
                         </div>
                     </div>

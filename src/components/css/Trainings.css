@@ -1,32 +1,109 @@
 .trainings-main {
-    background-color: rgb(235, 235, 235);
-    min-height: 100vh;
+    /* background-color: rgb(235, 235, 235); */
 }
 
 .trainings-content {
     display: flex;
-    flex-wrap: wrap-reverse;
-    flex-direction: row-reverse;
     justify-content: center;
-    align-content: space-around;
-    margin: 5em 10em;
+    align-content: center;
+    /* background-color: green; */
 }
 
 .trainings-category {
     border: 1px solid #000000;
     border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 5em;
-    margin: 2em;
-    width: 160px;
+    padding: 10px 10px 10px 14px;
+    margin-top: 15px;
+    width: 200px;
+    height: 120px;
     display: flex;
-    align-items: center;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+
+.subject-box{
+    /* background-color: pink; */
+    margin: auto;
+    padding: 10px;
+}
+
+
+.subject-boxs{
+    /* background-color: red; */
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.subject-button {
+    /* background-color: teal; */
+    margin: 0 10px;
+    font-size: 13px;
+    padding: 1px;
+    border: 1px solid #000000;
+}
+
+.subject-buttons {
+    margin-top: 20px;
+    /* background-color: purple; */
+    min-width: 198px;
 }
 
 .link {
     text-decoration: unset;
-    color: black;
+    color: black; 
+}
+
+@media (min-width: 600px){
+    .trainings-content {
+        /* background-color: yellow; */
+        flex-direction: row;
+    }
+    
+    .trainings-category {
+        /* background-color: blue; */
+        margin: 10px;
+    }
+    
+    .subject-box{
+        /* background-color: green; */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 803px;
+        margin-top: 25px;
+    }
+}
+
+@media (min-width: 900px){
+    .trainings-content {
+        /* background-color: yellow; */
+        flex-direction: row;
+    }
+
+    .trainings-main-2 {
+        width: 1003px;
+    }
+
+    .trainings-main {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .trainings-category {
+        /* background-color: blue; */
+        margin: 10px;
+    }
+    
+    .subject-box{
+        /* background-color: green; */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 1003px;
+        margin-top: 40px;
+    }
 }

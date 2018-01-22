@@ -85,37 +85,39 @@ class Create extends Component {
                         <div>{item.question}</div>
                         <div>{item.answer}</div>
                     </div>
+                    <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
                 </div>
-                <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
             </div>
         })
 
         return (
             <div className='edit-main'>
                 {user && 
-                <div>
+                <div className='edit-main-2'>
                     <Header />
-                    <div className='edit-content'>
-                        <div className='edit-name'>
-                            {this.state.showEditTitle &&
-                            <div>
-                                {this.state.testName}
-                                <button onClick={this.editTestName}>Edit</button>
+                    <div className='edit-main-3'>
+                        <div className='edit-content'>
+                            <div className='edit-name'>
+                                {this.state.showEditTitle &&
+                                <div>
+                                    {this.state.testName}
+                                    <button onClick={this.editTestName}>Edit</button>
+                                </div>
+                                }
+                                {!this.state.showEditTitle &&
+                                <div>
+                                    <input value={this.state.testName} onChange={(event) => this.updateStateTestName(event.target.value)}/>
+                                    <button onClick={this.updateTestName}>Update</button>
+                                </div>}
                             </div>
-                            }
-                            {!this.state.showEditTitle &&
-                            <div>
-                                <input value={this.state.testName} onChange={(event) => this.updateStateTestName(event.target.value)}/>
-                                <button onClick={this.updateTestName}>Update</button>
-                            </div>}
-                        </div>
-                        <div className='edit-cards-label'>
-                            <div className='edit-cards-info'>
-                                <div>Question/Description</div>
-                                <div>Answer</div>
+                            <div className='edit-cards-label'>
+                                <div className='edit-cards-info'>
+                                    <div>Question/Description</div>
+                                    <div>Answer</div>
+                                </div>
                             </div>
+                            {cards}
                         </div>
-                        {cards}
                     </div>
                 </div>
                 }
