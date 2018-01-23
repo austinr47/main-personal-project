@@ -7,6 +7,47 @@
     /* background-color: lightgrey; */
 }
 
+.flashcard-content {
+    /* background-color: lightcoral; */
+    padding: 10px;
+    min-height: 250px;
+    margin: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    cursor: pointer;
+    animation-duration: 1s; 
+    animation-fill-mode: both; 
+    animation-timing-function: linear; 
+}
+
+
+@keyframes flipInY { 
+    0% { 
+        transform: perspective(400px) rotateY(90deg); 
+        opacity: 0; 
+    } 
+    40% { 
+        transform: perspective(400px) rotateY(-10deg); 
+    } 
+    70% { 
+        transform: perspective(400px) rotateY(10deg); 
+    } 
+    100% { 
+        transform: perspective(400px) rotateY(0deg); 
+        opacity: 1; 
+    } 
+} 
+.flashcard-content:after { 
+    backface-visibility: visible !important; 
+    animation-name: flipInY; 
+}
+
 .flashcard-main-1 {
     min-height: 99vh;
     box-shadow: 0px 2px 5px 2px #1C487C;
@@ -28,21 +69,6 @@
     justify-content: space-around;
 }
 
-.flashcard-content {
-    /* background-color: lightcoral; */
-    padding: 10px;
-    min-height: 250px;
-    margin: 20px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    cursor: pointer;
-}
 
 .flashcard-view {
     /* background-color: lightgoldenrodyellow; */
@@ -105,3 +131,4 @@
     }
 
 }
+

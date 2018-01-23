@@ -141,7 +141,7 @@ class Create extends Component {
                             <div className='create-left'>
                                 { this.state.showSubjectName &&
                                     <div className='create-subject'>
-                                        <input placeholder={this.state.category} onChange={event => this.updateCategory(event.target.value)}/>
+                                        <input value={this.state.category} onChange={event => this.updateCategory(event.target.value)}/>
                                         {this.state.showCreateSubject && <button onClick={this.createTest}>Create Subject</button>}
                                         {!this.state.showCreateSubject && <button onClick={this.updateTestName}>Update Subject Name</button>}
                                     </div>

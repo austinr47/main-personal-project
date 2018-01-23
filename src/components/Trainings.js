@@ -40,22 +40,22 @@ class Trainings extends Component {
                             <div>{items.category}</div>
                         </div>
                             <div className='subject-buttons'>
-                                <div>
+                                <div className='subject-button-text'>
                                     <Link className='link subject-button' to={`/flashcards/${items.category}`}>
                                         {/* <button className='subject-button1'>Flaschards</button> */}
-                                        Flaschards
+                                        <div className='subject-text-button'>Flaschards</div>
                                     </Link>
                                 </div>
-                                <div>
+                                <div className='subject-button-text'>
                                     <Link className='link subject-button' to={`/tests/${items.category}`}>
                                         {/* <button className='subject-button1'>Test</button> */}
-                                        Test
+                                        <div className='subject-text-button'>Test</div>
                                     </Link>
                                 </div>
-                                <div>
+                                <div className='subject-button-text'>
                                     <Link className='link subject-button' to={`/tests/edit/${items.category}`}>
                                         {/* <button className='subject-button1'>Edit</button> */}
-                                        Edit
+                                        <div className='subject-text-button'>Edit</div>
                                     </Link>
                                 </div>
                             </div>
