@@ -44,7 +44,7 @@ class TestResults extends Component {
             }
         )} ).then (() => {
             const score = this.state.score
-            const percent1 = score.reduce(( acc, cur ) => acc + cur, 0) / score.length
+            const percent1 = Math.round((score.reduce(( acc, cur ) => acc + cur, 0) / score.length)*1)/1
             // console.log(percent1)
             this.setState({
                 percent: percent1
