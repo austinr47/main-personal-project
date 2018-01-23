@@ -35,6 +35,7 @@ class Account extends Component {
     render() {
         const { user } = this.props;
         const result = this.state.data.map((item, index) => {
+            console.log(item)
             const date = item.date
             const year = date.slice(0, 4)
             var month = () => {
@@ -68,11 +69,13 @@ class Account extends Component {
             // console.log(date)
             const newDate = month() + ' ' + day + ', ' + year;
             return <div key={index}>
-                        <div className='account-right-stats'>
-                            <div className='account-subject'>{item.category}</div>
-                            <div className='account-date'>{newDate}</div>
-                            <div className='account-percent'>{item.percent}%</div>
-                        </div>
+                        <Link className='account-link' to={`/previous-results/results/${item.indi_test}`}>
+                            <div className='account-right-stats'>
+                                <div className='account-subject'>{item.category}</div>
+                                <div className='account-date'>{newDate}</div>
+                                <div className='account-percent'>{item.percent}%</div>
+                            </div>
+                        </Link>
                     </div>
         })
         

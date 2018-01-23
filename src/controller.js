@@ -22,7 +22,7 @@ module.exports = {
 
           db.new_test(category, req.session.user[0].id)
             .then( (response) => res.status(200).send(response) )
-              .catch( () => res.status(500).send() );
+              .catch( (err) => res.status(500).send(err) );
           },
 
       create: ( req, res, next ) => {
@@ -31,14 +31,14 @@ module.exports = {
     
         db.create_card([ question, answer, test_id ])
           .then( (response) => res.status(200).send(response) )
-            .catch( () => res.status(500).send() );
+            .catch( (err) => res.status(500).send(err) );
       },
 
       createGeneralResults: ( req, res, next ) => {
         const db = req.app.get('db');
         const { category, percent } = req.body;
-    
-        db.create_general_results(req.params.id, category, percent, req.session.user[0].id)
+        console.log(req.body)
+        db.create_general_results([ req.params.id, category, percent, req.session.user[0].id] )
           .then( (response) => res.status(200).send(response) )
             .catch( (err) => res.status(500).send(err) );
       },

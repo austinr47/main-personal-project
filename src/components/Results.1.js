@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 ///////need to check timestamp
 
-class Results extends Component {
+class TestResults extends Component {
     constructor() {
         super()
         this.state = {
@@ -19,7 +19,6 @@ class Results extends Component {
             category: '',
             percent: '',
         }
-        // this.addResults=this.addResults.bind(this)
     }
 
     componentDidMount() {
@@ -45,25 +44,13 @@ class Results extends Component {
             }
         )} ).then (() => {
             const score = this.state.score
-            const percent1 = Math.round((score.reduce(( acc, cur ) => acc + cur, 0) / score.length)*1)/1
+            const percent1 = score.reduce(( acc, cur ) => acc + cur, 0) / score.length
             // console.log(percent1)
             this.setState({
                 percent: percent1
             })
-        }).then (() => {
-           console.log(this.state.category, this.state.percent, this.props.match.params.id)
-                axios.post(`/general-account-results/${this.props.match.params.id}`, { category: `${this.state.category}`, percent: `${this.state.percent}` } ).then(response => {
-               console.log(response)
-            })
         })
     }
-
-    // addResults() {
-    //         // console.log(this.state.category, this.state.percent, this.props.match.params.id)
-    //         axios.post(`/general-account-results/${this.props.match.params.id}`, { category: `${this.state.category}`, percent: `${this.state.percent}` } ).then(response => {
-    //             console.log(response)
-    //         })
-    // }
 
     render() {
         const { user } = this.props;
@@ -93,9 +80,7 @@ class Results extends Component {
                     <Header />
                     <div className='results-main-3'>
                         <div className='results-title'>
-                            <Link to='/account' className='result-link'>
-                                <div /*onClick={this.addResults}*/ className='results-to-account'>Go To Account</div>
-                            </Link>
+                            <Link to='/account' className='result-link'><div /*onClick={this.addResults}*/ className='results-to-account'>Go To Account</div></Link>
                             <div className='results-main-title'>Flash-Study Results</div>
                             <Link to={`/tests/${this.state.category}`}>
                                 <div className='results-try-again'>Train Again</div>
@@ -105,7 +90,7 @@ class Results extends Component {
                         <div className='results-content'>
                             <div className='results-right'>
                                 <div className='results-result'>
-                                    {this.state.percent === 100 ? <div>Perfection!!</div> : (this.state.percent > 90 ? <div>Congrats!!!</div> : (this.state.percent > 80 ? <div>Getting there.</div> : (this.state.percent > 50 ? <div>Study! Study! Study!</div> : <div>Well that...sucks</div>)))}
+                                {this.state.percent === 100 ? <div>Perfection!!</div> : (this.state.percent > 90 ? <div>Congrats!!!</div> : (this.state.percent > 80 ? <div>Getting there.</div> : (this.state.percent > 50 ? <div>Study! Study! Study!</div> : <div>Well that...sucks</div>)))}
                                 </div>
                                 <div className='results-percent'>
                                     <div>{this.state.percent}%</div>
@@ -148,4 +133,4 @@ const mapDispatchToProps = {
 
 };
 
-export default connect(mapStateToProps,  mapDispatchToProps )(Results);
+export default connect(mapStateToProps,  mapDispatchToProps )(TestResults);

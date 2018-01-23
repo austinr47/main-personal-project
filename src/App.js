@@ -5,6 +5,7 @@ import Account from './components/Account';
 import Trainings from './components/Trainings';
 import Train from './components/Train';
 import Results from './components/Results';
+import TestResults from './components/Results.1';
 import Create from './components/Create';
 import Flashcards from './components/Flashcards';
 import EditTests from './components/EditTests';
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path='/tests/edit/:category' component={ EditTests } /> {/*good*/}
           <Route path='/tests/:category' component={ Train } /> {/*good*/}
           <Route path='/test-results/:id' component={ Results } /> {/*good*/}
+          <Route path='/previous-results/results/:id' component={ TestResults } /> {/*good*/}
           <Route path='/create-test' component={ Create } /> {/*good*/}
           <Route path='/logout' component={ NotLoggedIn } /> {/*good*/}
         </Switch>
