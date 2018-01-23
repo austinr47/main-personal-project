@@ -29,15 +29,13 @@ componentDidMount() {
     });
     axios.get('/user-tests-results').then(response => {
         // console.log(response)
-        this.setState({
-            data: response.data
-        })
-    }).then(() => {
         // console.log(this.state.data)
-        this.state.data.map((item, index) => {
+        response.data.map((item, index) => {
             this.setState({
-                categories: [...this.state.categories, item.category]
+                categories: [...this.state.categories, item.category],
+                data: response.data
             })
+            return ''
         })
     }).then(() => {
         // console.log(this.state.categories)
@@ -83,13 +81,16 @@ componentDidMount() {
             var arr = []
             var average = ''
             this.state.data.map((i, ind) => {
-                if(i.category === item) {
+                
+                if (i.category === item) {
                     arr.push(i.percent)
-                }
+                    return ''
+                } else return ''
             })
             // length = arr.length
             average = arr.reduce(( acc, cur ) => acc + cur, 0) / arr.length
             data1.datasets[0].data.push(average)
+            return ''
         })
         this.setState({
             data1: data1
@@ -103,24 +104,22 @@ componentDidMount() {
     render() {
         return (
             <div className='chart'>
-
                 <HorizontalBar 
-          data={this.state.data1} redraw
-          //   width={450}
-        //   height={360}
-          options={{
-            maintainAspectRatio: false,
-            scales:{
-                xAxes:[{
-                    ticks:{
-                        min:0,
-                        max:100,
-                    },
-                }]
-            }
-          }}
-        />
-
+                    data={this.state.data1} redraw
+                    //   width={450}
+                    //   height={360}
+                    options={{
+                        maintainAspectRatio: false,
+                        scales:{
+                            xAxes:[{
+                                ticks:{
+                                    min:0,
+                                    max:100,
+                                },
+                            }]
+                        }
+                    }}
+                />
             </div>
         );
     }

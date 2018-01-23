@@ -39,7 +39,7 @@ class Account extends Component {
             const date = item.date
             const year = date.slice(0, 4)
             var month = () => {
-                let mon = date.slice(5, 7)
+                var mon = (date.slice(5, 7))
                 if(mon = 1){
                     return 'Jan'
                 } else if (mon = 2){

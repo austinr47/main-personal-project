@@ -2,6 +2,15 @@
     /* padding: 3px; */
     /* background-color: rgb(240, 95, 95); */
 }
+
+.results-main-2 {
+    /* padding: 3px; */
+    /* background-color: rgb(240, 95, 95); */
+    margin: 0 2px;
+    min-height: 99vh;
+    box-shadow: 0px 2px 5px 2px #1C487C;
+}
+
 /* results title */
 .results-title {
     padding: 3px;

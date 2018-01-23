@@ -21,11 +21,11 @@
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     cursor: pointer;
-    animation-duration: 1s; 
+    /* animation-duration: 1s; 
     animation-fill-mode: both; 
-    animation-timing-function: linear; 
+    animation-timing-function: linear;  */
 }
-
+/* 
 
 @keyframes flipInY { 
     0% { 
@@ -46,7 +46,7 @@
 .flashcard-content:after { 
     backface-visibility: visible !important; 
     animation-name: flipInY; 
-}
+} */
 
 .flashcard-main-1 {
     min-height: 99vh;

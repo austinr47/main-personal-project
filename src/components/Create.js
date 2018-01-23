@@ -20,6 +20,9 @@ class Create extends Component {
             showSubjectName: true,
             cards: [],
             showCreateSubject: true,
+
+            questionInput: 'Description',
+            answerInput: 'Answer',
         }
         this.addToDb=this.addToDb.bind(this)
         this.updateCategory=this.updateCategory.bind(this)
@@ -45,10 +48,8 @@ class Create extends Component {
             axios.get(`/during-create-test/${this.state.testId}`  ).then(response => {
                 // console.log(response, this.state.testId)
                 this.setState({
-                    cards: response.data
+                    cards: response.data,
                 })
-            }).then(() => {
-                // console.log(this.state.cards)
             })
         }
     )}
@@ -79,6 +80,7 @@ class Create extends Component {
             })
         })
     }
+
 
 
     updateCategory(category){
@@ -153,8 +155,8 @@ class Create extends Component {
                                 }
                                 {this.state.showAdd && 
                                     <div className='create-label'>
-                                        <input placeholder='Input Decription' onChange={event => this.updateQuestion(event.target.value)}/>
-                                        <input placeholder='Input Answer' onChange={event => this.updateAnswer(event.target.value)}/>
+                                        <input placeholder={this.state.questionInput} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
+                                        <input placeholder={this.state.answerInput} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
                                         <button onClick={this.addToDb}>Add</button>
                                     </div>
                                 }
