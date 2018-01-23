@@ -9,6 +9,11 @@
     /* background-color: green; */
 }
 
+.trainings-main-1 {
+    min-height: 99vh;
+    box-shadow: 0px 2px 5px 2px #1C487C;
+}
+
 .trainings-category {
     border: 1px solid #000000;
     border-radius: 3px;

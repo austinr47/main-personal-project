@@ -65,24 +65,26 @@ class Trainings extends Component {
         return (
             
             <div className='trainings-main'>
-                {user && 
-                    <div className='trainings-main-2'>
-                    <Header />
-                        <div className='trainings-content'>
-                            <div className='subject-box'>
+                <div className='trainings-main-1'>
+                    {user && 
+                        <div className='trainings-main-2'>
+                        <Header />
+                            <div className='trainings-content'>
+                                <div className='subject-box'>
 
-                                <Link to='/create-test'>
-                                    <div className='link trainings-category'>
-                                        Add New Test
-                                    </div>
-                                </Link>
-                                {categories}
+                                    <Link to='/create-test'>
+                                        <div className='link trainings-category'>
+                                            Add New Test
+                                        </div>
+                                    </Link>
+                                    {categories}
+                                </div>
                             </div>
-                        </div>
-                    </div>}
-                {!user &&
-                    <NotLoggedIn />
-                }
+                        </div>}
+                    {!user &&
+                        <NotLoggedIn />
+                    }
+                </div>
             </div>
         );
     }

@@ -68,6 +68,7 @@ app.delete('/card-delete/:id', controller.deleteTestCard);
 app.post('/indi-test/:category', controller.createIndiTest);
 app.post('/results-indi-test', controller.createIndiResults);
 app.post('/general-account-results/:id', controller.createGeneralResults);
+app.post( '/signout', controller.signout );
 
 
 app.get('/user-data', (req, res) => {

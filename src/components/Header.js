@@ -14,6 +14,13 @@ class Header extends Component {
         });
       }
 
+      logout() {
+          axios.post('/signout').then(response => {
+              console.log(response)
+              this.props.login('')
+          })
+      }
+
     render() {
         const { user } = this.props
         return (
@@ -30,7 +37,7 @@ class Header extends Component {
                     </div>
                     <div className='header-logout'>
                         <div className='logout'>
-                            <Link className='link' to='/logout'> Logout </Link>
+                            <Link className='link' to='/logout' onClick={() => {this.logout()}}> Logout </Link>
                         </div>
                     </div>
                 </div>

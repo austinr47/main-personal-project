@@ -89,7 +89,7 @@ class Create extends Component {
                     <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
                 </div>
             </div>
-            }
+            } else return ('')
         })
 
         return (

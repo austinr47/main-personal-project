@@ -69,41 +69,43 @@ class Flashcards extends Component {
         const { user } = this.props
         return (
             <div className='flashcard-main'>
-                {user && 
-                    <div className='flashcard-main-2'  onClick={this.showAnswer}>
-                        <Header />
-                        <div className='flaschard-box-3'>
-                            <div className='flashcard-big-box'>
-                                <div className='flashcard-content'>
-                                    {this.state.showQuestion &&
-                                        <div className='flashcard-view'>
-                                            <div className='flaschard-question'>
-                                                {this.state.question}
+                <div className='flashcard-main-1'>
+                    {user && 
+                        <div className='flashcard-main-2'  onClick={this.showAnswer}>
+                            <Header />
+                            <div className='flaschard-box-3'>
+                                <div className='flashcard-big-box'>
+                                    <div className='flashcard-content'>
+                                        {this.state.showQuestion &&
+                                            <div className='flashcard-view'>
+                                                <div className='flaschard-question'>
+                                                    {this.state.question}
+                                                </div>
                                             </div>
-                                        </div>
-                                    } 
-                                    {!this.state.showQuestion &&
-                                        <div className='flashcard-view'>
-                                            <div className='flashcard-answer'>
-                                                {this.state.answer}
+                                        } 
+                                        {!this.state.showQuestion &&
+                                            <div className='flashcard-view'>
+                                                <div className='flashcard-answer'>
+                                                    {this.state.answer}
+                                                </div>
                                             </div>
-                                        </div>
-                                    }
-                                </div>
-                                <div className='flashcard-buttons'>
-                                    <Link to='/subjects' className='link-1'>
-                                        <button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button>
-                                    </Link>
-                                    <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
-                                    <button className='flashcard-button' onClick={this.nextCard}>Next</button>
+                                        }
+                                    </div>
+                                    <div className='flashcard-buttons'>
+                                        <Link to='/subjects' className='link-1'>
+                                            <button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button>
+                                        </Link>
+                                        <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
+                                        <button className='flashcard-button' onClick={this.nextCard}>Next</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        }
+                    {!user &&
+                        <NotLoggedIn />
                     }
-                {!user &&
-                    <NotLoggedIn />
-                }
+                </div>
             </div>
         );
     }

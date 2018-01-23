@@ -1,15 +1,19 @@
 .account-bck {
-    /* background-color: rgb(221, 47, 47); */
+    /* background-color: #D5DDE3; */
     /* height: 100vh; */
     /* width: 300px; */
 }
 
+/* #F5F7F9,  #1C487C, #287095, #D5DDE3, #559CAC, #97CFD9, #E78B74 */
+
 .account-center {
     margin: 0 2px;
+    min-height: 99vh;
+    box-shadow: 0px 2px 5px 2px #1C487C;
 }
 
 .account-content {
-    /* background-color: pink; */
+    /* background-color: #E78B74; */
     display: flex;
     justify-content: space-between;
     /* padding: 1em; */
@@ -30,13 +34,14 @@
 }
 
 .account-right {
-    /* background-color: lightsalmon; */
+    /* background-color: #287095; */
     padding: 1em 0 0 0;
 }
 
 .account-right-label {
     font-size: 14px;
-    /* background-color: lightblue; */
+    background-color: rgb(131, 199, 211);
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     border: 1.5px solid #000000;
@@ -62,6 +67,7 @@
 .account-right-stats {
     /* background-color: lightcoral; */
     /* padding: 6px; */
+    /* background-color: rgba(151, 207, 217, 0.479); */
     display: flex;
     justify-content: space-between;
     padding: 5px 3px;
@@ -99,7 +105,7 @@
     color: #FFFFFF; 
     font-family: 'Arial'; 
     font-size: 18px; 
-    background-color: rgb(153, 157, 161); 
+    background-color: #E78B74; 
     border-width: 1px; 
     border-style: solid; 
     border-color: #3E537D; 
@@ -149,7 +155,7 @@
 
 @media (min-width: 900px) {
     .account-margin {
-        min-width: 900px;
+        min-width: 1000px;
         display: flex;
     }
 

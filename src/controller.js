@@ -102,6 +102,12 @@ module.exports = {
             .catch( () => res.status(500).send() );
         },
 
+        signout: ( req, res, next ) => {
+          const { session } = req;
+          session.destroy();
+          res.status(200).send( req.session );
+        },
+
     }
 
     // create_card
