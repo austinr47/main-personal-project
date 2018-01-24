@@ -24,21 +24,22 @@
 }
 
 .create-subject input {
-    /* background-color: purple; */
+    background-color: rgba(250, 250, 210, 0.534);
     /* margin: 10px 50px; */
+    box-shadow: inset 0px 0px 8px -1px #000000;
     font-size: 25px;
     padding: 10px 0 10px 0;
     text-align: center;
     width: 230px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .create-subject button {
     /* background-color: teal; */
     margin: 10px 50px;
     padding: 10px 8px;
-    border-radius: 20px;
-    background-color: rgb(172, 172, 172);
+    border-radius: 10px;
+    background-color: #1BCC2C;
     box-shadow: 0px 1px 1px 0px black;
     border: 1px solid black;
 }
@@ -59,6 +60,14 @@
     display: flex;
     font-size: 30px;
     justify-content: center;
+}
+
+.create-edit-name button {
+    /* background-color: yellow; */
+    height: 20px;
+    width: 35px;
+    opacity: .5;
+    margin-left: 10px;
 }
 
 .create-label {
@@ -88,6 +97,9 @@
     margin-bottom: 10px;
     width: 230px;
     border: 1px solid black;
+    background-color: rgba(250, 250, 210, 0.534);
+    /* margin: 10px 50px; */
+    box-shadow: inset 0px 0px 8px -1px #000000;
 }
 
 .create-label button {
@@ -96,6 +108,8 @@
     margin: 0 60px;
     border: 1px solid black;
     width: 180px;
+    background-color: #1BCC2C;
+    box-shadow: 0px 1px 1px 0px black;
 }
 
 .create-description {
@@ -107,11 +121,12 @@
 .create-answer {
     /* background-color: pink; */
     /* border: 1px solid black; */
+    margin-right: 20px;
 }
 
 .create-labels-1 {
     /* background-color: lightsalmon; */
-    padding: 10px;
+    padding: 0 10px;
     margin: 10px 10px;
     border: 1px solid #000000;
     border-radius: 3px;
@@ -119,7 +134,7 @@
 }
 
 .create-labels-1 button {
-    /* background-color: red; */
+    background-color: rgb(252, 168, 168);
     padding: 6px;
     margin: 0 10px;
     border: 1px solid black;

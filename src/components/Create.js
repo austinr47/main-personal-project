@@ -150,7 +150,8 @@ class Create extends Component {
                                 }
                                 {!this.state.showSubjectName &&
                                     <div className='create-edit-name'>
-                                        {this.state.category}<button onClick={this.showEdit}>Edit</button>
+                                        {this.state.category}
+                                        <button onClick={this.showEdit}>Edit</button>
                                     </div>
                                 }
                                 {this.state.showAdd && 

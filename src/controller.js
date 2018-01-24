@@ -108,6 +108,22 @@ module.exports = {
           res.status(200).send( req.session );
         },
 
+        deleteSubjectContent: ( req, res, next ) => {
+          const db = req.app.get('db');
+      
+          db.delete_all_cards_for_subject(req.params.id)
+            .then( (response) => res.status(200).send(response) )
+              .catch( (err) => res.status(500).send(err) );
+        },
+
+        deleteTheSubject: ( req, res, next ) => {
+          const db = req.app.get('db');
+      
+          db.delete_subject(req.params.id, req.session.user[0].id)
+            .then( (response) => res.status(200).send(response) )
+              .catch( (err) => res.status(500).send(err) );
+        },
+
     }
 
     // create_card

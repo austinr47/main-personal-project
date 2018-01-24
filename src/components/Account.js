@@ -39,28 +39,28 @@ class Account extends Component {
             const date = item.date
             const year = date.slice(0, 4)
             var month = () => {
-                var mon = (date.slice(5, 7))
-                if(mon = 1){
+                var mon = Number((date.slice(5, 7)))
+                if(mon === 1){
                     return 'Jan'
-                } else if (mon = 2){
+                } else if (mon === 2){
                     return 'Feb'
-                } else if (mon = 3){
+                } else if (mon === 3){
                     return 'Mar'
-                } else if (mon = 4){
+                } else if (mon === 4){
                     return 'Apr'
-                } else if (mon = 5){
+                } else if (mon === 5){
                     return 'May'
-                } else if (mon = 6){
+                } else if (mon === 6){
                     return 'Jun'
-                } else if (mon = 7){
+                } else if (mon === 7){
                     return 'July'
-                } else if (mon = 8){
+                } else if (mon === 8){
                     return 'Aug'
-                } else if (mon = 9){
+                } else if (mon === 9){
                     return 'Sept'
-                } else if (mon = 10){
+                } else if (mon === 10){
                     return 'Oct'
-                } else if (mon = 11){
+                } else if (mon === 11){
                     return 'Nov'
                 } else 
                     return 'Dec'

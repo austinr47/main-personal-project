@@ -1,11 +1,11 @@
 .edit-main {
     /* background-color: rgb(241, 97, 97); */
     /* padding: 5px; */
-    
 }
 
 .edit-main-2 {
     margin: 0 2px;
+    padding-bottom: 200px;
     min-height: 99vh;
     box-shadow: 0px 2px 5px 2px #1C487C;
 }
@@ -25,17 +25,19 @@
     /* background-color: rgb(231, 179, 110); */
     /* padding: 5px; */
     padding: 25px 0;
-    font-size: 23px;
+    font-size: 33px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .edit-cards {
     /* background-color: rgb(108, 95, 133); */
     padding: 5px;
-    margin: 7px 0;
+    margin: 15px 10px;
     border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
 }
 
 .edit-cards-label {
@@ -43,13 +45,137 @@
     /* padding: 5px; */
 }
 
+.edit-card-content {
+    margin: 10px 15px;
+}
+
+.edit-button-edit {
+    margin-left: 10px;
+}
+
+.edit-name-20 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+.edit1-labels {
+    /* background-color: lightgrey; */
+    padding: 10px 20% 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    font-weight: bold;
+}
+
+.edit1-description {
+    /* background-color: purple; */
+    /* border: 1px solid black; */
+    flex: 2;
+}
+
+.edit1-answer {
+    /* background-color: pink; */
+    /* border: 1px solid black; */
+    /* min-width: 40px; */
+}
+
+.edit1-cards {
+    /* background-color: pink; */
+    margin: 10px 8px;
+    padding: 10px 20px;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+}
+
+.edit1-cards-info {
+    /* background-color: blue; */
+    /* padding: 12px 2px 12px 6px; */
+    flex: 3;
+}
+
+.edit1-input-1 {
+    /* background-color: green; */
+    background-color: lightgoldenrodyellow;
+    width: 60%;
+    margin-right: 10%;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+}
+
+.edit1-input-2 {
+    background-color: lightgoldenrodyellow;
+    width: 20%;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+}
+
+.edit1-button {
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+}
+
+
+
+
+.edit-to-account {
+    font-size: 15px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    padding: 3px;
+}
+
+.edit-to-subject {
+    font-size: 15px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    padding: 3px;
+}
+
 .edit-cards-info {
     /* background-color: rgb(34, 241, 69); */
     padding: 3px;
     display: flex;
     justify-content: space-between;
+    margin: 8px 7px 5px 10px;
 }
 
+.edit-cards-info div {
+    /* background-color: rgb(34, 241, 69); */
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-width: 55px;
+}
+
+.edit-cards-info-1 {
+    padding: 13px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    font-weight: bold;
+}
 
 @media (min-width: 700px){
     /* .edit-main-2 {

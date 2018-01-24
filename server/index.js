@@ -65,6 +65,8 @@ app.post('/create/:category', controller.create);
 app.post('/new-test/:category', controller.newTest);
 app.patch('/test-name-update/:id', controller.updateTestName);
 app.delete('/card-delete/:id', controller.deleteTestCard);
+app.delete('/subject-content/:id', controller.deleteSubjectContent);
+app.delete('/subject-delete/:id', controller.deleteTheSubject);
 app.post('/indi-test/:category', controller.createIndiTest);
 app.post('/results-indi-test', controller.createIndiResults);
 app.post('/general-account-results/:id', controller.createGeneralResults);

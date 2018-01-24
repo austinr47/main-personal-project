@@ -56,11 +56,13 @@
 .flashcard-question {
     /* background-color: lightgreen; */
     /* padding: 3px; */
+    text-align: center;
 }
 
 .flashcard-answer {
     /* background-color: lightseagreen; */
     /* padding: 3px; */
+    text-align: center;
 }
 
 .flashcard-buttons {
@@ -73,6 +75,7 @@
 .flashcard-view {
     /* background-color: lightgoldenrodyellow; */
     padding: 10px;
+    text-align: center;
 }
 
 .link-1 {
