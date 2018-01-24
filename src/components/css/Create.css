@@ -20,31 +20,28 @@
 }
 
 .create-subject input {
-    background-color: rgba(250, 250, 210, 0.534);
-    box-shadow: inset 0px 0px 8px -1px #000000;
     font-size: 25px;
+    color: gray;
     padding: 10px 0 10px 0;
     text-align: center;
     width: 230px;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .create-subject button {
     margin: 10px 50px;
     padding: 10px 8px;
-    border-radius: 10px;
-    background-color: #1BCC2C;
-    box-shadow: 0px 1px 1px 0px black;
-    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #4CAF50;
 }
 
-.create-subject:active button {
+.create-subject:hover button {
     margin: 10px 50px;
     padding: 10px 8px;
-    border-radius: 20px;
-    background-color: rgb(207, 202, 202);
-    box-shadow: 0px 1px 1px 0px black;
-    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #45a049;
 }
 
 .create-edit-name {
@@ -59,6 +56,7 @@
     width: 35px;
     opacity: .5;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .create-label {
@@ -81,19 +79,25 @@
 .create-label input{
     padding: 10px;
     margin-bottom: 10px;
-    width: 230px;
-    border: 1px solid black;
-    background-color: rgba(250, 250, 210, 0.534);
-    box-shadow: inset 0px 0px 8px -1px #000000;
+    width: 270px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .create-label button {
     padding: 10px;
-    margin: 0 60px;
-    border: 1px solid black;
+    margin: 2px 60px;
     width: 180px;
-    background-color: #1BCC2C;
-    box-shadow: 0px 1px 1px 0px black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.create-label:hover button {
+    background-color: #45a049;
 }
 
 .create-description {
@@ -116,7 +120,13 @@
     background-color: rgb(252, 168, 168);
     padding: 6px;
     margin: 0 10px;
+    border-radius: 6px;
     border: 1px solid black;
+}
+
+.create-labels-1:hover button {
+    background-color: rgb(255, 101, 101);
+    cursor: pointer;
 }
 
 .create-description-1 {

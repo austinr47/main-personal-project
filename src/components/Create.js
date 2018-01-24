@@ -11,7 +11,7 @@ class Create extends Component {
     constructor(){
         super()
         this.state={
-            category: 'Input Subject Name',
+            category: 'Add Name Here',
             question: '',
             answer: '',
             showAdd: false,
@@ -23,6 +23,7 @@ class Create extends Component {
 
             questionInput: 'Description',
             answerInput: 'Answer',
+            rerender: false,
         }
         this.addToDb=this.addToDb.bind(this)
         this.updateCategory=this.updateCategory.bind(this)
@@ -49,6 +50,7 @@ class Create extends Component {
                 // console.log(response, this.state.testId)
                 this.setState({
                     cards: response.data,
+                    rerender: !this.state.rerender
                 })
             })
         }
@@ -158,7 +160,8 @@ class Create extends Component {
                                     <div className='create-label'>
                                         <input placeholder={this.state.questionInput} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
                                         <input placeholder={this.state.answerInput} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
-                                        <button onClick={this.addToDb}>Add</button>
+                                        <button onClick={this.addToDb}>- Add -</button>
+                                        <button onClick={() => this.props.history.push('/account')}>- Finish -</button>
                                     </div>
                                 }
                                         <div className='create-labels'>

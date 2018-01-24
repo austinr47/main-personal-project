@@ -35,7 +35,7 @@ class Account extends Component {
     render() {
         const { user } = this.props;
         const result = this.state.data.map((item, index) => {
-            console.log(item)
+            // console.log(item)
             const date = item.date
             const year = date.slice(0, 4)
             var month = () => {
@@ -92,12 +92,6 @@ class Account extends Component {
                                         View/Create Subjects
                                     </div>
                                 </Link>
-                                {/* <Link className='link account-left-text' to='/create-cards'>
-                                    Create Flashcards
-                                </Link> */}
-                                {/* <div className='account-left-text'>
-                                    Edit Flashcards
-                                </div> */}
                                 <div>Subject Results</div>
                                 <div>
                                     <Chart/>

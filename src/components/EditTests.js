@@ -18,6 +18,8 @@ class Create extends Component {
             cardId: '',
             rerender: true,
             showAdd: true,
+
+            waiting: false,
         }
         this.editTestName=this.editTestName.bind(this);
         this.updateTestName=this.updateTestName.bind(this);
@@ -34,8 +36,8 @@ class Create extends Component {
             }
         });
         axios.get(`/questions/${this.props.match.params.category}`).then(response => {
-            console.log(response)
-            console.log(response.data[0].test_id)
+            // console.log(response)
+            // console.log(response.data[0].test_id)
             this.setState({
                 testId: response.data[0].test_id,
                 cards: response.data,
@@ -57,14 +59,15 @@ class Create extends Component {
     }
 
     deleteSubject(i) {
+        // console.log(this.state.cards[0].id)
         if(this.state.cards[0].id != null) {
             axios.delete(`/subject-content/${i}`).then(response => {
                 console.log(this.state.testId)
-                axios.delete(`/subject-delete/${this.state.cards[0].category}`).then(response => {
+                axios.delete(`/subject-delete/${this.state.testName}`).then(response => {
                     this.props.history.push('/account')
                 })
             })
-        } else axios.delete(`/subject-delete/${this.state.cards[0].category}`).then(response => {
+        } else axios.delete(`/subject-delete/${this.state.testName}`).then(response => {
             this.props.history.push('/account')
         })
     }
@@ -72,11 +75,23 @@ class Create extends Component {
     updateTestName() {
         // console.log(this.state.testId, this.state.testName)
         axios.patch(`/test-name-update/${this.state.testId}`, {test_id: this.state.testId, category: this.state.testName}).then(response => {
-            // console.log(response)
+            console.log(this.state.testName)
+            this.setState({
+                waiting: !this.state.waiting
+            })
         })
-        this.setState({
-            showEditTitle: !this.state.showEditTitle
-        })
+        .then(() => {
+            setTimeout(() => {
+                console.log('url-update')
+                this.props.history.push(`/tests/edit/${this.state.testName}`)
+                // alert("Subject name updated!")
+            this.setState({
+                showEditTitle: !this.state.showEditTitle,
+                waiting: !this.state.waiting
+            })
+            }, 3000)
+    })
+    console.log('done with update')
     }
 
     updateStateTestName(name) {
@@ -88,7 +103,7 @@ class Create extends Component {
     deleteCard(i) {
         axios.delete(`/card-delete/${i}`).then(response => {
             axios.get(`/questions/${this.props.match.params.category}`).then(response => {
-                // console.log(response)
+                console.log(response.data)
                 this.setState({
                     testId: response.data[0].id,
                     cards: response.data,
@@ -101,8 +116,8 @@ class Create extends Component {
     render() {
         const { user } = this.props;
         // console.log(this.state.cards[0].test_id)
-        console.log(this.state.testId)
-        console.log(this.state.cards)
+        // console.log(this.state.testId)
+        // console.log(this.state.cards)
         const cards = this.state.cards.map((item, i) => {
             if(this.state.cards[0].id != null) {
                 return <div className='edit-card-content'key={item.id}>
@@ -119,6 +134,15 @@ class Create extends Component {
 
         return (
             <div className='edit-main'>
+                {this.state.waiting && 
+                    <div className='updating-body'>
+                        <div className='updating-box'>
+                            <div className='updating-text'>
+                                Updating...
+                            </div>
+                        </div>
+                    </div>
+                }
                 {user && 
                 <div className='edit-main-2'>
                     <Header />
