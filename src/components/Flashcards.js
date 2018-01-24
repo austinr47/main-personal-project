@@ -16,6 +16,9 @@ class Flashcards extends Component {
             questions: '',
             answer: '',
             showQuestion: true,
+            animation: true,
+            flipCard: true,
+            slideCard: true,
         }
         this.showAnswer=this.showAnswer.bind(this);
         this.nextCard=this.nextCard.bind(this);
@@ -42,6 +45,9 @@ class Flashcards extends Component {
     }
 
     nextCard() {
+        this.setState({
+            flipCard: false,
+        })
         const question = this.state.questions.map(a => a.question);
         const answer = this.state.questions.map(a => a.answer);
         const newCount = Math.floor(Math.random() * Math.floor(this.state.questions.length))
@@ -55,53 +61,88 @@ class Flashcards extends Component {
             question: question[this.state.count],
             answer: answer[this.state.count],
             count: newCount,
-            showQuestion: oddEven()
+            showQuestion: oddEven(),
+            animation: !this.state.animation,
         })
     }
 
     showAnswer() {
+        // console.log(this.state.showQuestion, this.state.animation)
         this.setState({
-            showQuestion: !this.state.showQuestion
-        })
+            showQuestion: !this.state.showQuestion,
+            animation: !this.state.animation,
+            flipCard: true,
+        });
     }
 
     render() {
         const { user } = this.props
+        console.log(this.state.flipCard)
+        const flipCard = (this.state.flipCard ? 'flashcard-content' : 'flashcard-content-1')
+        // const slideCard= 'wfv';
         return (
             <div className='flashcard-main'>
                 <div className='flashcard-main-1'>
                     {user && 
-                        <div className='flashcard-main-2'  onClick={this.showAnswer}>
+                        <div className='flashcard-main-2'  /**/>
                             <Header />
                             <div className='flaschard-box-3'>
                                 <div className='flashcard-big-box'>
-                                    <div className='flashcard-content'>
-                                        <div className='flashcard-flipping' id='card'>
-                                            <div className='flashcard-side-1'>
-                                                {this.state.showQuestion &&
-                                                    <div className='flashcard-view'>
-                                                        <div className='flaschard-question'>
-                                                            {this.state.question}
-                                                        </div>
+                                    {this.state.animation && 
+                                        <div className='flashcard-new-card'>
+                                            <div className={flipCard} onClick={() => this.showAnswer()}>
+                                                <div className='flashcard-flipping' id='card'>
+                                                    <div className='flashcard-side-1'>
+                                                        {this.state.showQuestion &&
+                                                            <div className='flashcard-view'>
+                                                                <div className='flaschard-question'>
+                                                                    {this.state.question}
+                                                                </div>
+                                                            </div>
+                                                        } 
                                                     </div>
-                                                } 
-                                            </div>
-                                            <div className='flashcard-side-2'>
-                                                {!this.state.showQuestion &&
-                                                    <div className='flashcard-view'>
-                                                        <div className='flashcard-answer'>
-                                                            {this.state.answer}
-                                                        </div>
+                                                    <div className='flashcard-side-2'>
+                                                        {!this.state.showQuestion &&
+                                                            <div className='flashcard-view'>
+                                                                <div className='flashcard-answer'>
+                                                                    {this.state.answer}
+                                                                </div>
+                                                            </div>
+                                                        }
                                                     </div>
-                                                }
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
+                                    {!this.state.animation && 
+                                        <div className={flipCard} onClick={() => this.showAnswer()}>
+                                            <div className='flashcard-flipping' id='card'>
+                                                <div className='flashcard-side-1'>
+                                                    {this.state.showQuestion &&
+                                                        <div className='flashcard-view'>
+                                                            <div className='flaschard-question'>
+                                                                {this.state.question}
+                                                            </div>
+                                                        </div>
+                                                    } 
+                                                </div>
+                                                <div className='flashcard-side-2'>
+                                                    {!this.state.showQuestion &&
+                                                        <div className='flashcard-view'>
+                                                            <div className='flashcard-answer'>
+                                                                {this.state.answer}
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
                                     <div className='flashcard-buttons'>
                                         <Link to='/subjects' className='link-1'>
-                                            <button className='flashcard-button' onClick={this.nextCard}>Go to Subjects</button>
+                                            <button className='flashcard-button' onClick={() => this.nextCard()}>Go to Subjects</button>
                                         </Link>
-                                        <button className='flashcard-button' onClick={this.showAnswer}>Show Answer</button>
+                                        <button className='flashcard-button' onClick={() => this.showAnswer()}>Show Answer</button>
                                         <button className='flashcard-button' onClick={this.nextCard}>Next</button>
                                     </div>
                                 </div>

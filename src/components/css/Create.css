@@ -1,10 +1,8 @@
 .create-content {
-    /* background-color: lightcoral; */
     padding: 10px;
 }
 
 .create-left {
-    /* background-color: lightgreen; */
     padding: 10px;
 }
 
@@ -15,17 +13,14 @@
 }
 
 .create-subject {
-    /* background-color: rgb(243, 243, 166); */
     padding: 10px ;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border: 1px solid black; */
 }
 
 .create-subject input {
     background-color: rgba(250, 250, 210, 0.534);
-    /* margin: 10px 50px; */
     box-shadow: inset 0px 0px 8px -1px #000000;
     font-size: 25px;
     padding: 10px 0 10px 0;
@@ -35,7 +30,6 @@
 }
 
 .create-subject button {
-    /* background-color: teal; */
     margin: 10px 50px;
     padding: 10px 8px;
     border-radius: 10px;
@@ -45,7 +39,6 @@
 }
 
 .create-subject:active button {
-    /* background-color: teal; */
     margin: 10px 50px;
     padding: 10px 8px;
     border-radius: 20px;
@@ -55,7 +48,6 @@
 }
 
 .create-edit-name {
-    /* background-color: yellow; */
     padding: 10px 10px 10px 40px;
     display: flex;
     font-size: 30px;
@@ -63,7 +55,6 @@
 }
 
 .create-edit-name button {
-    /* background-color: yellow; */
     height: 20px;
     width: 35px;
     opacity: .5;
@@ -71,7 +62,6 @@
 }
 
 .create-label {
-    /* background-color: lightskyblue; */
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -81,29 +71,23 @@
 
 
 .create-labels {
-    /* background-color: lightgrey; */
-    /* padding: 10px 0; */
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    /* font-weight: bold; */
 }
 
 .create-label input{
-    /* background-color: lightgoldenrodyellow; */
     padding: 10px;
     margin-bottom: 10px;
     width: 230px;
     border: 1px solid black;
     background-color: rgba(250, 250, 210, 0.534);
-    /* margin: 10px 50px; */
     box-shadow: inset 0px 0px 8px -1px #000000;
 }
 
 .create-label button {
-    /* background-color: lightsalmon; */
     padding: 10px;
     margin: 0 60px;
     border: 1px solid black;
@@ -113,19 +97,14 @@
 }
 
 .create-description {
-    /* background-color: purple; */
-    /* border: 1px solid black; */
     flex: 2;
 }
 
 .create-answer {
-    /* background-color: pink; */
-    /* border: 1px solid black; */
     margin-right: 20px;
 }
 
 .create-labels-1 {
-    /* background-color: lightsalmon; */
     padding: 0 10px;
     margin: 10px 10px;
     border: 1px solid #000000;
@@ -141,56 +120,44 @@
 }
 
 .create-description-1 {
-    /* background-color: purple; */
     display: flex;
-    /* justify-content: center; */
-    /* align-content: center; */
     align-items: center;
 }
 
 .create-description-2 {
-    /* background-color: rgb(150, 90, 150); */
     margin: 10px 0;
 }
 
 .create-answer-1 {
-    /* background-color: pink; */
 }
 
 @media (min-width: 700px) {
     .create-labels {
-        /* background-color: lightgrey; */
         padding: 8px 90px 8px 40px;
         font-size: 25px;
     }
    
     .create-answer {
-        /* background-color: pink; */
         width: 50px;
     }
     
     .create-labels-1 {
-        /* background-color: lightsalmon; */
         display: flex;
         justify-content: space-between;
         align-content: center;
     }
     
     .create-labels-1 button {
-        /* background-color: red; */
         padding: 2px;
         margin: 10px 0;
         height: 19px;
     }
     
     .create-description-1 {
-        /* background-color: purple; */
-        /* width: 450px; */
         flex: 2;
     }
     
     .create-description-2 {
-        /* background-color: rgb(150, 90, 150); */
         width: 160px;
     }
 }
@@ -198,7 +165,6 @@
 @media (min-width: 900px){
     .create-main {
         display: flex;
-        /* flex-direction: column; */
         justify-content: center;
     }
 

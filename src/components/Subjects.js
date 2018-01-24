@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import './css/Trainings.css';
+import './css/Subjects.css';
 import NotLoggedIn from './NotLoggedIn';
 import axios from 'axios';
 import { login } from '../ducks/reducer';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class Trainings extends Component {
+class Subjects extends Component {
     constructor(){
         super()
         this.state = {
@@ -103,4 +103,4 @@ const mapDispatchToProps = {
 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps )(Trainings);
+export default connect(mapStateToProps, mapDispatchToProps )(Subjects);

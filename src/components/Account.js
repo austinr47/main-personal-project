@@ -109,7 +109,9 @@ class Account extends Component {
                                     <div>Date</div>
                                     <div>% Correct</div>
                                 </div>
-                                {result}
+                                <div className='animated-account-results'>
+                                    {result}
+                                </div>
                             </div>
                         </div>
                     </div>
