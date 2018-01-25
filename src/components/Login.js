@@ -40,6 +40,11 @@ class Login extends Component {
                         <div className='login-text'>Flash-Study</div>
                         <button onClick={this.login}>Login / Register</button>
                     </div>
+                        <div className='login-guest'>
+                            <div>For guest access, use:</div>
+                            <div>Email: guest@email.com</div>
+                            <div>Password: guest</div>
+                        </div>
                 </div>
             </div>
         );
