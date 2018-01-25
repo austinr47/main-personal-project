@@ -75,46 +75,44 @@ class TestResults extends Component {
         return (
             
             <div className='results-main'>
-            {user &&
-                <div className='results-main-2'>
-                    <Header />
-                    <div className='results-main-3'>
-                        <div className='results-title'>
-                            <Link to='/account' className='result-link'>
-                                <div className='results-to-account'>Go To Account</div>
-                            </Link>
-                            <div className='results-main-title'>Flash-Study Results</div>
-                            <Link to={`/tests/${this.state.category}`} className='result-link'>
-                                <div className='results-try-again'>Test Again</div>
-                            </Link>
-                        </div>
-
-                        <div className='results-content'>
-                            <div className='results-right'>
-                                <div className='results-result'>
-                                {this.state.percent === 100 ? <div>Perfection!!</div> : (this.state.percent > 90 ? <div>Congrats!!!</div> : (this.state.percent > 80 ? <div>Getting there!</div> : (this.state.percent > 50 ? <div>Time to improve</div> : <div>Well that...sucks</div>)))}
+                {user &&
+                    <div className='results-main-2'>
+                        <Header />
+                        <div className='results-main-3'>
+                            <div className='results-title'>
+                                <Link to='/account' className='result-link'>
+                                    <div className='results-to-account'>Go To Account</div>
+                                </Link>
+                                <div className='results-main-title'>Flash-Study Results</div>
+                                <Link to={`/tests/${this.state.category}`} className='result-link'>
+                                    <div className='results-try-again'>Test Again</div>
+                                </Link>
+                            </div>
+                            <div className='results-content'>
+                                <div className='results-right'>
+                                    <div className='results-result'>
+                                    {this.state.percent === 100 ? <div>Perfection!!</div> : (this.state.percent > 90 ? <div>Congrats!!!</div> : (this.state.percent > 80 ? <div>Getting there!</div> : (this.state.percent > 50 ? <div>Time to improve</div> : <div>Well that...sucks</div>)))}
+                                    </div>
+                                    <div className='results-percent'>
+                                        <div>{this.state.percent}%</div>
+                                        <div>Correct</div>
+                                    </div>
                                 </div>
-                                <div className='results-percent'>
-                                    <div>{this.state.percent}%</div>
-                                    <div>Correct</div>
+                                <div className='results-left'>
+                                    <div className='results-label'>
+                                        <div className='results-stats-1'>{right1}/{wrong1}</div>
+                                        <div className='results-stats-2'>Description/Question</div>
+                                        <div className='results-stats-3'>Correct</div>
+                                        <div className='results-stats-4'>Answered</div>
+                                    </div>
+                                    {result}
                                 </div>
                             </div>
-                            
-                            <div className='results-left'>
-                                <div className='results-label'>
-                                    <div className='results-stats-1'>{right1}/{wrong1}</div>
-                                    <div className='results-stats-2'>Description/Question</div>
-                                    <div className='results-stats-3'>Correct</div>
-                                    <div className='results-stats-4'>Answered</div>
-                                </div>
-                                {result}
-                            </div>
-                            
                         </div>
                     </div>
-                </div>}
+                }
                 {!user &&
-                <NotLoggedIn />
+                    <NotLoggedIn />
                 }
             </div>
         );

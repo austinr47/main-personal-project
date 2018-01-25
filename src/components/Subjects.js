@@ -40,30 +40,13 @@ class Subjects extends Component {
                             <div>{items.category}</div>
                         </div>
                         <div className='subject-buttons'>
-                            {/* <div className='subject-button-text'> */}
-                                <Link className='link subject-button----' to={`/flashcards/${items.category}`}>
-                                    <button className='subject-button1'>Flaschards</button>
-                                    {/* <div className='subject-text-button'>Flaschards</div> */}
-                                </Link>
-                            {/* </div> */}
-                            {/* <div className='subject-button-text'> */}
-                                <Link className='link subject-button----' to={`/tests/${items.category}`}>
-                                    <button className='subject-button1'>Test</button>
-                                    {/* <div className='subject-text-button'>Test</div> */}
-                                </Link>
-                            {/* </div> */}
-                            {/* <div className='subject-button-text'> */}
-                                <Link className='link subject-button----' to={`/tests/edit/${items.category}`}>
-                                    <button className='subject-button1'>Edit</button>
-                                    {/* <div className='subject-text-button'>Edit</div> */}
-                                </Link>
-                            {/* </div> */}
+                                <Link className=' subject-button' to={`/flashcards/${items.category}`}>Flashcards</Link>
+                                <Link className=' subject-button' to={`/tests/${items.category}`}>Test</Link>
+                                <Link className=' subject-button' to={`/tests/edit/${items.category}`}>Edit</Link>
                         </div>
                     </div>
         })
-        // console.log(this.state.question)
         return (
-            
             <div className='trainings-main'>
                 <div className='trainings-main-1'>
                     {user && 
@@ -80,7 +63,8 @@ class Subjects extends Component {
                                     {categories}
                                 </div>
                             </div>
-                        </div>}
+                        </div>
+                    }
                     {!user &&
                         <NotLoggedIn />
                     }

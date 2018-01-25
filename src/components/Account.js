@@ -28,7 +28,6 @@ class Account extends Component {
             this.setState({
                 data: response.data
             })
-
         })
     }
     
@@ -81,39 +80,39 @@ class Account extends Component {
         
         return (
             <div className='account-bck'>
-            {user &&
-                <div className='account-center'>
-                    <Header />
-                    <div className='account-margin'>
-                        <div className='account-content'>
-                            <div className='account-left-column'>
-                                <Link type="button" className='css-button link account-left-text' to='/subjects'>
-                                    <div className='center-text'>
-                                        View/Create Subjects
+                {user &&
+                    <div className='account-center'>
+                        <Header />
+                        <div className='account-margin'>
+                            <div className='account-content'>
+                                <div className='account-left-column'>
+                                    <Link type="button" className='css-button link account-left-text' to='/subjects'>
+                                        <div className='center-text'>
+                                            View/Create Subjects
+                                        </div>
+                                    </Link>
+                                    <div>Subject Results</div>
+                                    <div>
+                                        <Chart/>
                                     </div>
-                                </Link>
-                                <div>Subject Results</div>
-                                <div>
-                                    <Chart/>
                                 </div>
-                            </div>
-                            <div className='account-right'>
-                                <div className='account-right-label'>
-                                    <div>Subject</div>
-                                    <div>Date</div>
-                                    <div>% Correct</div>
-                                </div>
-                                <div className='animated-account-results'>
-                                    {result}
+                                <div className='account-right'>
+                                    <div className='account-right-label'>
+                                        <div>Subject</div>
+                                        <div>Date</div>
+                                        <div>% Correct</div>
+                                    </div>
+                                    <div className='animated-account-results'>
+                                        {result}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            }
-            {!user && 
-            <NotLoggedIn />
-            }
+                }
+                {!user && 
+                    <NotLoggedIn />
+                }
             </div>
         );
     }

@@ -7,7 +7,8 @@
 .account-center {
     margin: 0 2px;
     min-height: 99vh;
-    box-shadow: 0px 2px 5px 2px #1C487C;
+    box-shadow: 0px 2px 5px .5px #1C487C;
+    /* font-family: 'Times New Roman', Times, serif */
 }
 
 .account-content {
@@ -29,14 +30,14 @@
 
 .animated-account-results {
     backface-visibility: visible !important;
-    animation-name: fadeInDown;
+    animation-name: scaleUp;
     animation-duration: .9s;
     animation-timing-function: linear;
     animation-fill-mode: both;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
-@keyframes fadeInDown { 
+@keyframes scaleUp { 
     0% { 
         transform: scale(1, 0)
 
@@ -46,9 +47,9 @@
     } 
 } 
 
-.fadeInDown { 
+/* .fadeInDown { 
     animation-name: fadeInDown; 
-}
+} */
 
 .account-margin {
     display: flex;
@@ -67,10 +68,12 @@
     justify-content: space-between;
     border: 1.5px solid #000000;
     padding: .5em 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .account-subject {
     min-width: 79px;
+    /* font-family: serif */
 }
 
 .account-date {
@@ -89,6 +92,7 @@
     margin: 10px 7px;
     border: 1px solid #000000;
     border-radius: 2px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .account-left-column {
@@ -107,6 +111,7 @@
 .center-text {
     margin: auto;
     padding: 10px 0 10px 25px;
+    font-family: 'Times New Roman', Times, serif
 }
 
 .css-button{ 
@@ -117,7 +122,7 @@
     color: #FFFFFF; 
     font-family: 'Arial'; 
     font-size: 18px; 
-    background-color: #E78B74; 
+    background-color: rgb(238, 160, 141); 
     border-width: 1px; 
     border-style: solid; 
     border-color: #3E537D; 
@@ -125,9 +130,9 @@
     box-shadow: 2px 3px 5px 0px #a8aeb8; 
 } 
 .css-button:hover{ 
-    height: 77px; 
-    width: 157px; 
-    background-color: #08C5FF; 
+    height: 70px; 
+    width: 140px; 
+    background-color: rgb(92, 217, 255); 
 } 
 
 @media (min-width: 700px) {

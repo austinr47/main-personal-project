@@ -46,10 +46,10 @@ module.exports = {
       updateTestName: ( req, res, next ) => {
         const db = req.app.get('db');
         const { test_id, category } = req.body;
-        // console.log(test_id, category)
+        console.log(test_id, category)
         db.update_test_name( [ test_id, category ] )
         .then( (response) => res.status(200).send(response) )
-          .catch( () => res.status(500).send() );
+          .catch( (err) => res.status(500).send(err) );
       },
 
       deleteTestCard: ( req, res, next ) => {

@@ -4,19 +4,44 @@
 }
 
 
+
+
+/* .flashcard-new-card-1 {
+    backface-visibility: visible !important;
+    animation-name: fadeOut;
+    animation-duration: .6s;
+    animation-timing-function: cubic-bezier(1,0,.07,1.81);
+    animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 0;
+    }
+} */
+
 .flashcard-button-1 {
-    animation-duration: .5s; 
+    animation-duration: 1s; 
     animation-fill-mode: both; 
-    animation-timing-function: linear; 
+    animation-timing-function: ease-in-out; 
     backface-visibility: visible !important; 
     animation-name: slideIn; 
 }
 
 @keyframes slideIn { 
-    0% { transform: translateX(100%); opacity: 0; } 
-    60% { transform: translateX(20%) ; opacity: 1; } 
-    80% { transform: translateX(0%); opacity: 1; } 
+    0% {opacity: 1;}
+    20% {opacity: .5;}
+    40% {opacity: 0;}
+    60% { transform: translateX(100%); opacity: 0; } 
+    80% { transform: translateX(20%) ; opacity: .3; } 
     100% { transform: translateX(0%); opacity: 1; } 
+    /* 100% { transform: translateX(0%); opacity: 1; }  */
 } 
 
 .flashcard-content-1 {
@@ -86,51 +111,39 @@
     animation-name: fadeIn;
     animation-duration: .6s;
     animation-timing-function: cubic-bezier(1,0,.07,1.81);
-    animation-fill-mode: both
+    animation-fill-mode: both;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        /* display: none; */
     }
-/* 
-    25% {
-        opacity: 0
-    }
-
-    50% {
-        opacity: 1
-    }
-
-    75% {
-        opacity: 1
-    }
-
-    76% {
-        opacity: 1
-    } */
-
     100% {
         opacity: 1;
-        /* display: inline; */
     }
-
-    
 }
 
 
 .flashcard-main-1 {
     min-height: 99vh;
-    box-shadow: 0px 2px 5px 2px #1C487C;
+    box-shadow: 0px 2px 5px .5px #1C487C;
 }
 
-.flashcard-question {
+.flaschard-question {
     text-align: center;
+    margin: 20px 0 0 0;
+    /* background-color: pink; */
+    /* padding: 5px; */
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .flashcard-answer {
     text-align: center;
+    margin: 20px 0 0 0;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 .flashcard-buttons {

@@ -19,6 +19,7 @@ class Flashcards extends Component {
             animation: true,
             flipCard: true,
             slideCard: true,
+            fadout: false,
         }
         this.showAnswer=this.showAnswer.bind(this);
         this.nextCard=this.nextCard.bind(this);
@@ -63,6 +64,7 @@ class Flashcards extends Component {
             count: newCount,
             showQuestion: oddEven(),
             animation: !this.state.animation,
+            fadeOut: !this.state.fadeOut,
         })
     }
 
@@ -72,24 +74,25 @@ class Flashcards extends Component {
             showQuestion: !this.state.showQuestion,
             animation: !this.state.animation,
             flipCard: true,
+            fadeOut: false,
         });
     }
 
     render() {
         const { user } = this.props
-        console.log(this.state.flipCard)
+        // console.log(this.state.flipCard)
         const flipCard = (this.state.flipCard ? 'flashcard-content' : 'flashcard-content-1')
-        // const slideCard= 'wfv';
+        const fadeOut = (this.state.fadeOut ? 'flashcard-new-card-1' : 'flashcard-new-card')
         return (
             <div className='flashcard-main'>
                 <div className='flashcard-main-1'>
                     {user && 
-                        <div className='flashcard-main-2'  /**/>
+                        <div className='flashcard-main-2'>
                             <Header />
                             <div className='flaschard-box-3'>
                                 <div className='flashcard-big-box'>
                                     {this.state.animation && 
-                                        <div className='flashcard-new-card'>
+                                        <div className={fadeOut}>
                                             <div className={flipCard} onClick={() => this.showAnswer()}>
                                                 <div className='flashcard-flipping' id='card'>
                                                     <div className='flashcard-side-1'>

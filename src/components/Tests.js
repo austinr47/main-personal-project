@@ -20,8 +20,8 @@ class Tests extends Component {
             testId: '',
             category: '',
             indiTest: '',
-            
         }
+
         this.renderQuestion = this.renderQuestion.bind(this);
         this.answer = this.answer.bind(this);
     }
@@ -48,7 +48,7 @@ class Tests extends Component {
                 indiTest: response.data[0].indi_test
             })
         });
-}
+    }
 
     renderQuestion() {
         axios.post('/results-indi-test', { my_answer: `${this.state.myAnswer}`, correct_answer: `${this.state.correctAnswer}`, question: `${this.state.question}`,  test_id: `${this.state.testId}`, category: `${this.state.category}`, result_table_id: `${this.state.indiTest}` }).then(response => {

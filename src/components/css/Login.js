@@ -4,6 +4,7 @@ import Auth0Lock from 'auth0-lock';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { login } from '../ducks/reducer';
+// import Header from './Header';
 
 class Login extends Component {
     constructor() {
@@ -34,6 +35,7 @@ class Login extends Component {
     render() {
         return (
             <div>
+                {/* <Header /> */}
                 <div className='login-main'>
                     <div className='login-box'>
                         <img alt='' src=''/>

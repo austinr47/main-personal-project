@@ -20,11 +20,11 @@ class Create extends Component {
             showSubjectName: true,
             cards: [],
             showCreateSubject: true,
-
             questionInput: 'Description',
             answerInput: 'Answer',
             rerender: false,
         }
+
         this.addToDb=this.addToDb.bind(this)
         this.updateCategory=this.updateCategory.bind(this)
         this.updateQuestion=this.updateQuestion.bind(this)
@@ -82,8 +82,6 @@ class Create extends Component {
             })
         })
     }
-
-
 
     updateCategory(category){
         this.setState({
@@ -164,12 +162,12 @@ class Create extends Component {
                                         <button onClick={() => this.props.history.push('/account')}>- Finish -</button>
                                     </div>
                                 }
-                                        <div className='create-labels'>
-                                            <div className='create-description'>Descriptions</div>
-                                            <div className='create-answer'>Answers</div>
-                                            <div className='create-answer'></div>
-                                        </div>
-                                        {cards}
+                                <div className='create-labels'>
+                                    <div className='create-description'>Descriptions</div>
+                                    <div className='create-answer'>Answers</div>
+                                    <div className='create-answer'></div>
+                                </div>
+                                {cards}
                             </div>
                         </div>
                     </div>

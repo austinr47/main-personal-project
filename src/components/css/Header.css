@@ -1,6 +1,7 @@
 .header {
     /* background-color: rgb(155, 149, 149); */
-    background-color: #559CAC;
+    background-color: #97CFD9;
+    /* background-color: rgb(158, 158, 158); */
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -31,6 +32,18 @@
 }
 
 .header-text {
+    font-family: fantasy;
+    /* background-color: lightblue; */
+    font-size: 14px;
+    margin: auto;
+
+    display: flex;
+    align-content: center;
+    padding-right: 6px;
+}
+
+.header-text-1 {
+    font-family: 'Times New Roman', Times, serif;
     /* background-color: lightblue; */
     font-size: 14px;
     margin: auto;

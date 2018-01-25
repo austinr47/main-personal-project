@@ -7,13 +7,15 @@
     margin: 0 2px;
     padding-bottom: 200px;
     min-height: 99vh;
-    box-shadow: 0px 2px 5px 2px #1C487C;
+    box-shadow: 0px 2px 5px .5px #1C487C;
 }
 
 
 
 .updating-body {
-    background-color: rgba(128, 128, 128, 0.493);
+    /* background-color: rgba(128, 128, 128, 0.493); */
+    background-color: #222228;
+    opacity: .94;
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -30,15 +32,23 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    opacity: 1;
 }
 
 .updating-text {
-    border: 2px solid rgba(30, 128, 141, 0.932);
-    background-color: rgba(55, 191, 209, 0.932);
-    border-radius: 15px;
-    height: 200px;
+    /* border: 2px solid rgba(30, 128, 141, 0.932); */
+    /* background-color: rgba(55, 191, 209, 0.932); */
+    background-color: #ffffff;
+    opacity: 1;
+    /* color: #666666; */
+    color: black;
+    font-family: "Avenir Next", Avenir, -apple-system, system-ui, Roboto, Helvetica, sans-serif;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 279px;
     width: 300px;
     position:absolute;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,6 +71,18 @@
     border: 1px solid black;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-cards button {
+    max-width: 100px;
+    /* margin: auto; */
+}
+
+.edit-cards:hover button {
+    cursor: pointer;
+    background-color: rgb(219, 216, 216);
 }
 
 .edit-card-content {
@@ -150,6 +172,8 @@
     display: flex;
     justify-content: space-between;
     margin: 8px 7px 5px 10px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
 }
 
 .edit-cards-info div {

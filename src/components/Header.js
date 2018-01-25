@@ -16,7 +16,7 @@ class Header extends Component {
 
       logout() {
           axios.post('/signout').then(response => {
-              console.log(response)
+            //   console.log(response)
               this.props.login('')
           })
       }
@@ -28,11 +28,10 @@ class Header extends Component {
                 <div className='header-left'>
                     <div className='header-text'>
                         <Link className='link' to='/account' ><img className='header-image' src='https://image.flaticon.com/icons/svg/70/70370.svg' alt='home'/><div>Flash-Study</div></Link>
-                        {/* <Link className='link' to='/' >Login</Link> */}
                     </div>
                 </div>
                 <div className='header-right'>
-                    <div className='header-text'>
+                    <div className='header-text-1'>
                         {user[0].name}
                     </div>
                     <div className='header-logout'>

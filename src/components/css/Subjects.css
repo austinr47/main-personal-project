@@ -11,7 +11,7 @@
 
 .trainings-main-1 {
     min-height: 99vh;
-    box-shadow: 0px 2px 5px 2px #1C487C;
+    box-shadow: 0px 2px 5px .5px #1C487C;
     text-align: center;
 }
 
@@ -26,8 +26,10 @@
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    /* background-color: blue; */
+    /* background-color: rgba(199, 199, 199, 0.123); */
+    background-color: white;
     text-align: center;
+    box-shadow: 0px 1px 3px .5px #1C487C;
 }
 
 .subject-box{
@@ -38,43 +40,48 @@
 
 
 .subject-boxs{
-    /* background-color: red; */
-    /* margin: 0 0 20px 0; */
-    /* padding: 10px; */
     font-size: 25px;
     text-align: center;
 }
 
-.subject-button {
-    /* background-color: teal; */
-    font-size: 14px;
-    border: 1px solid #000000;
-    margin: 0 2px 0 2px;
-    /* text-align: center; */
-    /* padding-left: 5px; */
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center; */
-}
-
-.subject-button1 {
-    cursor: pointer;
-    background-color: green;
-    padding: 5px;
-}
-
-.subject-button----{
+.subject-button{
     text-align: center;
-    background-color: pink;
-    padding: 5px;
+    border-radius: 6px;
+    text-decoration: unset;
+    color: black; 
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 3px;
+    box-shadow: 0px 1px 3px 0px #1C487C;
+    background-color: rgba(199, 199, 199, 0.123);
+}
+
+.subject-button:hover{
+    text-align: center;
+    border-radius: 6px;
+    background-color: rgb(217, 254, 255);
+    text-decoration: unset;
+    color: black; 
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 3px;
+    box-shadow: 0px 1px 3px 0px #1C487C;
 }
 
 .subject-buttons {
     display: flex;
-    background-color: purple;
+    /* background-color: purple; */
     padding: 7px 0;
+    width: 110%;
     margin: 15px 0;
+    text-decoration: unset;
+    color: black; 
+    /* cursor: pointer; */
+    justify-content: space-around;
 }
 
 .link {

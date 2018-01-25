@@ -13,11 +13,8 @@ class BarGraph extends Component {
             data: [],
             categories: [],
             singleCategories: [],
-
-
-           data1: {}
+            data1: {}
     }
-
 }
 
 componentDidMount() {
@@ -87,7 +84,6 @@ componentDidMount() {
                     return ''
                 } else return ''
             })
-            // length = arr.length
             average = arr.reduce(( acc, cur ) => acc + cur, 0) / arr.length
             data1.datasets[0].data.push(average)
             return ''
