@@ -59,7 +59,8 @@ class Tests extends Component {
         this.setState({
             question: result[this.state.count + 1],
             correctAnswer: answer[this.state.count + 1],
-            count: this.state.count + 1
+            count: this.state.count + 1,
+            myAnswer: '',
         });
     }
 
@@ -84,7 +85,7 @@ class Tests extends Component {
                                 {this.state.question}
                             </div>
                             <div className='train-input'>
-                                <input onFocus={(e) => e.target.select()} className='train-input-box' onChange={event => this.answer(event.target.value)}placeholder='Enter Answer Here'/>
+                                <input placeholder='Enter Answer Here' value={this.state.myAnswer} onFocus={(e) => e.target.select()} className='train-input-box' onChange={event => this.answer(event.target.value)}/>
                             </div>
                             <button onClick={this.renderQuestion} className='train-button'>next question</button>
                         </div>
