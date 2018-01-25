@@ -23,6 +23,10 @@ body {
     border-radius: 7px;
 }
 
+.login-guest {
+    background-color: pink;
+}
+
 .login-box button {
     background-color: #403d39;
     color: #ffffff;

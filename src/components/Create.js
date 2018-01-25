@@ -143,7 +143,7 @@ class Create extends Component {
                             <div className='create-left'>
                                 { this.state.showSubjectName &&
                                     <div className='create-subject'>
-                                        <input value={this.state.category} onChange={event => this.updateCategory(event.target.value)}/>
+                                        <input value={this.state.category} onFocus={(e) => e.target.select()} onChange={event => this.updateCategory(event.target.value)}/>
                                         {this.state.showCreateSubject && <button onClick={this.createTest}>Create Subject</button>}
                                         {!this.state.showCreateSubject && <button onClick={this.updateTestName}>Update Subject Name</button>}
                                     </div>
@@ -156,8 +156,8 @@ class Create extends Component {
                                 }
                                 {this.state.showAdd && 
                                     <div className='create-label'>
-                                        <input placeholder={this.state.questionInput} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
-                                        <input placeholder={this.state.answerInput} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
+                                        <input placeholder={this.state.questionInput} onFocus={(e) => e.target.select()} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
+                                        <input placeholder={this.state.answerInput} onFocus={(e) => e.target.select()} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
                                         <button onClick={this.addToDb}>- Add -</button>
                                         <button onClick={() => this.props.history.push('/account')}>- Finish -</button>
                                     </div>

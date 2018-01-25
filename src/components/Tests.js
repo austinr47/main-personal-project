@@ -84,7 +84,7 @@ class Tests extends Component {
                                 {this.state.question}
                             </div>
                             <div className='train-input'>
-                                <input className='train-input-box' onChange={event => this.answer(event.target.value)}placeholder='Enter Answer Here'/>
+                                <input onFocus={(e) => e.target.select()} className='train-input-box' onChange={event => this.answer(event.target.value)}placeholder='Enter Answer Here'/>
                             </div>
                             <button onClick={this.renderQuestion} className='train-button'>next question</button>
                         </div>

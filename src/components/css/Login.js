@@ -41,6 +41,7 @@ class Login extends Component {
                         <img alt='' src=''/>
                         <div className='login-text'>Flash-Study</div>
                         <button onClick={this.login}>Login / Register</button>
+                        <div className='login-guest'>sdfsdfg</div>
                     </div>
                 </div>
             </div>

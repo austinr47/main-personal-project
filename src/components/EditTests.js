@@ -161,7 +161,7 @@ class Create extends Component {
                                     }
                                     {!this.state.showEditTitle &&
                                         <div>
-                                            <input value={this.state.testName} onChange={(event) => this.updateStateTestName(event.target.value)}/>
+                                            <input value={this.state.testName} onFocus={(e) => e.target.select()} onChange={(event) => this.updateStateTestName(event.target.value)}/>
                                             <button onClick={this.updateTestName}>Update</button>
                                             <button className='edit-button-edit' onClick={() => this.deleteSubject(this.state.testId)}>Delete Subject</button>
                                         </div>
@@ -191,8 +191,8 @@ class Create extends Component {
                                         </div>
                                         <div className='edit1-cards'>
                                             <div className='edit1-cards-info'>
-                                                <input className='edit1-input-1' />
-                                                <input className='edit1-input-2' />
+                                                <input onFocus={(e) => e.target.select()} className='edit1-input-1' />
+                                                <input onFocus={(e) => e.target.select()} className='edit1-input-2' />
                                             </div>
                                             <button className='edit1-button'>ADD</button>
                                         </div>
