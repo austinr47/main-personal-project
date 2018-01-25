@@ -4,11 +4,13 @@ const massive = require('massive');
 const session = require('express-session');
 const axios = require('axios');
 const controller = require('../src/controller.js');
+const path = require('path')
 
 require('dotenv').config();
 
 const app = express();
 
+app.use( express.static( `${__dirname}/../build` ) );
 app.use(bodyParser.json());
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -77,6 +79,10 @@ app.get('/user-data', (req, res) => {
     res.json({ user: req.session.user })
     console.log('its running!1')
 });
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const PORT = process.env.SERVER_PORT || 3035;
 app.listen(PORT, () => {
