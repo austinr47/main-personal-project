@@ -20,9 +20,12 @@ class Create extends Component {
             showSubjectName: true,
             cards: [],
             showCreateSubject: true,
-            questionInput: 'Description',
-            answerInput: 'Answer',
+            questionInput: '',
+            answerInput: '',
             rerender: false,
+
+            quesitonValue: '',
+            answerValue: '',
         }
 
         this.addToDb=this.addToDb.bind(this)
@@ -50,7 +53,9 @@ class Create extends Component {
                 // console.log(response, this.state.testId)
                 this.setState({
                     cards: response.data,
-                    rerender: !this.state.rerender
+                    rerender: !this.state.rerender,
+                    question: '',
+                    answer: '',
                 })
             })
         }
@@ -156,8 +161,8 @@ class Create extends Component {
                                 }
                                 {this.state.showAdd && 
                                     <div className='create-label'>
-                                        <input placeholder={this.state.questionInput} onFocus={(e) => e.target.select()} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
-                                        <input placeholder={this.state.answerInput} onFocus={(e) => e.target.select()} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
+                                        <input placeholder='Description' value={this.state.question} onFocus={(e) => e.target.select()} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
+                                        <input placeholder='Answer' value={this.state.answer} onFocus={(e) => e.target.select()} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
                                         <button onClick={this.addToDb}>- Add -</button>
                                         <button onClick={() => this.props.history.push('/account')}>- Finish -</button>
                                     </div>
