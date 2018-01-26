@@ -32,6 +32,7 @@
     margin: 2px 0;
     display: flex;
     align-items: center;
+    min-width: 70px;
 }
 
 .results-main-title {
@@ -59,6 +60,7 @@
     align-items: center;
     text-decoration: unset;
     color: black;
+    min-width: 70px;
 }
 
 /* results content */
@@ -117,10 +119,12 @@
 
 .results-stats-2 {
     flex: 3 0 0;
+    padding-right: 8px;
 }
 
 .results-stats-3 {
     flex: 1.5 0 0;
+    padding-right: 8px;
 }
 
 .results-stats-4 {

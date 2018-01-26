@@ -95,7 +95,7 @@ class Tests extends Component {
                             <div className='train-question'>
                             Done!
                             </div>
-                            <Link to={`/test-results/${myTestId}`} className='link'><button className='train-button'>Get Results</button></Link>
+                            <Link to={`/test-results/${myTestId}`} className='link'><button className='train-button-1'>Get Results</button></Link>
                         </div>
                         }
                     </div>
