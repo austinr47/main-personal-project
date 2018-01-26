@@ -115,6 +115,7 @@ class Create extends Component {
 
     render() {
         const { user } = this.props;
+        const subjectName = ((this.state.testName.length === 0 ? true : false));
         // console.log(this.state.cards[0].test_id)
         // console.log(this.state.testId)
         // console.log(this.state.cards)
@@ -162,7 +163,7 @@ class Create extends Component {
                                     {!this.state.showEditTitle &&
                                         <div>
                                             <input value={this.state.testName} onFocus={(e) => e.target.select()} onChange={(event) => this.updateStateTestName(event.target.value)}/>
-                                            <button onClick={this.updateTestName}>Update</button>
+                                            <button disabled={subjectName} onClick={this.updateTestName}>Update</button>
                                             <button className='edit-button-edit' onClick={() => this.deleteSubject(this.state.testId)}>Delete Subject</button>
                                         </div>
                                     }
@@ -179,7 +180,7 @@ class Create extends Component {
                             </div>
                             {cards}
                             <div className='edit-add-section'>
-                                {this.state.showAdd &&
+                                {/* {this.state.showAdd &&
                                     <div onClick={this.showAdd}>+ ADD</div>
                                 }
                                 {!this.state.showAdd &&
@@ -197,7 +198,7 @@ class Create extends Component {
                                             <button className='edit1-button'>ADD</button>
                                         </div>
                                     </div>
-                                }
+                                } */}
                             </div>
                         </div>
                     </div>
