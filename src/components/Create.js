@@ -134,6 +134,7 @@ class Create extends Component {
     render() {
         // console.log(this.state.testId)
         const { user } = this.props;
+        const disableUpdate = ((this.state.category.length === 0) ? true : false)
         const cards = this.state.cards.map((item, i) => {
             return <div className='' key={i}>
                 <div className='create-labels-1'>
@@ -155,7 +156,7 @@ class Create extends Component {
                                     <div className='create-subject'>
                                         <input placeholder='Subject Name Here' value={this.state.category} onFocus={(e) => e.target.select()} onChange={event => this.updateCategory(event.target.value)} required/>
                                         {this.state.showCreateSubject && <button disabled={this.state.disableButton} onClick={this.createTest}>Create Subject</button>}
-                                        {!this.state.showCreateSubject && <button onClick={this.updateTestName}>Update Subject Name</button>}
+                                        {!this.state.showCreateSubject && <button disabled={disableUpdate} onClick={this.updateTestName}>Update Subject Name</button>}
                                     </div>
                                 }
                                 {!this.state.showSubjectName &&
