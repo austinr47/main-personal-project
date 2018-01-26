@@ -26,6 +26,8 @@ class Create extends Component {
 
             quesitonValue: '',
             answerValue: '',
+            disableButton: true,
+            disableAdd: true,
         }
 
         this.addToDb=this.addToDb.bind(this)
@@ -56,6 +58,7 @@ class Create extends Component {
                     rerender: !this.state.rerender,
                     question: '',
                     answer: '',
+                    disableAdd: true,
                 })
             })
         }
@@ -91,12 +94,14 @@ class Create extends Component {
     updateCategory(category){
         this.setState({
             category: category,
+            disableButton: false,
         })
     }
 
     updateQuestion(question){
         this.setState({
             question: question,
+            disableAdd: false,
         })
     }
 
@@ -148,8 +153,8 @@ class Create extends Component {
                             <div className='create-left'>
                                 { this.state.showSubjectName &&
                                     <div className='create-subject'>
-                                        <input placeholder='Subject Name Here' value={this.state.category} onFocus={(e) => e.target.select()} onChange={event => this.updateCategory(event.target.value)}/>
-                                        {this.state.showCreateSubject && <button onClick={this.createTest}>Create Subject</button>}
+                                        <input placeholder='Subject Name Here' value={this.state.category} onFocus={(e) => e.target.select()} onChange={event => this.updateCategory(event.target.value)} required/>
+                                        {this.state.showCreateSubject && <button disabled={this.state.disableButton} onClick={this.createTest}>Create Subject</button>}
                                         {!this.state.showCreateSubject && <button onClick={this.updateTestName}>Update Subject Name</button>}
                                     </div>
                                 }
@@ -163,7 +168,7 @@ class Create extends Component {
                                     <div className='create-label'>
                                         <input placeholder='Description' value={this.state.question} onFocus={(e) => e.target.select()} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
                                         <input placeholder='Answer' value={this.state.answer} onFocus={(e) => e.target.select()} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
-                                        <button onClick={this.addToDb}>- Add -</button>
+                                        <button onClick={this.addToDb} disabled={this.state.disableAdd}>- Add -</button>
                                         <button onClick={() => this.props.history.push('/account')}>- Finish -</button>
                                     </div>
                                 }
