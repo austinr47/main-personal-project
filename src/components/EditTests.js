@@ -127,8 +127,8 @@ class Create extends Component {
                         <div>{item.question}</div>
                         <div>{item.answer}</div>
                     </div>
-                    <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
                 </div>
+                    <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
             </div>
             } else return ''
         })

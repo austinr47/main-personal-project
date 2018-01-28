@@ -4,6 +4,7 @@ import axios from 'axios';
 import { login } from '../ducks/reducer';
 import './css/Header.css';
 import { Link } from 'react-router-dom';
+import logo from './FlashStudyDark.png';
 
 class Header extends Component {
     componentDidMount() {
@@ -27,7 +28,7 @@ class Header extends Component {
             <div className='header'>
                 <div className='header-left'>
                     <div className='header-text'>
-                        <Link className='link' to='/account' ><img className='header-image' src='https://image.flaticon.com/icons/svg/70/70370.svg' alt='home'/><div>Flash-Study</div></Link>
+                        <Link className='link' to='/account' ><img className='header-image' src={logo} alt='home'/>{/*<div>Flash-Study</div>*/}</Link>
                     </div>
                 </div>
                 <div className='header-right'>

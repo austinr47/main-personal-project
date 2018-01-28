@@ -100,15 +100,20 @@
     font-size: 13px;
     font-weight: bold;
     /* background-color: lightcoral; */
-    border: 1px solid #000000;
+    /* border: 1px solid #000000;
     border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7); */
     display: flex;
     justify-content: space-around;
     margin: 1em 0;
     padding: .6em .3em;
-}
-
+    
+    font-family: 'Work Sans', sans-serif;
+    background-color: rgba(65, 65, 65, 0.925);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 0px rgb(95, 95, 95);
+} 
 .results-stats-1 {
     flex: 1 0 0;
 }
@@ -147,19 +152,20 @@
 .results-stats-right {
     font-size: 12px;
     /* background-color: #1f910210; */
-    border: 1px solid #1e9102;
-    border-radius: 3px;
+    /* border: 1px solid #1e9102; */
+    border-radius: 8px;
     box-shadow: 1px 2px 5px -1px #235e14;
     display: flex;
     margin: 10px 8px;
     padding: .6em .3em;
     justify-content: space-around;
+    align-items: center;
 }
 
 .results-stats-wrong {
     font-size: 12px;
-    border: 1px solid #bb0404;
-    border-radius: 3px;
+    /* border: 1px solid #bb0404; */
+    border-radius: 8px;
     box-shadow: 1px 2px 5px -1px #7e1212;
     display: flex;
     margin: 10px 8px;
@@ -170,6 +176,7 @@
     animation-duration: 2s; 
     animation-fill-mode: both;
     animation-iteration-count: 5;
+    align-items: center;
 }
 
 @keyframes wrongGlow {
@@ -198,16 +205,19 @@
 
 .results-result {
     /* background-color: lightgreen; */
-    border: 1px solid #000000;
-    border-radius: 3px;
+    /* border: 1px solid #000000; */
+    border-radius: 8px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    padding: 10px;
+    padding: 3px;
+    font-size: 12px;
 }
 
 .results-percent {
-    /* background-color: rgba(0, 255, 0, 0.356); */
-    border: 1px solid #000000;
-    border-radius: 3px;
+    background-color:  #97cfd9;
+    /* #97cfd9, opacity 68.6% */
+    /* border: 1px solid #000000; */
+    border-radius: 30%;
+    /* border-radius: 3px; */
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     padding: 10px;
     margin: 5px;
@@ -273,8 +283,8 @@
     }
 
     .results-result {
-        padding-top: 25px;
-        padding-bottom: 25px;
+        /* padding-top: 25px;
+        padding-bottom: 25px; */
     }
     .results-title {
         padding: 20px 0;

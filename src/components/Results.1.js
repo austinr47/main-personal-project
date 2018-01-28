@@ -83,19 +83,19 @@ class TestResults extends Component {
                                 <Link to='/account' className='result-link'>
                                     <div className='results-to-account'>Go To Account</div>
                                 </Link>
-                                <div className='results-main-title'>Flash-Study Results</div>
+                                <div className='results-main-title'>Test Results</div>
                                 <Link to={`/tests/${this.state.category}`} className='result-link'>
                                     <div className='results-try-again'>Test Again</div>
                                 </Link>
                             </div>
                             <div className='results-content'>
                                 <div className='results-right'>
-                                    <div className='results-result'>
-                                    {this.state.percent === 100 ? <div>Perfection!!</div> : (this.state.percent > 90 ? <div>Congrats!!!</div> : (this.state.percent > 80 ? <div>Getting there!</div> : (this.state.percent > 50 ? <div>Time to improve</div> : <div>Well that...sucks</div>)))}
-                                    </div>
                                     <div className='results-percent'>
                                         <div>{this.state.percent}%</div>
                                         <div>Correct</div>
+                                    </div>
+                                    <div className='results-result'>
+                                    {this.state.percent === 100 ? <div>Perfection!</div> : (this.state.percent > 89 ? <div>Congrats!</div> : (this.state.percent > 79 ? <div>Getting there!</div> : (this.state.percent > 69 ? <div>Keep on studying!</div> : (this.state.percent > 49 ? <div>Study study study!</div> : (this.state.percent > 19 ? <div>Tray again!</div> : <div>Well that...sucks</div>)))))}
                                     </div>
                                 </div>
                                 <div className='results-left'>

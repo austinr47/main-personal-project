@@ -42,7 +42,7 @@
     opacity: 1;
     /* color: #666666; */
     color: black;
-    font-family: "Avenir Next", Avenir, -apple-system, system-ui, Roboto, Helvetica, sans-serif;
+    /* font-family: "Avenir Next", Avenir, -apple-system, system-ui, Roboto, Helvetica, sans-serif; */
     border-radius: 5px;
     font-size: 14px;
     height: 279px;
@@ -67,20 +67,25 @@
 
 .edit-cards {
     padding: 5px;
-    margin: 15px 10px;
-    border: 1px solid black;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    margin: 15px 10px 0;
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.7);
     display: flex;
     flex-direction: column;
 }
 
-.edit-cards button {
+.edit-card-content button {
     max-width: 100px;
-    /* margin: auto; */
+    margin-left: 20px;
+    /* border: .5px solid rgb(136, 135, 135); */
+    border-radius: 6px;
+    background-color: rgba(211, 211, 211, 0);
+    /* background-color: rgba(211, 211, 211, 0.356); */
+    border: 0px solid rgba(0, 0, 0, 0);
 }
 
-.edit-cards:hover button {
+.edit-card-content:hover button {
     cursor: pointer;
     background-color: rgb(219, 216, 216);
 }
@@ -103,10 +108,11 @@
     padding: 10px 20% 10px 30px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.7);
     font-weight: bold;
+    /* font-family:  'Work Sans', sans-serif; */
 }
 
 .edit1-description {
@@ -115,7 +121,7 @@
 
 .edit1-cards {
     margin: 10px 8px;
-    padding: 10px 20px;
+    padding: 7px 20px;
     display: flex;
     border: 1px solid black;
     border-radius: 3px;
@@ -157,6 +163,7 @@
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     padding: 3px;
+    text-align: center;
 }
 
 .edit-to-subject {
@@ -165,6 +172,7 @@
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     padding: 3px;
+    text-align: center;
 }
 
 .edit-cards-info {
@@ -172,7 +180,7 @@
     display: flex;
     justify-content: space-between;
     margin: 8px 7px 5px 10px;
-    font-family: 'PT Sans Narrow', sans-serif;
+    /* font-family: 'PT Sans Narrow', sans-serif; */
     font-size: 20px;
 }
 
@@ -191,10 +199,12 @@
     font-size: 20px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    /* border: 1px solid black; */
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.7);
     font-weight: bold;
+    background-color: rgb(230, 230, 230);
+    font-family:  'Work Sans', sans-serif;
 }
 
 @media (min-width: 700px){
@@ -210,9 +220,9 @@
     }
     
     .edit-cards {
-        padding: 5px;
+        /* padding: 5px;
         margin: 7px 0;
-        border: 1px solid black;
+        border: 1px solid black; */
     }
     
 }

@@ -28,6 +28,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    /* font-family: 'Work Sans', sans-serif; */
 }
 
 .create-subject button {
@@ -49,6 +50,7 @@
     display: flex;
     font-size: 30px;
     justify-content: center;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .create-edit-name button {
@@ -72,8 +74,10 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 8px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    font-family: 'Work Sans', sans-serif;
+    background-color: rgba(128, 128, 128, 0.096);
 }
 
 .create-label input{
@@ -96,7 +100,11 @@
     color: white;
 }
 
-.create-label:hover button {
+.create-1-button:hover {
+    background-color: #45a049;
+}
+
+.create-2-button:hover {
     background-color: #45a049;
 }
 
@@ -111,9 +119,11 @@
 .create-labels-1 {
     padding: 0 10px;
     margin: 10px 10px;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
+    border: .5px solid #57565675;
+    border-radius: 8px;
+    /* box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7); */
+    box-shadow: rgba(134, 134, 134, 0.808) 0px 0px 6px 0px
+    /* background-color: rgba(134, 134, 134, 0.808) 0px 0px 6px 0px */
 }
 
 .create-labels-1 button {

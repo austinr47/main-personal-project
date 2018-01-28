@@ -11,6 +11,10 @@
     /* font-family: 'Times New Roman', Times, serif */
 }
 
+.center-text {
+    font-family: 'Work Sans', sans-serif;
+}
+
 .account-content {
     display: flex;
     justify-content: space-between;
@@ -23,9 +27,14 @@
     color: black;
 }
 
+
 .account-link {
     text-decoration: unset;
     color: black;
+}
+
+.account-right-label {
+    font-family: 'Work Sans', sans-serif;
 }
 
 .animated-account-results {
@@ -62,13 +71,16 @@
 
 .account-right-label {
     font-size: 14px;
-    background-color: rgb(131, 199, 211);
-    font-weight: bold;
+    /* background-color: rgb(131, 199, 211); */
+    /* background-color: #97CFD9; */
+    color: white;
     display: flex;
     justify-content: space-between;
-    border: 1.5px solid #000000;
     padding: .5em 1em;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Work Sans', sans-serif;
+    background-color: rgba(65, 65, 65, 0.925);
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 0px rgb(95, 95, 95);
 }
 
 .account-subject {
@@ -88,11 +100,17 @@
 .account-right-stats {
     display: flex;
     justify-content: space-between;
-    padding: 5px 3px;
+    padding: 5px 7px;
     margin: 10px 7px;
-    border: 1px solid #000000;
-    border-radius: 2px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    /* border: 1px solid #000000; */
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px 0px rgba(134, 134, 134, 0.808);
+    /* background-color: pink; */
+}
+
+.account-right-stats:hover {
+    background-color: rgba(128, 128, 128, 0.103);
 }
 
 .account-left-column {
@@ -110,8 +128,8 @@
 
 .center-text {
     margin: auto;
-    padding: 10px 0 10px 25px;
-    font-family: 'Times New Roman', Times, serif
+    padding: 10px 0 10px 14px;
+    /* font-family: 'Times New Roman', Times, serif */
 }
 
 .css-button{ 
@@ -122,8 +140,9 @@
     color: #FFFFFF; 
     font-family: 'Arial'; 
     font-size: 18px; 
-    background-color: rgb(238, 160, 141); 
-    border-width: 1px; 
+    /* background-color: rgb(238, 160, 141);  */
+    background-color: rgba(151, 207, 217, 0.685);
+    border-width: .4px; 
     border-style: solid; 
     border-color: #3E537D; 
     border-radius: 18px; 
@@ -132,7 +151,8 @@
 .css-button:hover{ 
     height: 70px; 
     width: 140px; 
-    background-color: rgb(92, 217, 255); 
+    /* background-color: rgb(92, 217, 255);  */
+    background-color: #9EF0FF;
 } 
 
 @media (min-width: 700px) {

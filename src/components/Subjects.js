@@ -39,6 +39,7 @@ class Subjects extends Component {
                         <div className='subject-boxs'>
                             <div>{items.category}</div>
                         </div>
+                        <div>_________________</div>
                         <div className='subject-buttons'>
                                 <Link className=' subject-button' to={`/flashcards/${items.category}`}>Flashcards</Link>
                                 <Link className=' subject-button' to={`/tests/${items.category}`}>Test</Link>

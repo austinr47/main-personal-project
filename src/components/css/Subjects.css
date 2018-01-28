@@ -16,8 +16,8 @@
 }
 
 .trainings-category {
-    border: 1px solid #000000;
-    border-radius: 3px;
+    /* border: 1px solid #000000; */
+    /* border-radius: 3px; */
     padding: 10px 25px 10px 25px;
     margin-top: 15px;
     width: 240px;
@@ -27,9 +27,13 @@
     align-items: center;
     flex-direction: column;
     /* background-color: rgba(199, 199, 199, 0.123); */
-    background-color: white;
+    background-color: rgba(167, 165, 165, 0.233);
     text-align: center;
-    box-shadow: 0px 1px 3px .5px #1C487C;
+    /* box-shadow: 0px 1px 3px .5px #1C487C; */
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px 0px rgba(134, 134, 134, 0.808);
+    /* background-color: rgba(151, 207, 217, 0.685); */
 }
 
 .subject-box{
@@ -46,20 +50,29 @@
 
 .subject-button{
     text-align: center;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     text-decoration: unset;
     color: black; 
     cursor: pointer;
     display: flex;
     justify-content: space-around;
-    border: 1px solid black;
+    align-items: center;
+    /* border: 1px solid black; */
     padding: 3px;
-    box-shadow: 0px 1px 3px 0px #1C487C;
-    background-color: rgba(199, 199, 199, 0.123);
+    /* background-color: white; */
+    /* box-shadow: 0px 1px 3px 0px #1C487C; */
+    /* background-color: rgba(199, 199, 199, 0.123); */
+    /* background-color: rgba(151, 207, 217, 0.685); */
+    /* border-width: .4px;  */
+    /* border-style: solid; 
+    border-color: #3E537D;  */
+    /* border-radius: 18px;  */
+    box-shadow: 0px 0px 7px 1px #a8aeb8; 
+    background-color: rgb(230, 230, 230);
 }
 
 .subject-button:hover{
-    text-align: center;
+    /* text-align: center;
     border-radius: 6px;
     background-color: rgb(217, 254, 255);
     text-decoration: unset;
@@ -69,15 +82,20 @@
     justify-content: space-around;
     border: 1px solid black;
     padding: 3px;
-    box-shadow: 0px 1px 3px 0px #1C487C;
+    box-shadow: 0px 1px 3px 0px #1C487C; */
+    /* background-color: #9EF0FF; */
+    font-size: 20px;
+    background-color: white;
+    border-radius: 4px;
+
 }
 
 .subject-buttons {
     display: flex;
     /* background-color: purple; */
-    padding: 7px 0;
+    /* padding: 7px 0; */
     width: 110%;
-    margin: 15px 0;
+    margin: 12px 0;
     text-decoration: unset;
     color: black; 
     /* cursor: pointer; */

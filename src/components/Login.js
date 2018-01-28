@@ -4,6 +4,7 @@ import Auth0Lock from 'auth0-lock';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { login } from '../ducks/reducer';
+import logo from '../components/FlashStudyDark.png';
 
 class Login extends Component {
     constructor() {
@@ -36,8 +37,8 @@ class Login extends Component {
             <div>
                 <div className='login-main'>
                     <div className='login-box'>
-                        <img alt='' src=''/>
-                        <div className='login-text'>Flash-Study</div>
+                        <img alt='logo' src={logo}/>
+                        {/* <div className='login-text'>Flash-Study</div> */}
                         <button onClick={this.login}>Login / Register</button>
                     </div>
                         <div className='login-guest'>

@@ -169,8 +169,8 @@ class Create extends Component {
                                     <div className='create-label'>
                                         <input placeholder='Description' value={this.state.question} onFocus={(e) => e.target.select()} type='text' ref='fieldQuestion' onChange={event => this.updateQuestion(event.target.value)}/>
                                         <input placeholder='Answer' value={this.state.answer} onFocus={(e) => e.target.select()} type='text' ref='fieldAnswer' onChange={event => this.updateAnswer(event.target.value)}/>
-                                        <button onClick={this.addToDb} disabled={this.state.disableAdd}>- Add -</button>
-                                        <button onClick={() => this.props.history.push('/account')}>- Finish -</button>
+                                        <button className='create-1-button' onClick={this.addToDb} disabled={this.state.disableAdd}>- Add -</button>
+                                        <button className='create-2-button' onClick={() => this.props.history.push('/account')}>- Finish -</button>
                                     </div>
                                 }
                                 <div className='create-labels'>
