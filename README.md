@@ -23,11 +23,11 @@ Account Page:
 
 Subjects Page:
 
-![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/sibjects.png)
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/subjects.png)
 
 Create Subjects Page:
 
-![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/create-subjects.png)
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/create-subject.png)
 
 Edit Subjects Page:
 
