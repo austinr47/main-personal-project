@@ -1,25 +1,34 @@
-# PeerQ
+# Flash-Study:
 
-I created PeerQ as an alternative to the DevMountain Q system. It is an app for students to use to help other students, without seeing other students questions from other cohorts across the country.
+Flash-study is a mobile friendly study aid web application. A user can create flashcards for different subjects, study the flashcards, then test on those subjects.
 
-## How?
+## Technologies:
 
-I used many technologies when making this project including but not limited to: React | Redux | JavaScript(ES6) | SCSS | Sass | NodeJS | ExpressJS | Massive | PostgreSQL | Axios | Socket.io
+* React
+* Redux
+* JavaScript(ES6)
+* NodeJS
+* ExpressJS
+* Massive
+* PostgreSQL
+* Axios
+* Chart.js
+* Auth0
 
-### PeerQ is very simple to use:
+### Overview of site features:
 
-Home Page:
+Account Page:
 
 ![Image of Home Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/pqactualhome.png)
 
-Mentor Page:
+Subjects Page:
 
 ![Image of Mentor Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/pqmentor.png)
 
-Student Form Page:
+New Subjects page Page:
 
 ![Image of Mentor Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/pqhome.png)
 
-Student Waiting Page:
+Results Page:
 
 ![Image of Mentor Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/studentwaitinggif.gif)
