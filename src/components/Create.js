@@ -140,7 +140,7 @@ class Create extends Component {
                 <div className='create-labels-1'>
                     <div className='create-description-1'>{item.question}</div>
                     <div className='create-description-2'>{item.answer}</div>
-                    <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
+                    <img className='create-10-button' src='https://d30y9cdsu7xlg0.cloudfront.net/png/3823-200.png' onClick={() => this.deleteCard(`${item.id}`)}/>
                 </div>
             </div>
         })

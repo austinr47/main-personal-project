@@ -121,21 +121,24 @@
     margin: 10px 10px;
     border: .5px solid #57565675;
     border-radius: 8px;
+    align-items: center;
     /* box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7); */
     box-shadow: rgba(134, 134, 134, 0.808) 0px 0px 6px 0px
     /* background-color: rgba(134, 134, 134, 0.808) 0px 0px 6px 0px */
 }
 
-.create-labels-1 button {
-    background-color: rgb(252, 168, 168);
+.create-10-button {
+    /* background-color: rgb(252, 168, 168); */
     padding: 6px;
     margin: 0 10px;
     border-radius: 6px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    width: 12px;
+    height: 15px;
 }
 
-.create-labels-1:hover button {
-    background-color: rgb(255, 101, 101);
+.create-10-button:hover {
+    /* background-color: rgb(255, 0, 0); */
     cursor: pointer;
 }
 
