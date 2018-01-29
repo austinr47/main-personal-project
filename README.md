@@ -2,6 +2,8 @@
 
 Flash-study is a mobile friendly study aid web application. A user can create flashcards for different subjects, study the flashcards, then test on those subjects.
 
+## For the live version, click [here](http://http://myflash-study.com/#/).
+
 ## Technologies:
 
 * React
@@ -14,6 +16,17 @@ Flash-study is a mobile friendly study aid web application. A user can create fl
 * Axios
 * Chart.js
 * Auth0
+
+## Setup:
+
+* `Fork` and `clone` this repository.
+* `cd` into the project directory.
+* Run `npm install`.
+* Create a Postgres database. Use this project's `db/init.sql` file to create the schema.
+* Copy the `env.example` file to a new file called `.env` and fill in the environmental variables.
+* Start the server with `nodemon`.
+* Start the web dev server with `npm start`. In your browser, open `http://localhost:3000`.
+
 
 ### Overview of site features:
 

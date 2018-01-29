@@ -1,5 +1,4 @@
 .header {
-    /* background-color: #97CFD9; */
     background-image: linear-gradient(to right, #77B4BF 0%, #9EF0FF 100%);
     padding: 5px;
     display: flex;
@@ -13,7 +12,6 @@
 }
 
 .header-right {
-    /* background-color: pink; */
     display: flex; 
     align-content: center;
     justify-content: center;
@@ -21,7 +19,6 @@
 }
 
 .link {
-    /* background-color: teal; */
     margin: auto;
     text-decoration: unset;
     display: flex;
@@ -31,10 +28,8 @@
 
 .header-text {
     font-family: 'Work Sans', sans-serif;
-    /* background-color: lightblue; */
     font-size: 14px;
     margin: auto;
-
     display: flex;
     align-content: center;
     padding-right: 6px;
@@ -42,7 +37,6 @@
 
 .header-text-1 {
     font-family: 'Work Sans', sans-serif;
-    /* background-color: lightblue; */
     font-size: 17px;
     margin: auto;
     display: flex;

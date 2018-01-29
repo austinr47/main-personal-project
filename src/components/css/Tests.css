@@ -1,11 +1,8 @@
 .train-main {
     /* background-color: rgb(235, 235, 235); */
-    /* height: 100vh; */
 }
 
 .train-main-02 {
-    /* background-color: rgb(235, 235, 235); */
-    /* height: 100vh; */
     margin: 0 2px;
     min-height: 99vh;
     box-shadow: 0px 2px 5px .5px #1C487C;
@@ -18,22 +15,9 @@
     align-items: center;
     align-content: center;
     text-align: center;
-    /* box-shadow: 0px 2px 5px 2px #1C487C; */
 }
 
 .train-question {
-    /* font-size: 2em;
-    border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
-    margin: 2em;
-    width: 60%;
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    align-items: center;
-    justify-content: center;
-    text-align: center; */
     padding: 10px;
     min-height: 250px;
     margin: 20px 15px;
@@ -50,7 +34,6 @@
 }
 
 .train-input {
-    /* width: 90%; */
     padding: 2em;
 }
 
@@ -70,7 +53,6 @@
     cursor: pointer;
     margin: auto;
     text-align: center;
-    /* margin-left: 43px; */
 }
 
 .train-button-1 {

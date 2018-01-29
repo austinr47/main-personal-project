@@ -1,20 +1,15 @@
 .results-main {
-    /* padding: 3px; */
     /* background-color: rgb(240, 95, 95); */
 }
 
 .results-main-2 {
-    /* padding: 3px; */
-    /* background-color: rgb(240, 95, 95); */
     margin: 0 2px;
     min-height: 99vh;
     box-shadow: 0px 2px 5px .5px #1C487C;
 }
 
-/* results title */
 .results-title {
     padding: 3px;
-    /* background-color: lightpink; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -23,8 +18,6 @@
 }
 
 .results-to-account {
-    /* padding: 5px; */
-    /* background-color: lightgreen; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
@@ -36,9 +29,7 @@
 }
 
 .results-main-title {
-    /* padding: 5px; */
     font-size: 20px;
-    /* background-color: lightyellow; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
@@ -49,8 +40,6 @@
 }
 
 .results-try-again {
-    /* padding: 5px; */
-    /* background-color: lightseagreen; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
@@ -61,14 +50,6 @@
     text-decoration: unset;
     color: black;
     min-width: 70px;
-}
-
-/* results content */
-
-.results-content {
-    /* padding: 5px; */
-    /* background-color: lightsalmon; */
-    /* display: flex; */
 }
 
 .result-right {
@@ -87,27 +68,14 @@
     width: 10px;
 }
 
-/* results left */
-
-.results-left {
-    /* padding: 5px; */
-    /* background-color: lightskyblue; */
-    /* flex: 3 0 0; */
-}
-
 .results-label {
     padding: 5px;
     font-size: 13px;
     font-weight: bold;
-    /* background-color: lightcoral; */
-    /* border: 1px solid #000000;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7); */
     display: flex;
     justify-content: space-around;
     margin: 1em 0;
     padding: .6em .3em;
-    
     font-family: 'Work Sans', sans-serif;
     background-color: rgba(65, 65, 65, 0.925);
     color: white;
@@ -139,7 +107,6 @@
 
 .results-stats {
     font-size: 10px;
-    /* background-color: teal; */
     border: 1px solid #000000;
     border-radius: 3px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
@@ -151,8 +118,6 @@
 
 .results-stats-right {
     font-size: 12px;
-    /* background-color: #1f910210; */
-    /* border: 1px solid #1e9102; */
     border-radius: 8px;
     box-shadow: 1px 2px 5px -1px #235e14;
     display: flex;
@@ -164,15 +129,12 @@
 
 .results-stats-wrong {
     font-size: 12px;
-    /* border: 1px solid #bb0404; */
     border-radius: 8px;
     box-shadow: 1px 2px 5px -1px #7e1212;
     display: flex;
     margin: 10px 8px;
     padding: .6em .3em;
     justify-content: space-around;
-    /* background-color: rgba(255, 225, 225, 0.459); */
-    /* animation-name: wrongGlow; */
     animation-duration: 2s; 
     animation-fill-mode: both;
     animation-iteration-count: 5;
@@ -191,11 +153,8 @@
     color: black;
 }
 
-/* results right */
-
 .results-right {
     padding: 5px;
-    /* background-color: lightblue; */
     flex: .5 0 0;
     display: flex;
     flex-direction: column;
@@ -204,8 +163,6 @@
 }
 
 .results-result {
-    /* background-color: lightgreen; */
-    /* border: 1px solid #000000; */
     border-radius: 8px;
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     padding: 3px;
@@ -214,10 +171,7 @@
 
 .results-percent {
     background-color:  #97cfd9;
-    /* #97cfd9, opacity 68.6% */
-    /* border: 1px solid #000000; */
     border-radius: 30%;
-    /* border-radius: 3px; */
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     padding: 10px;
     margin: 5px;
@@ -263,12 +217,10 @@
 @media (min-width: 900px) {
 
     .results-content {
-        /* background-color: lightsalmon; */
         display: flex;
     }
     
     .results-left {
-        /* background-color: lightskyblue; */
         flex: 2 0 0;
     }
 
@@ -282,10 +234,6 @@
         padding: 23px;
     }
 
-    .results-result {
-        /* padding-top: 25px;
-        padding-bottom: 25px; */
-    }
     .results-title {
         padding: 20px 0;
     }
@@ -299,7 +247,6 @@
 @media (min-width: 900px){
     .results-main {
         display: flex;
-        /* flex-direction: column; */
         justify-content: center;
     }
 

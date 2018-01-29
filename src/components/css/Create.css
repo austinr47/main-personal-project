@@ -28,7 +28,6 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    /* font-family: 'Work Sans', sans-serif; */
 }
 
 .create-subject button {
@@ -122,23 +121,18 @@
     border: .5px solid #57565675;
     border-radius: 8px;
     align-items: center;
-    /* box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7); */
-    box-shadow: rgba(134, 134, 134, 0.808) 0px 0px 6px 0px
-    /* background-color: rgba(134, 134, 134, 0.808) 0px 0px 6px 0px */
+    box-shadow: rgba(134, 134, 134, 0.808) 0px 0px 6px 0px;
 }
 
 .create-10-button {
-    /* background-color: rgb(252, 168, 168); */
     padding: 6px;
     margin: 0 10px;
     border-radius: 6px;
-    /* border: 1px solid black; */
     width: 12px;
     height: 15px;
 }
 
 .create-10-button:hover {
-    /* background-color: rgb(255, 0, 0); */
     cursor: pointer;
 }
 
@@ -151,8 +145,6 @@
     margin: 10px 0;
 }
 
-.create-answer-1 {
-}
 
 @media (min-width: 700px) {
     .create-labels {

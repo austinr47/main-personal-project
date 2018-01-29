@@ -1,6 +1,5 @@
 .edit-main {
     /* background-color: rgb(241, 97, 97); */
-    /* padding: 5px; */
 }
 
 .edit-main-2 {
@@ -10,10 +9,7 @@
     box-shadow: 0px 2px 5px .5px #1C487C;
 }
 
-
-
 .updating-body {
-    /* background-color: rgba(128, 128, 128, 0.493); */
     background-color: #222228;
     opacity: .94;
     position: absolute;
@@ -36,13 +32,9 @@
 }
 
 .updating-text {
-    /* border: 2px solid rgba(30, 128, 141, 0.932); */
-    /* background-color: rgba(55, 191, 209, 0.932); */
     background-color: #ffffff;
     opacity: 1;
-    /* color: #666666; */
     color: black;
-    /* font-family: "Avenir Next", Avenir, -apple-system, system-ui, Roboto, Helvetica, sans-serif; */
     border-radius: 5px;
     font-size: 14px;
     height: 279px;
@@ -68,7 +60,6 @@
 .edit-cards {
     padding: 5px;
     margin: 15px 10px 0;
-    /* border: 1px solid black; */
     border-radius: 8px;
     box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.7);
     display: flex;
@@ -76,21 +67,16 @@
 }
 
 .delete-button {
-    /* max-width: 100px; */
     width: 12px;
     height: 15px;
-    /* margin-left: 20px; */
-    /* border: .5px solid rgb(136, 135, 135); */
     border-radius: 6px;
     background-color: rgba(211, 211, 211, 0);
-    /* background-color: rgba(211, 211, 211, 0.356); */
     border: 0px solid rgba(0, 0, 0, 0);
     padding-top: 12px;
 }
 
 .delete-button:hover {
     cursor: pointer;
-    /* background-color: rgb(219, 216, 216); */
 }
 
 .edit-card-content {
@@ -114,11 +100,9 @@
     padding: 10px 20% 10px 30px;
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid black; */
     border-radius: 3px;
     box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.7);
     font-weight: bold;
-    /* font-family:  'Work Sans', sans-serif; */
 }
 
 .edit1-description {
@@ -190,7 +174,6 @@
     display: flex;
     justify-content: space-between;
     margin: 8px 7px 5px 10px;
-    /* font-family: 'PT Sans Narrow', sans-serif; */
     font-size: 20px;
 }
 
@@ -209,7 +192,6 @@
     font-size: 20px;
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid black; */
     border-radius: 8px;
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.7);
     font-weight: bold;
@@ -227,12 +209,6 @@
         padding: 5px;
         margin: 0 40px;
         width: 700px;
-    }
-    
-    .edit-cards {
-        /* padding: 5px;
-        margin: 7px 0;
-        border: 1px solid black; */
     }
     
 }

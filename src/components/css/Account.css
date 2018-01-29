@@ -1,14 +1,11 @@
 .account-bck {
     /* background-color: #D5DDE3; */
-    /* height: 100vh; */
-    /* width: 300px; */
 }
 
 .account-center {
     margin: 0 2px;
     min-height: 99vh;
     box-shadow: 0px 2px 5px .5px #1C487C;
-    /* font-family: 'Times New Roman', Times, serif */
 }
 
 .center-text {
@@ -71,8 +68,6 @@
 
 .account-right-label {
     font-size: 14px;
-    /* background-color: rgb(131, 199, 211); */
-    /* background-color: #97CFD9; */
     color: white;
     display: flex;
     justify-content: space-between;
@@ -85,7 +80,6 @@
 
 .account-subject {
     min-width: 79px;
-    /* font-family: serif */
 }
 
 .account-date {
@@ -102,11 +96,9 @@
     justify-content: space-between;
     padding: 5px 7px;
     margin: 10px 7px;
-    /* border: 1px solid #000000; */
     font-family: 'Roboto', sans-serif;
     border-radius: 8px;
     box-shadow: 0px 0px 6px 0px rgba(134, 134, 134, 0.808);
-    /* background-color: pink; */
 }
 
 .account-right-stats:hover {
@@ -129,7 +121,6 @@
 .center-text {
     margin: auto;
     padding: 10px 0 10px 14px;
-    /* font-family: 'Times New Roman', Times, serif */
 }
 
 .css-button{ 
@@ -140,7 +131,6 @@
     color: #FFFFFF; 
     font-family: 'Arial'; 
     font-size: 18px; 
-    /* background-color: rgb(238, 160, 141);  */
     background-color: rgba(151, 207, 217, 0.685);
     border-width: .4px; 
     border-style: solid; 
@@ -151,7 +141,6 @@
 .css-button:hover{ 
     height: 70px; 
     width: 140px; 
-    /* background-color: rgb(92, 217, 255);  */
     background-color: #9EF0FF;
 } 
 
