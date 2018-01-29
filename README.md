@@ -19,16 +19,28 @@ Flash-study is a mobile friendly study aid web application. A user can create fl
 
 Account Page:
 
-![Image of Home Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/pqactualhome.png)
+![Image of Home Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/account.png)
 
 Subjects Page:
 
-![Image of Mentor Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/pqmentor.png)
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/sibjects.png)
 
-New Subjects page Page:
+Create Subjects Page:
 
-![Image of Mentor Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/pqhome.png)
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/create-subjects.png)
+
+Edit Subjects Page:
+
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/edit-subjects.png)
+
+Flashcard Page:
+
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/flashcards.png)
+
+Testing Page:
+
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/test.png)
 
 Results Page:
 
-![Image of Mentor Page](https://github.com/TrevBo25/peerq/blob/master/src/assets/studentwaitinggif.gif)
+![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/results.png)
