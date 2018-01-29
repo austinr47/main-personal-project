@@ -17,7 +17,7 @@ Flash-study is a mobile friendly study aid web application. A user can create fl
 
 ### Overview of site features:
 
-Account Page:
+<strong>Account Page:</strong>
 
 The account page will show all tests that have been taken by that user. It will also average out the percent score of all tests for individual subjects and iupdate the grapg with that information.
 
