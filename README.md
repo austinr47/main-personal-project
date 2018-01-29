@@ -23,37 +23,37 @@ The account page will show all tests that have been taken by that user. It will 
 
 ![Image of Home Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/account.png)
 
-Subjects Page:
+<strong>Subjects Page:</strong>
 
 The subjects page shows all subjects create by the user. A new subject can be create or existing subjects can be edited or deleted.
 
 ![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/subjects.png)
 
-Create Subjects Page:
+<strong>Create Subjects Page:</strong>
 
 THis page is used to create new flashcards and subjects.
 
 ![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/create-subject.png)
 
-Edit Subjects Page:
+<strong>Edit Subjects Page:</strong>
 
 This page is used to edit the flashcards in existing subjects or to delete the entire subjects and all of its flashcards.
 
 ![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/edit-subjects.png)
 
-Flashcard Page:
+<strong>Flashcard Page:</strong>
 
 This page is where the user can study the flashcards made. It will display the flashcards in random order and will continue to cycle through them. 
 
 ![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/flashcards.png)
 
-Testing Page:
+<strong>Testing Page:</strong>
 
 The user will type in the answer to the questions one at a time.
 
 ![Image of Mentor Page](https://github.com/austinr47/main-personal-project/blob/master/src/assets/test.png)
 
-Results Page:
+<strong>Results Page:</strong>
 
 At the end of the tests, the user will be directed to a results page. This page will display all question, correct answers, users answers, and the percent correct. The user then can retake the test or go back to the account page where the new test has been added and the chart been updated.
 
