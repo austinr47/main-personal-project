@@ -1,1 +1,1 @@
-<h>Flash-Study</h>
+<strong>Flash-Study</strong>
