@@ -2,7 +2,7 @@
 
 Flash-study is a mobile friendly study aid web application. A user can create flashcards for different subjects, study the flashcards, then test on those subjects.
 
-## For the live version, click [here](myflash-study.com/#/).
+## For the live version, click [here](www.myflash-study.com/#/).
 
 ## Technologies:
 
