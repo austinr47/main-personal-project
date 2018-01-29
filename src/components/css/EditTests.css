@@ -75,23 +75,29 @@
     flex-direction: column;
 }
 
-.edit-card-content button {
-    max-width: 100px;
-    margin-left: 20px;
+.delete-button {
+    /* max-width: 100px; */
+    width: 12px;
+    height: 15px;
+    /* margin-left: 20px; */
     /* border: .5px solid rgb(136, 135, 135); */
     border-radius: 6px;
     background-color: rgba(211, 211, 211, 0);
     /* background-color: rgba(211, 211, 211, 0.356); */
     border: 0px solid rgba(0, 0, 0, 0);
+    padding-top: 12px;
 }
 
-.edit-card-content:hover button {
+.delete-button:hover {
     cursor: pointer;
-    background-color: rgb(219, 216, 216);
+    /* background-color: rgb(219, 216, 216); */
 }
 
 .edit-card-content {
     margin: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .edit-button-edit {
@@ -173,6 +179,10 @@
     box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.7);
     padding: 3px;
     text-align: center;
+}
+
+.edit-cards{
+    flex: 4;
 }
 
 .edit-cards-info {

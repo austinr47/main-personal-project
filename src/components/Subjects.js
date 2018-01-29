@@ -58,7 +58,7 @@ class Subjects extends Component {
 
                                     <Link to='/create-test'>
                                         <div className='link trainings-category'>
-                                            Add New Test
+                                            Create New Subject
                                         </div>
                                     </Link>
                                     {categories}

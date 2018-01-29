@@ -122,14 +122,14 @@ class Create extends Component {
         const cards = this.state.cards.map((item, i) => {
             if(this.state.cards[0].id != null) {
                 return <div className='edit-card-content'key={item.id}>
-                <div className='edit-cards'>
-                    <div className='edit-cards-info'>
-                        <div>{item.question}</div>
-                        <div>{item.answer}</div>
-                    </div>
-                </div>
-                    <button onClick={() => this.deleteCard(`${item.id}`)}>Delete</button>
-            </div>
+                            <div className='edit-cards'>
+                                <div className='edit-cards-info'>
+                                    <div>{item.question}</div>
+                                    <div>{item.answer}</div>
+                                </div>
+                            </div>
+                            <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/3823-200.png' className='delete-button' onClick={() => this.deleteCard(`${item.id}`)}/>
+                        </div>
             } else return ''
         })
 
